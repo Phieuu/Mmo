@@ -6,6 +6,11 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 
+[assembly: ExportFont("Montserrat-Bold.ttf",Alias="Montserrat-Bold")]
+     [assembly: ExportFont("Montserrat-Medium.ttf", Alias = "Montserrat-Medium")]
+     [assembly: ExportFont("Montserrat-Regular.ttf", Alias = "Montserrat-Regular")]
+     [assembly: ExportFont("Montserrat-SemiBold.ttf", Alias = "Montserrat-SemiBold")]
+     [assembly: ExportFont("UIFontIcons.ttf", Alias = "FontIcons")]
 namespace MobileApp
 {
     public partial class App
@@ -17,6 +22,9 @@ namespace MobileApp
 
         protected override async void OnInitialized()
         {
+            //Register Syncfusion license
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("NTU3NjUyQDMxMzkyZTM0MmUzMFlSRWdodlB5cjRaVktPYTJ4QllmU2l1N1VWWUxXS1ZHQlVYTHNpVmlpcHM9");
+
             InitializeComponent();
 
             await NavigationService.NavigateAsync("NavigationPage/MainPage");

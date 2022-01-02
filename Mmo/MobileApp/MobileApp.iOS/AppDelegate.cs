@@ -1,4 +1,15 @@
-﻿using Foundation;
+using Syncfusion.XForms.iOS.TabView;
+using Syncfusion.XForms.Pickers.iOS;
+using  Syncfusion.XForms.iOS.Graphics;
+using Syncfusion.SfRating.XForms.iOS;
+using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.XForms.iOS.ComboBox;
+using Syncfusion.XForms.iOS.TextInputLayout;
+using Syncfusion.XForms.iOS.Core;
+using Syncfusion.XForms.iOS.Graphics;
+using Syncfusion.XForms.iOS.Border;
+using Syncfusion.XForms.iOS.Buttons;
+using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -22,6 +33,19 @@ namespace MobileApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+            Core.Init();
+            SfTabViewRenderer.Init();
+            SfDatePickerRenderer.Init();
+            SfRatingRenderer.Init();
+            SfListViewRenderer.Init();
+            SfComboBoxRenderer.Init();
+            SfTextInputLayoutRenderer.Init();
+            SfAvatarViewRenderer.Init();
+            SfSegmentedControlRenderer.Init();
+            SfRadioButtonRenderer.Init();
+            SfGradientViewRenderer.Init();
+            SfBorderRenderer.Init();
+            SfButtonRenderer.Init();
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
