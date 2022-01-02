@@ -39,6 +39,5 @@
             Text="{StaticResource Google}"
             TextColor="{DynamicResource Gray-White}"
             WidthRequest="-1" />
-
     </Grid>
 </Grid>

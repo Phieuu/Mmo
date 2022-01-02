@@ -5,14 +5,12 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behavior="clr-namespace:MobileApp.Behaviors"
     xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
-    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
-    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:calender="clr-namespace:Syncfusion.SfCalendar.XForms;assembly=Syncfusion.SfCalendar.XForms"
-    xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
     xmlns:control="clr-namespace:MobileApp.Controls"
     xmlns:converter="clr-namespace:MobileApp.Converters"
-    xmlns:datePicker="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
     xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:button="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:datePicker="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
     x:Name="AddCard"
     Title="Add Card"
     BackgroundColor="{DynamicResource GrayShadowBackgroundColor}"
@@ -43,7 +41,6 @@
                             CommandParameter="{x:Reference backButton}"
                             Style="{StaticResource IconButtonStyle}"
                             Text="{StaticResource Back}" />
-
                     </control:TitleView.LeadingView>
                 </control:TitleView>
                 <ContentPresenter />
@@ -89,12 +86,11 @@
                                          UnselectedItemFontSize="16"
                                          UnselectedItemTextColor="{DynamicResource Gray-900}"
                                          Format="dd_MM_yyyy">
-
                 </datePicker:SfDatePicker>
 
                 <Grid RowDefinitions="Auto, Auto">
 
-                <control:CustomShadowFrame
+                    <control:CustomShadowFrame
                     Margin="16,24,16,32"
                     Padding="16"
                     BackgroundColor="{DynamicResource GrayShadowColor}"
@@ -106,24 +102,24 @@
                     WidthRequest="{OnIdiom Default='550',
                                            Phone='-1'}">
 
-                    <StackLayout BackgroundColor="Transparent" Spacing="0">
+                        <StackLayout BackgroundColor="Transparent" Spacing="0">
 
-                        <Label
+                            <Label
                             FontFamily="Montserrat-Medium"
                             FontSize="12"
                             Text="Card number"
                             TextColor="{DynamicResource Gray-800}" />
 
-                        <!--  Card number entry and card image  -->
-                        <border:SfBorder 
+                            <!--  Card number entry and card image  -->
+                            <border:SfBorder
                             Margin="0,4"
                             BackgroundColor="{DynamicResource Gray-Bg}"
                             BorderColor="{Binding Source={x:Reference cardNumberEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                             CornerRadius="4">
 
-                            <Grid ColumnDefinitions="*, Auto">
+                                <Grid ColumnDefinitions="*, Auto">
 
-                                <control:BorderlessEntry
+                                    <control:BorderlessEntry
                                     x:Name="cardNumberEntry"
                                     Grid.Column="0"
                                     Margin="12,0"
@@ -134,12 +130,12 @@
                                     Style="{StaticResource BorderlessEntryStyle}"
                                     Text="{Binding CardNumber.Value}">
 
-                                    <control:BorderlessEntry.Behaviors>
-                                        <behavior:PaymentCardNumberEntryBehavior IsValid="{Binding CardNumber.IsValid}" />
-                                    </control:BorderlessEntry.Behaviors>
-                                </control:BorderlessEntry>
+                                        <control:BorderlessEntry.Behaviors>
+                                            <behavior:PaymentCardNumberEntryBehavior IsValid="{Binding CardNumber.IsValid}" />
+                                        </control:BorderlessEntry.Behaviors>
+                                    </control:BorderlessEntry>
 
-                                <Image
+                                    <Image
                                     Grid.Column="1"
                                     Margin="12,0"
                                     HeightRequest="40"
@@ -147,13 +143,11 @@
                                     Source="Card.png"
                                     VerticalOptions="CenterAndExpand"
                                     WidthRequest="40" />
+                                </Grid>
+                            </border:SfBorder>
 
-                            </Grid>
-
-                        </border:SfBorder>
-
-                        <!--  Label to display error message  -->
-                        <Label
+                            <!--  Label to display error message  -->
+                            <Label
                             x:Name="CardNumberValidationLabel"
                             Margin="15,-3,0,0"
                             IsVisible="{Binding CardNumber.IsValid, Converter={StaticResource InverseBoolConverter}}"
@@ -162,14 +156,14 @@
                             TextColor="{DynamicResource Red}"
                             VerticalOptions="FillAndExpand" />
 
-                        <Grid
+                            <Grid
                             Margin="0,12,0,16"
                             Padding="0"
                             ColumnDefinitions="*, *"
                             ColumnSpacing="16"
                             RowDefinitions="Auto, Auto"
                             RowSpacing="4">
-                            <Label
+                                <Label
                                 Grid.Row="0"
                                 Grid.Column="0"
                                 FontFamily="Montserrat-Medium"
@@ -177,7 +171,7 @@
                                 Text="Expiration date"
                                 TextColor="{DynamicResource Gray-800}" />
 
-                            <Label
+                                <Label
                                 Grid.Row="0"
                                 Grid.Column="1"
                                 FontFamily="Montserrat-Medium"
@@ -185,35 +179,35 @@
                                 Text="CVV"
                                 TextColor="{DynamicResource Gray-800}" />
 
-                            <StackLayout Grid.Row="1">
-                                <!--  Combobox with calendar to pick the expire date of the card  -->
-                                <border:SfBorder
+                                <StackLayout Grid.Row="1">
+                                    <!--  Combobox with calendar to pick the expire date of the card  -->
+                                    <border:SfBorder
                                     Margin="0"
                                     Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                                     VerticalOptions="Fill">
-                                        <button:SfButton x:Name="pickerButton" 
+                                        <button:SfButton x:Name="pickerButton"
                                                          Text="{Binding Date, StringFormat='{0:MM/yy}'}"
-                                                         FontSize="16"   
+                                                         FontSize="16"
                                                          HeightRequest="40"
                                                          FontFamily="Montserrat-Regular"
                                                          HorizontalOptions="FillAndExpand"
                                                          HorizontalTextAlignment="Start"
                                                          TextColor="{DynamicResource Gray-900}"
-                                                         BackgroundColor="Transparent" 
+                                                         BackgroundColor="Transparent"
                                                          Clicked="DatePicker_Clicked" />
                                     </border:SfBorder>
-                            </StackLayout>
+                                </StackLayout>
 
-                            <StackLayout Grid.Row="1" Grid.Column="1">
-                                <!--  Entry for cvv number  -->
-                                <border:SfBorder
+                                <StackLayout Grid.Row="1" Grid.Column="1">
+                                    <!--  Entry for cvv number  -->
+                                    <border:SfBorder
                                     BackgroundColor="{DynamicResource Gray-Bg}"
                                     BorderColor="{Binding Source={x:Reference cvvEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                                     CornerRadius="4">
 
-                                    <Grid ColumnDefinitions="*, Auto">
+                                        <Grid ColumnDefinitions="*, Auto">
 
-                                        <control:BorderlessEntry
+                                            <control:BorderlessEntry
                                             x:Name="cvvEntry"
                                             Margin="12,0"
                                             HeightRequest="40"
@@ -223,22 +217,22 @@
                                             Placeholder="Enter CVV"
                                             Style="{StaticResource BorderlessEntryStyle}"
                                             Text="{Binding CVV.Value}">
-                                            <control:BorderlessEntry.Behaviors>
-                                                <behavior:BorderlessEntryCVVBehavior IsValid="{Binding CVV.IsValid}" />
-                                            </control:BorderlessEntry.Behaviors>
-                                        </control:BorderlessEntry>
+                                                <control:BorderlessEntry.Behaviors>
+                                                    <behavior:BorderlessEntryCVVBehavior IsValid="{Binding CVV.IsValid}" />
+                                                </control:BorderlessEntry.Behaviors>
+                                            </control:BorderlessEntry>
 
-                                        <!--  Label to display error icon  -->
-                                        <Label
+                                            <!--  Label to display error icon  -->
+                                            <Label
                                             Grid.Column="1"
                                             IsVisible="{Binding Path=IsVisible, Source={x:Reference CvvValidationLabel}}"
                                             Style="{StaticResource ErrorIconLabelStyle}"
                                             Text="{StaticResource Error}" />
-                                    </Grid>
-                                </border:SfBorder>
+                                        </Grid>
+                                    </border:SfBorder>
 
-                                <!--  Label to display error message  -->
-                                <Label
+                                    <!--  Label to display error message  -->
+                                    <Label
                                     x:Name="CvvValidationLabel"
                                     Margin="15,-3,0,0"
                                     IsVisible="{Binding CVV.IsValid, Converter={StaticResource InverseBoolConverter}}"
@@ -246,47 +240,46 @@
                                     Text="{Binding CVV.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                                     TextColor="{DynamicResource Red}"
                                     VerticalOptions="FillAndExpand" />
+                                </StackLayout>
+                            </Grid>
 
-                            </StackLayout>
-                        </Grid>
-
-                        <Label
+                            <Label
                             FontFamily="Montserrat-Medium"
                             FontSize="12"
                             Text="Name on card"
                             TextColor="{DynamicResource Gray-800}" />
 
-                        <!--  Entry for card holder name  -->
-                        <border:SfBorder
+                            <!--  Entry for card holder name  -->
+                            <border:SfBorder
                             Margin="0,4"
                             BackgroundColor="{DynamicResource Gray-Bg}"
                             BorderColor="{Binding Source={x:Reference nameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                             CornerRadius="4">
-                            <Grid ColumnDefinitions="*, Auto">
+                                <Grid ColumnDefinitions="*, Auto">
 
-                                <control:BorderlessEntry
+                                    <control:BorderlessEntry
                                     x:Name="nameEntry"
                                     Margin="12,0"
                                     HeightRequest="40"
                                     Placeholder="Enter Name"
                                     Style="{StaticResource BorderlessEntryStyle}"
                                     Text="{Binding Name.Value}">
-                                    <Entry.Behaviors>
-                                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding Name.IsValid}" />
-                                    </Entry.Behaviors>
-                                </control:BorderlessEntry>
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding Name.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
 
-                                <!--  Label to display error icon  -->
-                                <Label
+                                    <!--  Label to display error icon  -->
+                                    <Label
                                     Grid.Column="1"
                                     IsVisible="{Binding Path=IsVisible, Source={x:Reference NameValidationLabel}}"
                                     Style="{StaticResource ErrorIconLabelStyle}"
                                     Text="{StaticResource Error}" />
-                            </Grid>
-                        </border:SfBorder>
+                                </Grid>
+                            </border:SfBorder>
 
-                        <!--  Label to display error message  -->
-                        <Label
+                            <!--  Label to display error message  -->
+                            <Label
                             x:Name="NameValidationLabel"
                             Margin="15,-3,0,0"
                             IsVisible="{Binding Name.IsValid, Converter={StaticResource InverseBoolConverter}}"
@@ -295,8 +288,8 @@
                             TextColor="{DynamicResource Red}"
                             VerticalOptions="FillAndExpand" />
 
-                        <!--  Checkbox to save the card  -->
-                        <button:SfCheckBox
+                            <!--  Checkbox to save the card  -->
+                            <button:SfCheckBox
                             Margin="4,16,0,4"
                             CornerRadius="2"
                             FontFamily="Montserrat-Medium"
@@ -306,21 +299,18 @@
                             Text="Save this card"
                             TextColor="{DynamicResource Gray-900}"
                             VerticalOptions="Center" />
+                        </StackLayout>
+                    </control:CustomShadowFrame>
 
-                    </StackLayout>
-
-                </control:CustomShadowFrame>
-
-                <button:SfButton
+                    <button:SfButton
                     Grid.Row="1"
                     Command="{Binding AddCardCommand}"
                     CommandParameter="{Binding .}"
                     Style="{StaticResource GradientButtonStyle}"
                     Text="ADD CARD"
                     WidthRequest="245" />
-
+                </Grid>
             </Grid>
-          </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

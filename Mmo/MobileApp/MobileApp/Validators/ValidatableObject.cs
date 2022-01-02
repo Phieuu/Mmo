@@ -35,13 +35,13 @@ namespace MobileApp.Validators
         /// </summary>
         private T value;
 
-        #endregion
+        #endregion Fields
 
         #region PropertyChanged
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        #endregion PropertyChanged
 
         #region properties
 
@@ -118,7 +118,7 @@ namespace MobileApp.Validators
             }
         }
 
-        #endregion
+        #endregion properties
 
         #region Methods
 
@@ -153,6 +153,6 @@ namespace MobileApp.Validators
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        #endregion
+        #endregion Methods
     }
 }

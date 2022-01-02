@@ -18,7 +18,7 @@ namespace MobileApp.ViewModels
 
         private Command<object> backButtonCommand;
 
-        #endregion
+        #endregion Fields
 
         #region Event handler
 
@@ -27,7 +27,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        #endregion Event handler
 
         #region Commands
 
@@ -42,7 +42,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Commands
 
         #region Methods
 
@@ -84,6 +84,6 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

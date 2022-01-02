@@ -17,5 +17,4 @@
         <Setter Property="BackgroundColor" Value="{DynamicResource Gray-700}" />
         <Setter Property="VerticalOptions" Value="Center" />
     </Style>
-
 </ResourceDictionary>

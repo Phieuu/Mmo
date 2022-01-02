@@ -21,6 +21,6 @@ namespace MobileApp.Models
         /// </summary>
         public IReadOnlyCollection<string> States { get; set; }
 
-        #endregion
+        #endregion Properties
     }
 }

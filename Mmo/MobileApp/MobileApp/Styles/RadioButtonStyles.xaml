@@ -18,5 +18,4 @@
         <Setter Property="UncheckedColor" Value="{DynamicResource Gray-300}" />
         <Setter Property="FontFamily" Value="Montserrat-SemiBold" />
     </Style>
-
 </ResourceDictionary>

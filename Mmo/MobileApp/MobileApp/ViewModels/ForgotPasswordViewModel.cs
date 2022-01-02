@@ -20,7 +20,7 @@ namespace MobileApp.ViewModels
             this.SendCommand = new Command(this.SendClicked);
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Command
 
@@ -34,7 +34,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public Command SignUpCommand { get; set; }
 
-        #endregion
+        #endregion Command
 
         #region Methods
 
@@ -59,6 +59,6 @@ namespace MobileApp.ViewModels
             // Do something
         }
 
-        #endregion
+        #endregion Methods
     }
 }

@@ -21,7 +21,7 @@ namespace MobileApp.ViewModels
 
         private Command<object> addProfileCommand;
 
-        #endregion
+        #endregion Fields
 
         #region Constructor
 
@@ -34,7 +34,7 @@ namespace MobileApp.ViewModels
             this.AddValidationRules();
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Property
 
@@ -80,7 +80,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Property
 
         #region Command
 
@@ -106,7 +106,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Command
 
         #region Method
 
@@ -160,6 +160,6 @@ namespace MobileApp.ViewModels
             // Do something
         }
 
-        #endregion
+        #endregion Method
     }
 }

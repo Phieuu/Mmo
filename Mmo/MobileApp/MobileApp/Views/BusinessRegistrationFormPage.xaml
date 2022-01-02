@@ -3,17 +3,17 @@
     x:Class="MobileApp.Views.BusinessRegistrationFormPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
     xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
     xmlns:behaviours="clr-namespace:MobileApp.Behaviors"
+    xmlns:controls="clr-namespace:MobileApp.Controls"
+    xmlns:converter="clr-namespace:MobileApp.Converters"
+    xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:local="clr-namespace:MobileApp.Views"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
-    xmlns:controls="clr-namespace:MobileApp.Controls"
-    xmlns:converter="clr-namespace:MobileApp.Converters"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:MobileApp.Views"
-    xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
     Title="Business Registration Form"
     BackgroundColor="{DynamicResource Gray-100}"
     NavigationPage.HasNavigationBar="False">
@@ -43,7 +43,6 @@
 
                 <BoxView BackgroundColor="{DynamicResource Gray-200}" HeightRequest="1" />
                 <ContentPresenter />
-
             </StackLayout>
         </ControlTemplate>
     </ContentPage.ControlTemplate>
@@ -256,7 +255,6 @@
                     Style="{StaticResource GradientButtonStyle}"
                     Text="SUBMIT"
                     WidthRequest="200" />
-
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

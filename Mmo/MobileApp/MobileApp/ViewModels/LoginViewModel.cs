@@ -14,7 +14,7 @@ namespace MobileApp.ViewModels
 
         private ValidatableObject<string> email;
 
-        #endregion
+        #endregion Fields
 
         #region Constructor
 
@@ -27,7 +27,7 @@ namespace MobileApp.ViewModels
             this.AddValidationRules();
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Property
 
@@ -51,7 +51,8 @@ namespace MobileApp.ViewModels
                 this.SetProperty(ref this.email, value);
             }
         }
-        #endregion
+
+        #endregion Property
 
         #region Methods
 
@@ -82,6 +83,6 @@ namespace MobileApp.ViewModels
             this.Email.Validations.Add(new IsValidEmailRule<string> { ValidationMessage = "Invalid Email" });
         }
 
-        #endregion
+        #endregion Methods
     }
 }

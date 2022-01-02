@@ -26,7 +26,7 @@ namespace MobileApp.ViewModels
 
         private bool isChecked;
 
-        #endregion
+        #endregion Fields
 
         #region Constrctor
 
@@ -40,7 +40,7 @@ namespace MobileApp.ViewModels
             this.AddCardCommand = new Command(this.AddCardClicked);
         }
 
-        #endregion
+        #endregion Constrctor
 
         #region Properties
 
@@ -170,7 +170,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Properties
 
         #region Command
 
@@ -179,7 +179,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public Command AddCardCommand { get; set; }
 
-        #endregion
+        #endregion Command
 
         #region Methods
 
@@ -230,6 +230,6 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

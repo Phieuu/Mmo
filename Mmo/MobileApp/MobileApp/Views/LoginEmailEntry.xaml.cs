@@ -8,7 +8,6 @@ namespace MobileApp.Views
     /// </summary>
     [Preserve(AllMembers = true)]
     [XamlCompilation(XamlCompilationOptions.Compile)]
-
     public partial class LoginEmailEntry
     {
         /// <summary>

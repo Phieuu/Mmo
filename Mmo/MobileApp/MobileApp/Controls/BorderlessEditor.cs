@@ -29,6 +29,6 @@ namespace MobileApp.Controls
             this.InvalidateMeasure();
         }
 
-        #endregion
+        #endregion Methods
     }
 }

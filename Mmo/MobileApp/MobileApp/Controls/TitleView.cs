@@ -46,7 +46,7 @@ namespace MobileApp.Controls
         /// </summary>
         public static readonly BindableProperty FontSizeProperty = BindableProperty.Create(nameof(FontSize), typeof(double), typeof(TitleView), 16d, BindingMode.Default, null, OnFontSizePropertyChanged);
 
-        #endregion
+        #endregion Bindable Properties
 
         #region variables
 
@@ -55,7 +55,7 @@ namespace MobileApp.Controls
         /// </summary>
         private Label titleLabel;
 
-        #endregion
+        #endregion variables
 
         #region Constructor
 
@@ -90,7 +90,7 @@ namespace MobileApp.Controls
             SetColumnSpan(boxView, 5);
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Public Properties
 
@@ -157,7 +157,7 @@ namespace MobileApp.Controls
             set { this.SetValue(FontSizeProperty, value); }
         }
 
-        #endregion
+        #endregion Public Properties
 
         #region Methods
 
@@ -292,6 +292,6 @@ namespace MobileApp.Controls
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

@@ -29,5 +29,4 @@
     <Color x:Key="VioletGradientEnd">#24243b</Color>
     <Color x:Key="PinkGradientStart">#d54381</Color>
     <Color x:Key="PinkGradientEnd">#7644ad</Color>
-
 </ResourceDictionary>

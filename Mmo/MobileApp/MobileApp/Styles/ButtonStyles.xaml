@@ -70,5 +70,4 @@
         <Setter Property="HorizontalTextAlignment" Value="Center" />
         <Setter Property="VerticalTextAlignment" Value="Center" />
     </Style>
-
 </ResourceDictionary>

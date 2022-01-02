@@ -28,11 +28,11 @@ namespace MobileApp.Controls
         private string countryCode;
 
         /// <summary>
-        /// Gets or sets string property that represents mask format for phone number. 
+        /// Gets or sets string property that represents mask format for phone number.
         /// </summary>
         private string mask = string.Empty;
 
-        #endregion
+        #endregion Fields
 
         #region Constructor
 
@@ -74,7 +74,7 @@ namespace MobileApp.Controls
             this.VerticalOptions = LayoutOptions.CenterAndExpand;
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Event handler
 
@@ -83,7 +83,7 @@ namespace MobileApp.Controls
         /// </summary>
         public new event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        #endregion Event handler
 
         #region Properties
 
@@ -105,7 +105,7 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Gets or sets the string property, that represents the phone number format based on country. 
+        /// Gets or sets the string property, that represents the phone number format based on country.
         /// </summary>
         public string PhoneNumberPlaceHolder
         {
@@ -122,7 +122,7 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Gets or sets the string property, that represents the phone number based on country. 
+        /// Gets or sets the string property, that represents the phone number based on country.
         /// </summary>
         public string PhoneNumber
         {
@@ -139,7 +139,7 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Gets or sets the string property, which holds the contry code based on user input. 
+        /// Gets or sets the string property, which holds the contry code based on user input.
         /// </summary>
         public string CountryCode
         {
@@ -156,7 +156,7 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Gets or sets the string property, that represents the user given city. 
+        /// Gets or sets the string property, that represents the user given city.
         /// </summary>
         public string City
         {
@@ -190,7 +190,7 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Gets or sets array collection that contains states based on country selection. 
+        /// Gets or sets array collection that contains states based on country selection.
         /// </summary>
         public IReadOnlyCollection<string> States
         {
@@ -221,11 +221,11 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Gets the collection property, which contains the countries data. 
+        /// Gets the collection property, which contains the countries data.
         /// </summary>
         public List<CountryModel> Countries { get; private set; }
 
-        #endregion
+        #endregion Properties
 
         #region Methods
 
@@ -239,7 +239,7 @@ namespace MobileApp.Controls
         }
 
         /// <summary>
-        /// Method used to rest State and City and update PhoneNumber format. 
+        /// Method used to rest State and City and update PhoneNumber format.
         /// </summary>
         private void UpdateStateAndPhoneNumberFormat()
         {
@@ -256,31 +256,36 @@ namespace MobileApp.Controls
                     this.Mask = "(+61)X XXXX XXXX";
                     this.CountryCode = "(+61)";
                     break;
+
                 case "Brazil":
                     this.PhoneNumberPlaceHolder = "e.g. XX XXXX XXXX";
                     this.Mask = "(+55)XX XXXX XXXX";
                     this.CountryCode = "(+55)";
                     break;
+
                 case "Canada":
                     this.PhoneNumberPlaceHolder = "e.g. XXXXXXXXX";
                     this.Mask = "(+1)XXXXXXXXX";
                     this.CountryCode = "(+1)";
                     break;
+
                 case "India":
                     this.PhoneNumberPlaceHolder = "e.g. XXXXX-XXXXX";
                     this.Mask = "(+91)XXXXX-XXXXX";
                     this.CountryCode = "(+91)";
                     break;
+
                 case "USA":
                     this.PhoneNumberPlaceHolder = "e.g. XXX-XXX-XXX";
                     this.Mask = "(+1)XXX-XXX-XXX";
                     this.CountryCode = "(+1)";
                     break;
+
                 default:
                     break;
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

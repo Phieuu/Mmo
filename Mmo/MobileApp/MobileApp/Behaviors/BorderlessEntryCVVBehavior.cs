@@ -20,7 +20,7 @@ namespace MobileApp.Behaviors
         public static readonly BindableProperty IsValidProperty =
             BindableProperty.Create(nameof(IsValid), typeof(bool), typeof(PaymentCardNumberEntryBehavior), true, BindingMode.TwoWay, null);
 
-        #endregion
+        #endregion fields
 
         #region Properties
 
@@ -45,7 +45,7 @@ namespace MobileApp.Behaviors
             }
         }
 
-        #endregion
+        #endregion Properties
 
         #region Methods
 
@@ -121,6 +121,6 @@ namespace MobileApp.Behaviors
             this.IsValid = true;
         }
 
-        #endregion
+        #endregion Methods
     }
 }

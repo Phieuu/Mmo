@@ -6,7 +6,7 @@ using Xamarin.Forms.Internals;
 namespace MobileApp.Converters
 {
     /// <summary>
-    /// This class have methods to convert the DynamicResource to color objects. 
+    /// This class have methods to convert the DynamicResource to color objects.
     /// This is needed when DynamicResource is set based on idiom/platform.
     /// </summary>
     [Preserve(AllMembers = true)]
@@ -38,7 +38,7 @@ namespace MobileApp.Converters
         /// <param name="targetType">Gets the target type.</param>
         /// <param name="parameter">Gets the parameter.</param>
         /// <param name="culture">Gets the culture.</param>
-        /// <returns>Returns the string.</returns>        
+        /// <returns>Returns the string.</returns>
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             return null;

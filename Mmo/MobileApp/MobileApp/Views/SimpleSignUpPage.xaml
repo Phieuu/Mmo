@@ -4,13 +4,13 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
-    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
-    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:control="clr-namespace:MobileApp.Controls"
     xmlns:converter="clr-namespace:MobileApp.Converters"
-    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:MobileApp.Views"
     xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:local="clr-namespace:MobileApp.Views"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
+    xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+    xmlns:core="clr-namespace:Syncfusion.XForms.Core;assembly=Syncfusion.Core.XForms"
     Title="Sign Up"
     BackgroundColor="{DynamicResource Gray-200}"
     NavigationPage.HasNavigationBar="False">
@@ -224,7 +224,6 @@
                             Style="{StaticResource TransparentButtonStyle}"
                             Text="Log In"
                             TextColor="{DynamicResource PrimaryColor}" />
-
                     </StackLayout>
                 </StackLayout>
             </ScrollView>
@@ -239,7 +238,6 @@
                 Text="{StaticResource Close}"
                 TextColor="{DynamicResource Steel}"
                 VerticalOptions="Start" />
-
         </Grid>
     </ContentPage.Content>
 </ContentPage>

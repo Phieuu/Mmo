@@ -19,5 +19,4 @@
         <Setter Property="ShadowOffsetWidth" Value="0" />
         <Setter Property="ShadowOpacity" Value="0.12" />
     </Style>
-
 </ResourceDictionary>

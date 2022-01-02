@@ -13,20 +13,20 @@ namespace MobileApp.Behaviors
         #region Fields
 
         /// <summary>
-        /// Property used to bind mask for entry to validate the user input. 
+        /// Property used to bind mask for entry to validate the user input.
         /// </summary>
         public static readonly BindableProperty MaskProperty =
           BindableProperty.Create(nameof(Mask), typeof(string), typeof(EntryMaskedBehavior), string.Empty, BindingMode.Default, null, OnMaskChanged);
 
         /// <summary>
-        /// Property used to set prefix text for entry field. 
+        /// Property used to set prefix text for entry field.
         /// </summary>
         public static readonly BindableProperty PrefixProperty =
           BindableProperty.Create(nameof(Prefix), typeof(string), typeof(EntryMaskedBehavior), string.Empty, BindingMode.Default, null, OnPrefixChanged);
 
         private IDictionary<int, char> positions;
 
-        #endregion
+        #endregion Fields
 
         #region Properties
 
@@ -45,7 +45,7 @@ namespace MobileApp.Behaviors
             set { this.SetValue(PrefixProperty, value); }
         }
 
-        #endregion
+        #endregion Properties
 
         #region Methods
 
@@ -138,6 +138,6 @@ namespace MobileApp.Behaviors
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

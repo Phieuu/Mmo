@@ -26,7 +26,7 @@ namespace MobileApp.Validators
         /// </summary>
         bool IsValid { get; set; }
 
-        #endregion
+        #endregion Property
 
         #region Method
 
@@ -36,6 +36,6 @@ namespace MobileApp.Validators
         /// <returns>returns bool value</returns>
         bool Validate();
 
-        #endregion
+        #endregion Method
     }
 }

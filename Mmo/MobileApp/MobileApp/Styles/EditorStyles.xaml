@@ -13,5 +13,4 @@
         <Setter Property="BackgroundColor" Value="Transparent" />
         <Setter Property="PlaceholderColor" Value="{DynamicResource Gray-700}" />
     </Style>
-
 </ResourceDictionary>

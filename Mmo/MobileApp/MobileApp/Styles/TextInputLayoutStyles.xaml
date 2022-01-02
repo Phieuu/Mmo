@@ -18,5 +18,4 @@
         <Setter Property="Margin" Value="0,-8,0,0" />
         <Setter Property="FocusedStrokeWidth" Value="1" />
     </Style>
-
 </ResourceDictionary>

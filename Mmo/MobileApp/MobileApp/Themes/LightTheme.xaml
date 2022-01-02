@@ -54,5 +54,4 @@
     <Color x:Key="Gray-Bg">#ffffff</Color>
     <Color x:Key="GrayShadowColor">#ffffff</Color>
     <Color x:Key="GrayShadowBackgroundColor">#f6f7f8</Color>
-
 </ResourceDictionary>

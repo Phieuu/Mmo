@@ -14,5 +14,4 @@
   <assembly fullname="Prism.Forms" />
   <assembly fullname="Prism.DryIoc.Forms" />
   <assembly fullname="DryIoc" />
-
 </linker>

@@ -17,7 +17,7 @@ namespace MobileApp.Behaviors
         public static readonly BindableProperty IsValidProperty =
             BindableProperty.Create(nameof(IsValid), typeof(bool), typeof(EntryLineValidationBehaviour), true, BindingMode.TwoWay, null);
 
-        #endregion
+        #endregion Fields
 
         #region Properties
 
@@ -37,7 +37,7 @@ namespace MobileApp.Behaviors
             }
         }
 
-        #endregion
+        #endregion Properties
 
         #region Method
 
@@ -60,6 +60,6 @@ namespace MobileApp.Behaviors
             this.IsValid = true;
         }
 
-        #endregion
+        #endregion Method
     }
 }

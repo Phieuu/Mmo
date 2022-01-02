@@ -1,9 +1,5 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
+﻿using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace MobileApp.ViewModels
 {
@@ -12,6 +8,7 @@ namespace MobileApp.ViewModels
         protected INavigationService NavigationService { get; private set; }
 
         private string _title;
+
         public string Title
         {
             get { return _title; }
@@ -25,22 +22,18 @@ namespace MobileApp.ViewModels
 
         public virtual void Initialize(INavigationParameters parameters)
         {
-
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)
         {
-
         }
 
         public virtual void OnNavigatedTo(INavigationParameters parameters)
         {
-
         }
 
         public virtual void Destroy()
         {
-
         }
     }
 }

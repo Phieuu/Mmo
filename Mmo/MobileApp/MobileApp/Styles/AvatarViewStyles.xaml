@@ -15,5 +15,4 @@
         <Setter Property="VerticalOptions" Value="CenterAndExpand" />
         <Setter Property="BorderWidth" Value="0" />
     </Style>
-
 </ResourceDictionary>

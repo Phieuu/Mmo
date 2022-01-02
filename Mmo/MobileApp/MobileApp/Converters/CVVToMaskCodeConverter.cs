@@ -6,7 +6,7 @@ using Xamarin.Forms.Internals;
 namespace MobileApp.Converters
 {
     /// <summary>
-    /// This class have methods to convert the string to CVV mask.     
+    /// This class have methods to convert the string to CVV mask.
     /// </summary>
     [Preserve(AllMembers = true)]
     public class CVVToMaskCodeConverter : IValueConverter

@@ -1,8 +1,7 @@
-﻿
-namespace MobileApp.Validators
+﻿namespace MobileApp.Validators
 {
     /// <summary>
-    /// this interface used for validation 
+    /// this interface used for validation
     /// </summary>
     /// <typeparam name="T">The validation rule parameter</typeparam>
     public interface IValidationRule<T>
@@ -14,7 +13,7 @@ namespace MobileApp.Validators
         /// </summary>
         string ValidationMessage { get; set; }
 
-        #endregion
+        #endregion Property
 
         #region Method
 
@@ -25,6 +24,6 @@ namespace MobileApp.Validators
         /// <returns>returns bool value</returns>
         bool Check(T value);
 
-        #endregion
+        #endregion Method
     }
 }

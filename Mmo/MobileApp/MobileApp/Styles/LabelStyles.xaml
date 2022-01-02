@@ -56,5 +56,4 @@
         <Setter Property="TextColor" Value="{DynamicResource Red}" />
         <Setter Property="VerticalOptions" Value="Center" />
     </Style>
-
 </ResourceDictionary>

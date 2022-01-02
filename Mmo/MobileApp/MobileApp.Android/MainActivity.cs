@@ -37,4 +37,3 @@ namespace MobileApp.Droid
         }
     }
 }
-

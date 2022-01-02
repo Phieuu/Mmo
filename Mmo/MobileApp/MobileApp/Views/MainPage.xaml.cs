@@ -1,5 +1,4 @@
-﻿
-namespace MobileApp.Views
+﻿namespace MobileApp.Views
 {
     public partial class MainPage
     {

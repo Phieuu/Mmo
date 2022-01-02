@@ -15,7 +15,7 @@ namespace MobileApp.ViewModels
 
         private ValidatableObject<string> password;
 
-        #endregion
+        #endregion Fields
 
         #region Constructor
 
@@ -34,7 +34,7 @@ namespace MobileApp.ViewModels
             this.GmailLoginCommand = new Command(this.GmailClicked);
         }
 
-        #endregion
+        #endregion Constructor
 
         #region property
 
@@ -59,7 +59,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion property
 
         #region Command
 
@@ -93,7 +93,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public Command GmailLoginCommand { get; set; }
 
-        #endregion
+        #endregion Command
 
         #region methods
 
@@ -181,6 +181,6 @@ namespace MobileApp.ViewModels
             // Do something
         }
 
-        #endregion
+        #endregion methods
     }
 }

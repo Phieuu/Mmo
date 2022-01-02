@@ -3,18 +3,18 @@
     x:Class="MobileApp.Views.AddContactPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
     xmlns:behaviors="clr-namespace:MobileApp.Behaviors"
     xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
+    xmlns:control="clr-namespace:MobileApp.Controls"
+    xmlns:converter="clr-namespace:MobileApp.Converters"
+    xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:local="clr-namespace:MobileApp.Views"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
     xmlns:combobox="clr-namespace:Syncfusion.XForms.ComboBox;assembly=Syncfusion.SfComboBox.XForms"
-    xmlns:control="clr-namespace:MobileApp.Controls"
-    xmlns:converter="clr-namespace:MobileApp.Converters"
     xmlns:datePicker="clr-namespace:Syncfusion.XForms.Pickers;assembly=Syncfusion.SfPicker.XForms"
     xmlns:inputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
-    xmlns:local="clr-namespace:MobileApp.Views"
-    xmlns:viewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
     x:Name="AddContact"
     Title="Details Form"
     BackgroundColor="{DynamicResource Gray-100}"
@@ -75,45 +75,44 @@
                                          UnselectedItemTextColor="{DynamicResource Gray-900}"
                                          Format="dd_MM_yyyy" />
                 <StackLayout Padding="16">
-                <Label
+                    <Label
                     FontSize="14"
                     HorizontalOptions="Start"
                     Style="{StaticResource TitleLabelStyle}"
                     Text="General Information" />
-                <Grid ColumnDefinitions="*,4,*" RowDefinitions="*,56">
+                    <Grid ColumnDefinitions="*,4,*" RowDefinitions="*,56">
 
-                    <StackLayout>
-                        <border:SfBorder
+                        <StackLayout>
+                            <border:SfBorder
                             Margin="0,8,0,0"
                             Padding="12,8"
                             BorderColor="{Binding Source={x:Reference FirstNameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                             Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                             VerticalOptions="Start">
-                            <Grid ColumnDefinitions="*, Auto">
+                                <Grid ColumnDefinitions="*, Auto">
 
-
-                                <control:BorderlessEntry
+                                    <control:BorderlessEntry
                                     x:Name="FirstNameEntry"
                                     Placeholder="First Name"
                                     Style="{StaticResource BorderlessEntryStyle}"
                                     Text="{Binding FirstName.Value}">
-                                    <Entry.Behaviors>
-                                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding FirstName.IsValid}" />
-                                    </Entry.Behaviors>
-                                </control:BorderlessEntry>
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding FirstName.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
 
-                                <!--  Label to display error icon  -->
-                                <Label
+                                    <!--  Label to display error icon  -->
+                                    <Label
                                     Grid.Column="1"
                                     Margin="0"
                                     IsVisible="{Binding Path=IsVisible, Source={x:Reference FirstNameValidationLabel}}"
                                     Style="{StaticResource ErrorIconLabelStyle}"
                                     Text="{StaticResource Error}" />
-                            </Grid>
-                        </border:SfBorder>
+                                </Grid>
+                            </border:SfBorder>
 
-                        <!--  Label to display error message  -->
-                        <Label
+                            <!--  Label to display error message  -->
+                            <Label
                             x:Name="FirstNameValidationLabel"
                             Margin="15,-5,0,0"
                             IsVisible="{Binding FirstName.IsValid, Converter={StaticResource InverseBoolConverter}}"
@@ -121,39 +120,39 @@
                             Text="{Binding FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                             TextColor="{DynamicResource Red}"
                             VerticalOptions="FillAndExpand" />
-                    </StackLayout>
+                        </StackLayout>
 
-                    <StackLayout Grid.Column="2">
-                        <border:SfBorder
+                        <StackLayout Grid.Column="2">
+                            <border:SfBorder
                             Margin="0,8,0,0"
                             Padding="12,8"
                             BorderColor="{Binding Source={x:Reference LastNameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                             Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                             VerticalOptions="Start">
-                            <Grid ColumnDefinitions="*, Auto">
+                                <Grid ColumnDefinitions="*, Auto">
 
-                                <control:BorderlessEntry
+                                    <control:BorderlessEntry
                                     x:Name="LastNameEntry"
                                     Placeholder="Last Name"
                                     Style="{StaticResource BorderlessEntryStyle}"
                                     Text="{Binding LastName.Value}">
-                                    <Entry.Behaviors>
-                                        <behaviour:EntryLineValidationBehaviour IsValid="{Binding LastName.IsValid}" />
-                                    </Entry.Behaviors>
-                                </control:BorderlessEntry>
+                                        <Entry.Behaviors>
+                                            <behaviour:EntryLineValidationBehaviour IsValid="{Binding LastName.IsValid}" />
+                                        </Entry.Behaviors>
+                                    </control:BorderlessEntry>
 
-                                <!--  Label to display error icon  -->
-                                <Label
+                                    <!--  Label to display error icon  -->
+                                    <Label
                                     Grid.Column="1"
                                     Margin="0"
                                     IsVisible="{Binding Path=IsVisible, Source={x:Reference LastNameValidationLabel}}"
                                     Style="{StaticResource ErrorIconLabelStyle}"
                                     Text="{StaticResource Error}" />
-                            </Grid>
-                        </border:SfBorder>
+                                </Grid>
+                            </border:SfBorder>
 
-                        <!--  Label to display error message  -->
-                        <Label
+                            <!--  Label to display error message  -->
+                            <Label
                             x:Name="LastNameValidationLabel"
                             Margin="15,-3,0,0"
                             IsVisible="{Binding LastName.IsValid, Converter={StaticResource InverseBoolConverter}}"
@@ -161,75 +160,74 @@
                             Text="{Binding LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                             TextColor="{DynamicResource Red}"
                             VerticalOptions="FillAndExpand" />
-                    </StackLayout>
+                        </StackLayout>
 
-                    <border:SfBorder
+                        <border:SfBorder
                         Grid.Row="1"
                         Margin="0,8"
                         Padding="12,0,0,0"
                         Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                         VerticalOptions="FillAndExpand">
 
-                            <buttons:SfButton x:Name="pickerButton" 
+                            <buttons:SfButton x:Name="pickerButton"
                                               Text="{Binding Date, StringFormat='{0:dd/MM/yyyy}'}"
                                               FontSize="16"
-                                              Padding="-5, 0, 0 ,0"                                            
+                                              Padding="-5, 0, 0 ,0"
                                               FontFamily="Montserrat-Regular"
                                               HorizontalOptions="FillAndExpand"
                                               HorizontalTextAlignment="Start"
                                               TextColor="{DynamicResource Gray-900}"
-                                              BackgroundColor="Transparent" 
+                                              BackgroundColor="Transparent"
                                               Clicked="DatePicker_Clicked" />
-
-                    </border:SfBorder>
-                    <inputLayout:SfTextInputLayout
+                        </border:SfBorder>
+                        <inputLayout:SfTextInputLayout
                         Grid.Row="1"
                         Grid.Column="2"
                         Style="{DynamicResource TextInputLayoutStyle}">
-                        <combobox:SfComboBox
+                            <combobox:SfComboBox
                             x:Name="GenderPicker"
                             SelectedValue="{Binding Gender, Mode=TwoWay}"
                             Style="{StaticResource TextInputLayoutComboBoxStyle}"
                             Watermark="Gender">
-                            <combobox:SfComboBox.ComboBoxSource>
-                                <ListCollection:List x:TypeArguments="x:String">
-                                    <x:String>Male</x:String>
-                                    <x:String>Female</x:String>
-                                </ListCollection:List>
-                            </combobox:SfComboBox.ComboBoxSource>
-                        </combobox:SfComboBox>
-                    </inputLayout:SfTextInputLayout>
-                </Grid>
-                <Label
+                                <combobox:SfComboBox.ComboBoxSource>
+                                    <ListCollection:List x:TypeArguments="x:String">
+                                        <x:String>Male</x:String>
+                                        <x:String>Female</x:String>
+                                    </ListCollection:List>
+                                </combobox:SfComboBox.ComboBoxSource>
+                            </combobox:SfComboBox>
+                        </inputLayout:SfTextInputLayout>
+                    </Grid>
+                    <Label
                     Margin="0,16,0,0"
                     FontSize="14"
                     HorizontalOptions="Start"
                     Style="{StaticResource TitleLabelStyle}"
                     Text="Contact Information" />
-                <local:ContactEmailEntry />
+                    <local:ContactEmailEntry />
 
-                <border:SfBorder
+                    <border:SfBorder
                     Margin="0,8"
                     Padding="12,8"
                     BorderColor="{Binding Source={x:Reference AddressEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                     Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                     VerticalOptions="Start">
-                    <control:BorderlessEntry
+                        <control:BorderlessEntry
                         x:Name="AddressEntry"
                         Placeholder="Address"
                         Style="{StaticResource BorderlessEntryStyle}"
                         Text="{Binding Address}" />
-                </border:SfBorder>
+                    </border:SfBorder>
 
-                <Grid Margin="0,8,0,10">
-                    <inputLayout:SfTextInputLayout Style="{DynamicResource TextInputLayoutStyle}">
-                        <control:CountryComboBox x:Name="CountryPicker" Style="{StaticResource TextInputLayoutComboBoxStyle}" />
-                    </inputLayout:SfTextInputLayout>
-                </Grid>
+                    <Grid Margin="0,8,0,10">
+                        <inputLayout:SfTextInputLayout Style="{DynamicResource TextInputLayoutStyle}">
+                            <control:CountryComboBox x:Name="CountryPicker" Style="{StaticResource TextInputLayoutComboBoxStyle}" />
+                        </inputLayout:SfTextInputLayout>
+                    </Grid>
 
-                <Grid ColumnDefinitions="*, 4, *">
+                    <Grid ColumnDefinitions="*, 4, *">
 
-                    <border:SfBorder
+                        <border:SfBorder
                         Grid.Column="2"
                         Margin="0,8"
                         Padding="12,8"
@@ -237,45 +235,45 @@
                         HeightRequest="26"
                         Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                         VerticalOptions="Start">
-                        <control:BorderlessEntry
+                            <control:BorderlessEntry
                             x:Name="CityEntry"
                             Placeholder="City"
                             Style="{StaticResource BorderlessEntryStyle}"
                             Text="{Binding City, Source={Reference CountryPicker}}" />
-                    </border:SfBorder>
-                    <inputLayout:SfTextInputLayout Style="{DynamicResource TextInputLayoutStyle}">
-                        <combobox:SfComboBox
+                        </border:SfBorder>
+                        <inputLayout:SfTextInputLayout Style="{DynamicResource TextInputLayoutStyle}">
+                            <combobox:SfComboBox
                             x:Name="StatePicker"
                             DataSource="{Binding States, Source={Reference CountryPicker}}"
                             SelectedItem="{Binding State, Source={Reference CountryPicker}}"
                             Style="{StaticResource TextInputLayoutComboBoxStyle}"
                             Watermark="State" />
-                    </inputLayout:SfTextInputLayout>
-                </Grid>
-                <border:SfBorder
+                        </inputLayout:SfTextInputLayout>
+                    </Grid>
+                    <border:SfBorder
                     Margin="0,8"
                     Padding="12,8"
                     BorderColor="{Binding Source={x:Reference PhoneNoEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
                     Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                     VerticalOptions="Start">
-                    <control:BorderlessEntry
+                        <control:BorderlessEntry
                         x:Name="PhoneNoEntry"
                         Keyboard="Telephone"
                         Placeholder="{Binding PhoneNumberPlaceHolder, Source={Reference CountryPicker}}"
                         Style="{StaticResource BorderlessEntryStyle}"
                         Text="{Binding PhoneNumber, Source={Reference CountryPicker}}">
-                        <control:BorderlessEntry.Behaviors>
-                            <behaviors:EntryMaskedBehavior Mask="{Binding Source={x:Reference CountryPicker}, Path=Mask}" Prefix="{Binding Source={Reference CountryPicker}, Path=CountryCode}" />
-                        </control:BorderlessEntry.Behaviors>
-                    </control:BorderlessEntry>
-                </border:SfBorder>
-                <buttons:SfButton
+                            <control:BorderlessEntry.Behaviors>
+                                <behaviors:EntryMaskedBehavior Mask="{Binding Source={x:Reference CountryPicker}, Path=Mask}" Prefix="{Binding Source={Reference CountryPicker}, Path=CountryCode}" />
+                            </control:BorderlessEntry.Behaviors>
+                        </control:BorderlessEntry>
+                    </border:SfBorder>
+                    <buttons:SfButton
                     Command="{Binding SubmitCommand}"
                     Style="{StaticResource GradientButtonStyle}"
                     Text="SUBMIT"
                     WidthRequest="200" />
-            </StackLayout>
-           </Grid>
+                </StackLayout>
+            </Grid>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

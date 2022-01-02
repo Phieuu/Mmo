@@ -16,7 +16,7 @@ namespace MobileApp.Validators.Rules
         /// </summary>
         public string ValidationMessage { get; set; }
 
-        #endregion
+        #endregion Properties
 
         #region Method
 
@@ -38,6 +38,7 @@ namespace MobileApp.Validators.Rules
                 throw;
             }
         }
-        #endregion
+
+        #endregion Method
     }
 }

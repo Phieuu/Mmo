@@ -26,7 +26,7 @@ namespace MobileApp.ViewModels
 
         private Command addCardCommand;
 
-        #endregion
+        #endregion Fields
 
         #region Property
 
@@ -140,7 +140,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Property
 
         #region commands
 
@@ -155,7 +155,7 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion commands
 
         #region Methods
 
@@ -168,6 +168,6 @@ namespace MobileApp.ViewModels
             // Do something
         }
 
-        #endregion
+        #endregion Methods
     }
 }

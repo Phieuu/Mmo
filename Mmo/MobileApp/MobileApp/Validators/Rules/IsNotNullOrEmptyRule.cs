@@ -16,7 +16,7 @@ namespace MobileApp.Validators.Rules
         /// </summary>
         public string ValidationMessage { get; set; }
 
-        #endregion
+        #endregion Properties
 
         #region Methods
 
@@ -36,6 +36,6 @@ namespace MobileApp.Validators.Rules
             return !string.IsNullOrWhiteSpace(str);
         }
 
-        #endregion
+        #endregion Methods
     }
 }

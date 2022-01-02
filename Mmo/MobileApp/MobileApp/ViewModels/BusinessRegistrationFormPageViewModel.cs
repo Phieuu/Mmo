@@ -6,8 +6,8 @@ using Xamarin.Forms.Internals;
 namespace MobileApp.ViewModels
 {
     /// <summary>
-    /// ViewModel for Business Registration Form page 
-    /// </summary> 
+    /// ViewModel for Business Registration Form page
+    /// </summary>
     [Preserve(AllMembers = true)]
     public class BusinessRegistrationFormPageViewModel : LoginViewModel
     {
@@ -23,7 +23,7 @@ namespace MobileApp.ViewModels
             this.SubmitCommand = new Command(this.SubmitClicked);
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Properties
 
@@ -57,7 +57,9 @@ namespace MobileApp.ViewModels
         /// </summary>
         public string City { get; set; }
 
-        #endregion 
+        #endregion Properties
+
+
 
         #region Comments
 
@@ -66,7 +68,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public Command SubmitCommand { get; set; }
 
-        #endregion
+        #endregion Comments
 
         #region Methods
 
@@ -109,6 +111,6 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

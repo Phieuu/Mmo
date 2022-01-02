@@ -15,7 +15,7 @@ namespace MobileApp.ViewModels
 
         private ValidatablePair<string> password;
 
-        #endregion
+        #endregion Fields
 
         #region Constructor
 
@@ -29,7 +29,8 @@ namespace MobileApp.ViewModels
             this.SubmitCommand = new Command(this.SubmitClicked);
             this.SignUpCommand = new Command(this.SignUpClicked);
         }
-        #endregion
+
+        #endregion Constructor
 
         #region Command
 
@@ -42,7 +43,8 @@ namespace MobileApp.ViewModels
         /// Gets or sets the command that is executed when the Sign Up button is clicked.
         /// </summary>
         public Command SignUpCommand { get; set; }
-        #endregion
+
+        #endregion Command
 
         #region Public property
 
@@ -66,7 +68,8 @@ namespace MobileApp.ViewModels
                 this.SetProperty(ref this.password, value);
             }
         }
-        #endregion
+
+        #endregion Public property
 
         #region Methods
 
@@ -118,6 +121,6 @@ namespace MobileApp.ViewModels
             // Do something
         }
 
-        #endregion
+        #endregion Methods
     }
 }

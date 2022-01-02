@@ -4,9 +4,9 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
-    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:control="clr-namespace:MobileApp.Controls"
-    xmlns:converter="clr-namespace:MobileApp.Converters">
+    xmlns:converter="clr-namespace:MobileApp.Converters"
+    xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms">
 
     <ContentView.Resources>
         <ResourceDictionary>
@@ -47,7 +47,6 @@
                         IsVisible="{Binding Path=IsVisible, Source={x:Reference ValidationLabel}}"
                         Style="{StaticResource ErrorIconLabelStyle}"
                         Text="{StaticResource Error}" />
-
                 </Grid>
             </border:SfBorder>
 
@@ -61,7 +60,6 @@
                 Text="{Binding Email.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                 TextColor="{DynamicResource Red}"
                 VerticalOptions="FillAndExpand" />
-
         </StackLayout>
     </ContentView.Content>
 </ContentView>

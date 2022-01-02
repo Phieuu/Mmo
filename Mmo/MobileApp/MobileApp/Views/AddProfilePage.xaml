@@ -3,28 +3,27 @@
     x:Class="MobileApp.Views.AddProfilePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:badge="clr-namespace:Syncfusion.XForms.BadgeView;assembly=Syncfusion.SfBadgeView.XForms"
+    xmlns:behaviours="clr-namespace:MobileApp.Behaviors"
+    xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
+    xmlns:control="clr-namespace:MobileApp.Controls"
+    xmlns:converter="clr-namespace:MobileApp.Converters"
+    xmlns:ViewModel="clr-namespace:MobileApp.ViewModels"
+    xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
     xmlns:border="clr-namespace:Syncfusion.XForms.Border;assembly=Syncfusion.Core.XForms"
     xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
-    xmlns:control="clr-namespace:MobileApp.Controls"
-    xmlns:behaviours="clr-namespace:MobileApp.Behaviors"
-    xmlns:converter="clr-namespace:MobileApp.Converters"
-    xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
-    xmlns:ViewModel="clr-namespace:MobileApp.ViewModels" 
-    xmlns:behaviour="clr-namespace:MobileApp.Behaviors"
     BackgroundColor="{DynamicResource Gray-Bg}"
     NavigationPage.HasNavigationBar="False"
     x:Name="AddProfile">
 
     <ContentPage.BindingContext>
-        <ViewModel:AddProfilePageViewModel/>
+        <ViewModel:AddProfilePageViewModel />
     </ContentPage.BindingContext>
 
     <ContentPage.Resources>
         <ResourceDictionary>
             <converter:BooleanToColorConverter x:Key="ColorConverter" />
-            <converter:InverseBoolConverter x:Key="InverseBoolConverter"/>
-            <converter:NameValidationConverter x:Key="FirstValidationErrorConverter"/>
+            <converter:InverseBoolConverter x:Key="InverseBoolConverter" />
+            <converter:NameValidationConverter x:Key="FirstValidationErrorConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
 
@@ -34,10 +33,9 @@
                 <control:TitleView Title="New Profile">
                     <control:TitleView.LeadingView>
                         <!--  Back button command  -->
-                        <buttons:SfButton x:Name="backButton" Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference AddProfile}}" 
-                                          Text="{StaticResource Back}" CommandParameter="{x:Reference backButton}" 
+                        <buttons:SfButton x:Name="backButton" Command="{Binding Path=BindingContext.BackButtonCommand, Source={x:Reference AddProfile}}"
+                                          Text="{StaticResource Back}" CommandParameter="{x:Reference backButton}"
                                           Style="{StaticResource IconButtonStyle}" />
-
                     </control:TitleView.LeadingView>
                 </control:TitleView>
                 <ContentPresenter />
@@ -49,7 +47,7 @@
         <ScrollView>
             <StackLayout Padding="16" Spacing="16">
                 <Grid>
-                <!--  Avatar view to display the profile picture  -->                  
+                    <!--  Avatar view to display the profile picture  -->
                     <sfavatar:SfAvatarView
                             Padding="13"
                             BackgroundColor="{DynamicResource Gray-200}"
@@ -69,11 +67,11 @@
                         </sfavatar:SfAvatarView.ImageSource>
                     </sfavatar:SfAvatarView>
 
-                    <border:SfBorder HorizontalOptions="Center" VerticalOptions="Center" 
-                        HeightRequest="110" WidthRequest="110" BorderColor="Transparent" >
+                    <border:SfBorder HorizontalOptions="Center" VerticalOptions="Center"
+                        HeightRequest="110" WidthRequest="110" BorderColor="Transparent">
                         <border:SfBorder.Content>
                             <buttons:SfButton Text="{StaticResource Add}" HeightRequest="36"
-                                              WidthRequest="36" CornerRadius="36" VerticalOptions="End" 
+                                              WidthRequest="36" CornerRadius="36" VerticalOptions="End"
                                               HorizontalOptions="End" BorderWidth="2" BackgroundColor="{DynamicResource Gray-200}"
                                               BorderColor="{DynamicResource Gray-Bg}"
                                               TextColor="{DynamicResource Steel}" Style="{StaticResource IconButtonStyle}"
@@ -87,25 +85,25 @@
                        Style="{StaticResource DescriptionLabelStyle}" />
 
                 <StackLayout>
-                <!--  First name entry with border  -->
-                <border:SfBorder BorderColor="{Binding Source={x:Reference FirstNameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
+                    <!--  First name entry with border  -->
+                    <border:SfBorder BorderColor="{Binding Source={x:Reference FirstNameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}" Style="{StaticResource DataFormBorderlessEntryBorderStyle}"
                                  Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start">
                         <Grid ColumnDefinitions="*, Auto">
 
                             <control:BorderlessEntry
                         x:Name="FirstNameEntry"
                         Placeholder="First Name"
-                        Style="{StaticResource BorderlessEntryStyle}" 
+                        Style="{StaticResource BorderlessEntryStyle}"
                         Text="{Binding FirstName.Value}">
                                 <Entry.Behaviors>
-                                    <behaviour:EntryLineValidationBehaviour IsValid="{Binding FirstName.IsValid}"/>
+                                    <behaviour:EntryLineValidationBehaviour IsValid="{Binding FirstName.IsValid}" />
                                 </Entry.Behaviors>
                             </control:BorderlessEntry>
 
                             <!--  Label to display error icon  -->
                             <Label Grid.Column="1" Style="{StaticResource ErrorIconLabelStyle}" Margin="0"
                                    IsVisible="{Binding Path=IsVisible, Source={x:Reference FirstNameValidationLabel}}"
-                                   Text="{StaticResource Error}"/>
+                                   Text="{StaticResource Error}" />
                         </Grid>
                     </border:SfBorder>
 
@@ -113,31 +111,31 @@
                     <Label x:Name="FirstNameValidationLabel" Margin="15,-3,0,0" VerticalOptions="FillAndExpand"
                            Text="{Binding FirstName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                            IsVisible="{Binding FirstName.IsValid, Converter={StaticResource InverseBoolConverter}}"
-                           Style="{StaticResource SimpleLabelStyle}" TextColor="{DynamicResource Red}"/>
+                           Style="{StaticResource SimpleLabelStyle}" TextColor="{DynamicResource Red}" />
                 </StackLayout>
 
                 <StackLayout>
-                <!--  Last name entry with border  -->
-                <border:SfBorder
+                    <!--  Last name entry with border  -->
+                    <border:SfBorder
                     Grid.Column="2"
                     BorderColor="{Binding Source={x:Reference LastNameEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
-                    Style="{StaticResource DataFormBorderlessEntryBorderStyle}" Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start" >
+                    Style="{StaticResource DataFormBorderlessEntryBorderStyle}" Padding="12,8" Margin="0,8,0,0" VerticalOptions="Start">
                         <Grid ColumnDefinitions="*, Auto">
 
                             <control:BorderlessEntry
                         x:Name="LastNameEntry"
                         Placeholder="Last Name"
-                        Style="{StaticResource BorderlessEntryStyle}" 
+                        Style="{StaticResource BorderlessEntryStyle}"
                         Text="{Binding LastName.Value}">
                                 <Entry.Behaviors>
-                                    <behaviour:EntryLineValidationBehaviour IsValid="{Binding LastName.IsValid}"/>
+                                    <behaviour:EntryLineValidationBehaviour IsValid="{Binding LastName.IsValid}" />
                                 </Entry.Behaviors>
                             </control:BorderlessEntry>
 
                             <!--  Label to display error icon  -->
                             <Label Grid.Column="1" Style="{StaticResource ErrorIconLabelStyle}" Margin="0"
                                    IsVisible="{Binding Path=IsVisible, Source={x:Reference LastNameValidationLabel}}"
-                                   Text="{StaticResource Error}"/>
+                                   Text="{StaticResource Error}" />
                         </Grid>
                     </border:SfBorder>
 
@@ -145,21 +143,21 @@
                     <Label x:Name="LastNameValidationLabel" Margin="15,-3,0,0" VerticalOptions="FillAndExpand"
                            Text="{Binding LastName.Errors, Converter={StaticResource FirstValidationErrorConverter}}"
                            IsVisible="{Binding LastName.IsValid, Converter={StaticResource InverseBoolConverter}}"
-                           Style="{StaticResource SimpleLabelStyle}" TextColor="{DynamicResource Red}"/>
+                           Style="{StaticResource SimpleLabelStyle}" TextColor="{DynamicResource Red}" />
                 </StackLayout>
 
                 <!--  Phone number entry with border  -->
                 <border:SfBorder
                     Grid.Column="2"
                     BorderColor="{Binding Source={x:Reference PhoneNoEntry}, Path=IsFocused, Converter={StaticResource ColorConverter}, ConverterParameter=3}"
-                    Style="{StaticResource DataFormBorderlessEntryBorderStyle}"  Padding="12,8" Margin="0,8" VerticalOptions="Start" >
+                    Style="{StaticResource DataFormBorderlessEntryBorderStyle}"  Padding="12,8" Margin="0,8" VerticalOptions="Start">
                     <control:BorderlessEntry
                         x:Name="PhoneNoEntry"
-                        Keyboard="Telephone" 
+                        Keyboard="Telephone"
                         Placeholder="Phone Number : e.g. XXXX-XXXXXX"
                         Style="{StaticResource BorderlessEntryStyle}">
                         <control:BorderlessEntry.Behaviors>
-                            <behaviours:EntryMaskedBehavior Mask="(+91)XXXXX-XXXXX" Prefix="(+91)"/>
+                            <behaviours:EntryMaskedBehavior Mask="(+91)XXXXX-XXXXX" Prefix="(+91)" />
                         </control:BorderlessEntry.Behaviors>
                     </control:BorderlessEntry>
                 </border:SfBorder>
@@ -168,8 +166,8 @@
                     Margin="0,16,0,0"
                     Style="{StaticResource GradientButtonStyle}"
                     Text="ADD CONTACT"
-                    WidthRequest="200" 
-                    Command="{Binding AddContactCommand}"/>
+                    WidthRequest="200"
+                    Command="{Binding AddContactCommand}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

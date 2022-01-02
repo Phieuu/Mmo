@@ -16,7 +16,7 @@ namespace MobileApp.ViewModels
 
         private DateTime date = DateTime.Now;
 
-        #endregion
+        #endregion Fields
 
         #region Constructor
 
@@ -30,7 +30,7 @@ namespace MobileApp.ViewModels
             this.SubmitCommand = new Command(this.SubmitButtonClicked);
         }
 
-        #endregion
+        #endregion Constructor
 
         #region Property
 
@@ -85,7 +85,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public string City { get; set; }
 
-        #endregion
+        #endregion Property
 
         #region Comments
 
@@ -94,7 +94,7 @@ namespace MobileApp.ViewModels
         /// </summary>
         public Command SubmitCommand { get; set; }
 
-        #endregion
+        #endregion Comments
 
         #region Methods
 
@@ -140,6 +140,6 @@ namespace MobileApp.ViewModels
             }
         }
 
-        #endregion
+        #endregion Methods
     }
 }

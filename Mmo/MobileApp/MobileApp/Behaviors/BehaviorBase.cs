@@ -13,12 +13,14 @@ namespace MobileApp.Behaviors
         where T : BindableObject
     {
         #region Properties
+
         public T AssociatedObject
         {
             get;
             private set;
         }
-        #endregion
+
+        #endregion Properties
 
         #region Methods
 
@@ -70,6 +72,6 @@ namespace MobileApp.Behaviors
             this.OnBindingContextChanged();
         }
 
-        #endregion
+        #endregion Methods
     }
 }

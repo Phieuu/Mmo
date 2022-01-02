@@ -9,7 +9,7 @@ namespace MobileApp.Validators
     /// <summary>
     /// This class contains the method to have validate the Pair fields
     /// </summary>
-    /// <typeparam name="T">Validatable pair parameter</typeparam>  
+    /// <typeparam name="T">Validatable pair parameter</typeparam>
     [Preserve(AllMembers = true)]
     public class ValidatablePair<T> : IValidatable<ValidatablePair<T>>
     {
@@ -20,7 +20,7 @@ namespace MobileApp.Validators
         /// </summary>
         private bool isValid = true;
 
-        #endregion
+        #endregion Fields
 
         #region PropertyChanged
 
@@ -29,7 +29,7 @@ namespace MobileApp.Validators
         /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
+        #endregion PropertyChanged
 
         #region Property
 
@@ -70,7 +70,7 @@ namespace MobileApp.Validators
         /// </summary>
         public ValidatableObject<T> Item2 { get; set; } = new ValidatableObject<T>();
 
-        #endregion
+        #endregion Property
 
         #region Methods
 
@@ -106,6 +106,6 @@ namespace MobileApp.Validators
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        #endregion
+        #endregion Methods
     }
 }
