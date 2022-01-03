@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MobileApp.Views.OnBoardingPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="*,50">
+        <CarouselView ItemsSource="{Binding Monkeys}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                        <Frame
+                            Margin="20"
+                            BorderColor="DarkGray"
+                            CornerRadius="5"
+                            HasShadow="True"
+                            HeightRequest="300"
+                            HorizontalOptions="Center"
+                            VerticalOptions="CenterAndExpand">
+                            <StackLayout>
+                                <Label
+                                    FontAttributes="Bold"
+                                    FontSize="Large"
+                                    HorizontalOptions="Center"
+                                    Text="{Binding Name}"
+                                    VerticalOptions="Center" />
+                                <Image
+                                    Aspect="AspectFill"
+                                    HeightRequest="150"
+                                    HorizontalOptions="Center"
+                                    Source="{Binding ImageUrl}"
+                                    WidthRequest="150" />
+                                <Label HorizontalOptions="Center" Text="{Binding Location}" />
+                                <Label
+                                    FontAttributes="Italic"
+                                    HorizontalOptions="Center"
+                                    LineBreakMode="TailTruncation"
+                                    MaxLines="5"
+                                    Text="{Binding Details}" />
+                            </StackLayout>
+                        </Frame>
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+    </Grid>
+</ContentPage>

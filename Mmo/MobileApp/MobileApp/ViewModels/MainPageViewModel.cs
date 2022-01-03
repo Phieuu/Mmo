@@ -1,4 +1,6 @@
-﻿using Prism.Navigation;
+﻿using System;
+using System.Threading.Tasks;
+using Prism.Navigation;
 
 namespace MobileApp.ViewModels
 {
@@ -8,6 +10,12 @@ namespace MobileApp.ViewModels
             : base(navigationService)
         {
             Title = "Main Page";
+        }
+
+        public override async void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
+            await Task.FromResult(TimeSpan.FromSeconds(2));
         }
     }
 }

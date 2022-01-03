@@ -44,6 +44,7 @@ namespace MobileApp
             containerRegistry.Register<IFirebaseDatabaseService, FirebaseDatabaseService>();
             containerRegistry.Register<IRestSharpService, RestSharpService>();
             containerRegistry.Register<ITelegramService, TelegramService>();
+            containerRegistry.RegisterForNavigation<OnBoardingPage, OnBoardingPageViewModel>();
         }
     }
 }
