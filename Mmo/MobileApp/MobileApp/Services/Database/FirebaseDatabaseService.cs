@@ -4,21 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using Firebase.Database;
 using Firebase.Database.Query;
+using MobileApp.Configurations;
 
-namespace Ole777.Services
+namespace MobileApp.Services.Database
 {
     public class FirebaseDatabaseService : IFirebaseDatabaseService
     {
-        private const string BaseUrl = "https://lksdjfas-default-rtdb.asia-southeast1.firebasedatabase.app/";
-        private const string Auth = "phRns5lZP6v9GqjeYjaziyRJhwbsaUeYdEf4dVxb";
-
         private readonly FirebaseOptions _options;
 
         public FirebaseDatabaseService()
         {
             _options = new FirebaseOptions()
             {
-                AuthTokenAsyncFactory = () => Task.FromResult(Auth)
+                AuthTokenAsyncFactory = () => Task.FromResult(AppConstants.AuthenFirebase)
             };
 
         }
@@ -26,7 +24,7 @@ namespace Ole777.Services
         private ChildQuery Query<T>()
         {
             var name = typeof(T).FullName.Split('.').LastOrDefault();
-            return new FirebaseClient(BaseUrl, _options).Child(name);
+            return new FirebaseClient(AppConstants.BaseUrlDataBase, _options).Child(name);
         }
         public async Task<bool> AddItemAsync<T>(T item)
         {

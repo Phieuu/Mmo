@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Ole777.Services
+namespace MobileApp.Services.Database
 {
     public interface IFirebaseDatabaseService
     {

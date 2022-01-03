@@ -1,3 +1,6 @@
+using MobileApp.Services.Database;
+using MobileApp.Services.RestSharp;
+using MobileApp.Services.Telegram;
 using MobileApp.ViewModels;
 using MobileApp.Views;
 using Prism;
@@ -37,6 +40,10 @@ namespace MobileApp
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+
+            containerRegistry.Register<IFirebaseDatabaseService, FirebaseDatabaseService>();
+            containerRegistry.Register<IRestSharpService, RestSharpService>();
+            containerRegistry.Register<ITelegramService, TelegramService>();
         }
     }
 }
