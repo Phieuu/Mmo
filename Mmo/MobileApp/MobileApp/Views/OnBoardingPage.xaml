@@ -26,8 +26,9 @@
                         <Label
                             Grid.Row="1"
                             FontAttributes="Bold"
-                            FontSize="30"
-                            HorizontalOptions="CenterAndExpand"
+                            FontSize="25"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
                             Text="{Binding Title}"
                             TextColor="#000" />
                         <Button

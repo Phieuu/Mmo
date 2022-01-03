@@ -3,6 +3,7 @@ using MobileApp.Services.RestSharp;
 using MobileApp.Services.Telegram;
 using MobileApp.ViewModels;
 using MobileApp.Views;
+using MobileApp.Views.Templates;
 using Prism;
 using Prism.Ioc;
 using Xamarin.Essentials.Implementation;
@@ -45,6 +46,9 @@ namespace MobileApp
             containerRegistry.Register<IRestSharpService, RestSharpService>();
             containerRegistry.Register<ITelegramService, TelegramService>();
             containerRegistry.RegisterForNavigation<OnBoardingPage, OnBoardingPageViewModel>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+
+            containerRegistry.RegisterDialog<ConnectFacebookView, ConnectFacebookViewModel>();
         }
     }
 }

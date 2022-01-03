@@ -1,5 +1,7 @@
 ﻿using MobileApp.Validators;
 using MobileApp.Validators.Rules;
+using MobileApp.Views.Templates;
+using Prism.Services.Dialogs;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 
@@ -11,6 +13,7 @@ namespace MobileApp.ViewModels
     [Preserve(AllMembers = true)]
     public class LoginPageViewModel : LoginViewModel
     {
+        private IDialogService _dialogService;
         #region Fields
 
         private ValidatableObject<string> password;
@@ -22,8 +25,9 @@ namespace MobileApp.ViewModels
         /// <summary>
         /// Initializes a new instance for the <see cref="LoginPageViewModel" /> class.
         /// </summary>
-        public LoginPageViewModel()
+        public LoginPageViewModel(IDialogService dialogService)
         {
+            _dialogService = dialogService;
             this.InitializeProperties();
             this.AddValidationRules();
             this.LoginCommand = new Command(this.LoginClicked);
@@ -148,7 +152,13 @@ namespace MobileApp.ViewModels
         /// <param name="obj">The Object</param>
         private void SocialLoggedIn(object obj)
         {
-            // Do something
+            _dialogService.ShowDialog(nameof(ConnectFacebookView), result =>
+            {
+                if (result?.Parameters != null)
+                {
+                    // to do
+                }
+            });
         }
 
         #endregion methods

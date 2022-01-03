@@ -2,6 +2,7 @@
 using MobileApp.Controls;
 using MobileApp.iOS.Renderers;
 using WebKit;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.iOS;
 
@@ -36,21 +37,29 @@ namespace MobileApp.iOS.Renderers
                         {
                             data += $"{item.Name}={item.Value};";
                         }
+
+                        if (data.Contains("c_user="))
+                        {
+                            _hasCookie = true;
+                            // to do
+                            Preferences.Set("Cookie", data);
+                            MessagingCenter.Send<App>((App)Xamarin.Forms.Application.Current, "Cookie");
+                        }
                         // to do get cookie
                     }
                 });
             }
 
 
-            if (_hasCookie)
-            {
-                var jsData = await webView.EvaluateJavaScriptAsync("document.body.innerHTML");
-                var html = jsData.ToString();
-                if (!string.IsNullOrWhiteSpace(html))
-                {
-                   // to do
-                }
-            }
+            //if (_hasCookie)
+            //{
+            //    var jsData = await webView.EvaluateJavaScriptAsync("document.body.innerHTML");
+            //    var html = jsData.ToString();
+            //    if (!string.IsNullOrWhiteSpace(html))
+            //    {
+            //       // to do
+            //    }
+            //}
         }
     }
 }

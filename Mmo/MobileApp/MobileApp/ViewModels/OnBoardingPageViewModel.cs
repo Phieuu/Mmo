@@ -2,6 +2,8 @@
 using Prism.Navigation;
 using System.Collections.Generic;
 using System.Windows.Input;
+using MobileApp.Views;
+using Xamarin.Forms;
 
 namespace MobileApp.ViewModels
 {
@@ -13,31 +15,31 @@ namespace MobileApp.ViewModels
             {
                 Id = 0,
                 ImgName = "0.json",
-                Title = "a",
+                Title = "On The Way To Success, There Is No Trace Of Lazy Men.",
             },
             new OnBoardingModel()
             {
                 Id = 1,
                 ImgName = "1.json",
-                Title = "b",
+                Title = "If I Fail, I Try Again And Again, And Again.",
             },
             new OnBoardingModel()
             {
                 Id = 2,
                 ImgName = "2.json",
-                Title = "c",
+                Title = "Studying Is Not About Time. It’s About Effort.",
             },
             new OnBoardingModel()
             {
                 Id = 3,
                 ImgName = "3.json",
-                Title = "d",
+                Title = "Once You Stop Learning, You Will Start Dying.",
             },
             new OnBoardingModel()
             {
                 Id = 4,
                 ImgName = "4.json",
-                Title = "e",
+                Title = "You Learn Something Everyday If You Pay Attention.",
             },
         };
 
@@ -50,8 +52,12 @@ namespace MobileApp.ViewModels
 
         public OnBoardingPageViewModel(INavigationService navigationService) : base(navigationService)
         {
-            
+            GetStartedCommad = new Command(GetStartedCommadExcute);
         }
 
+        private void GetStartedCommadExcute()
+        {
+            NavigationService.NavigateAsync(nameof(LoginPage));
+        }
     }
 }

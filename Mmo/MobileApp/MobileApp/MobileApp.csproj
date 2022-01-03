@@ -162,6 +162,9 @@
     <EmbeddedResource Update="Views\Templates\CardDisplayView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\Templates\ConnectFacebookView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Templates\SocialIconTemplate.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>

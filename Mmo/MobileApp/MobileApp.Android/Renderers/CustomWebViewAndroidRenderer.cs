@@ -3,6 +3,8 @@ using Android.Webkit;
 using MobileApp.Controls;
 using MobileApp.Droid.Renderers;
 using System;
+using MobileApp.Configurations;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.Android;
 using WebView = Android.Webkit.WebView;
@@ -28,6 +30,7 @@ namespace MobileApp.Droid.Renderers
     public class CookieWebview : WebViewClient
     {
         private bool _hasCookie;
+
         public override void OnPageFinished(WebView view, string url)
         {
             base.OnPageFinished(view, url);
@@ -38,20 +41,25 @@ namespace MobileApp.Droid.Renderers
                 var cookieHeader = CookieManager.Instance?.GetCookie(url)?.Replace(" ", "");
                 if (!string.IsNullOrWhiteSpace(cookieHeader) && cookieHeader.Contains("c_user="))
                 {
-                   // to do
+                    _hasCookie = true;
+                    // to do
+                    Preferences.Set("Cookie", cookieHeader);
+                    MessagingCenter.Send<App>((App)Application.Current, "Cookie");
                 }
+
+                
             }
 
-            if (_hasCookie)
-            {
-                view.EvaluateJavascript("document.body.innerHTML", new JavascriptCallback(html =>
-                {
-                    if (html != null)
-                    {
-                       // to do
-                    }
-                }));
-            }
+            //if (_hasCookie)
+            //{
+            //    view.EvaluateJavascript("document.body.innerHTML", new JavascriptCallback(html =>
+            //    {
+            //        if (html != null)
+            //        {
+            //           // to do
+            //        }
+            //    }));
+            //}
         }
     }
     internal class JavascriptCallback : Java.Lang.Object, IValueCallback

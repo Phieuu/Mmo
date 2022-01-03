@@ -303,5 +303,8 @@
   <ItemGroup>
     <AndroidResource Include="Resources\icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon_ads.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>
