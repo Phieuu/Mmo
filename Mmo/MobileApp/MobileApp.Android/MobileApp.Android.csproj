@@ -108,6 +108,11 @@
     <LinkDescription Include="LinkerSettings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\4.json" />
+    <AndroidAsset Include="Assets\3.json" />
+    <AndroidAsset Include="Assets\2.json" />
+    <AndroidAsset Include="Assets\1.json" />
+    <AndroidAsset Include="Assets\0.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>

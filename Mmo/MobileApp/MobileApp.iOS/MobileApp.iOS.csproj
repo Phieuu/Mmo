@@ -108,6 +108,11 @@
     <None Include="Info.plist" />
     <LinkDescription Include="LinkerSettings.xml" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <BundleResource Include="Resources\4.json" />
+    <BundleResource Include="Resources\3.json" />
+    <BundleResource Include="Resources\2.json" />
+    <BundleResource Include="Resources\1.json" />
+    <BundleResource Include="Resources\0.json" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\Contents.json">

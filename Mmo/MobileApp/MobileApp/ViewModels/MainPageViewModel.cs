@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using MobileApp.Views;
 using Prism.Navigation;
 
 namespace MobileApp.ViewModels
@@ -16,6 +17,7 @@ namespace MobileApp.ViewModels
         {
             base.OnNavigatedTo(parameters);
             await Task.FromResult(TimeSpan.FromSeconds(2));
+            await NavigationService.NavigateAsync(nameof(OnBoardingPage));
         }
     }
 }

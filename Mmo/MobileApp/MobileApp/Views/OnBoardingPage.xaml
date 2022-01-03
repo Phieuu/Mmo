@@ -3,47 +3,63 @@
     x:Class="MobileApp.Views.OnBoardingPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:prism="http://prismlibrary.com"
     prism:ViewModelLocator.AutowireViewModel="True"
     NavigationPage.HasNavigationBar="False">
-    <Grid RowDefinitions="*,50">
-        <CarouselView ItemsSource="{Binding Monkeys}">
+    <Grid RowDefinitions="*,80">
+        <CarouselView
+            x:Name="CarouselView"
+            Grid.Row="0"
+            IndicatorView="indicatorView"
+            ItemsSource="{Binding OnBoardingModels}">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <StackLayout>
-                        <Frame
-                            Margin="20"
-                            BorderColor="DarkGray"
-                            CornerRadius="5"
-                            HasShadow="True"
-                            HeightRequest="300"
-                            HorizontalOptions="Center"
-                            VerticalOptions="CenterAndExpand">
-                            <StackLayout>
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontSize="Large"
-                                    HorizontalOptions="Center"
-                                    Text="{Binding Name}"
-                                    VerticalOptions="Center" />
-                                <Image
-                                    Aspect="AspectFill"
-                                    HeightRequest="150"
-                                    HorizontalOptions="Center"
-                                    Source="{Binding ImageUrl}"
-                                    WidthRequest="150" />
-                                <Label HorizontalOptions="Center" Text="{Binding Location}" />
-                                <Label
-                                    FontAttributes="Italic"
-                                    HorizontalOptions="Center"
-                                    LineBreakMode="TailTruncation"
-                                    MaxLines="5"
-                                    Text="{Binding Details}" />
-                            </StackLayout>
-                        </Frame>
-                    </StackLayout>
+                    <Grid Padding="20" RowDefinitions="350,Auto,*,60">
+                        <forms:AnimationView
+                            x:Name="animationView"
+                            Grid.Row="0"
+                            Animation="{Binding ImgName}"
+                            AnimationSource="AssetOrBundle"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="FillAndExpand" />
+                        <Label
+                            Grid.Row="1"
+                            FontAttributes="Bold"
+                            FontSize="30"
+                            HorizontalOptions="CenterAndExpand"
+                            Text="{Binding Title}"
+                            TextColor="#000" />
+                        <Button
+                            Grid.Row="3"
+                            BackgroundColor="#2196f3"
+                            Command="{Binding Source={x:Reference CarouselView}, Path=BindingContext.GetStartedCommad}"
+                            CornerRadius="25"
+                            FontAttributes="Bold"
+                            FontSize="18"
+                            IsVisible="False"
+                            Text="Get Started"
+                            TextColor="#fff">
+                            <Button.Triggers>
+                                <DataTrigger
+                                    Binding="{Binding Id}"
+                                    TargetType="Button"
+                                    Value="4">
+                                    <Setter Property="Button.IsVisible" Value="True" />
+                                </DataTrigger>
+                            </Button.Triggers>
+                        </Button>
+                    </Grid>
                 </DataTemplate>
             </CarouselView.ItemTemplate>
         </CarouselView>
+        <IndicatorView
+            x:Name="indicatorView"
+            Grid.Row="1"
+            HorizontalOptions="CenterAndExpand"
+            IndicatorColor="LightGray"
+            IndicatorSize="10"
+            SelectedIndicatorColor="#2196f3"
+            VerticalOptions="CenterAndExpand" />
     </Grid>
 </ContentPage>
