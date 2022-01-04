@@ -49,6 +49,7 @@ namespace MobileApp
             containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
 
             containerRegistry.RegisterDialog<ConnectFacebookView, ConnectFacebookViewModel>();
+            containerRegistry.RegisterForNavigation<OverviewPage, OverviewPageViewModel>();
         }
     }
 }

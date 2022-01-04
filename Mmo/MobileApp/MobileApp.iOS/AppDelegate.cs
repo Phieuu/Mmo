@@ -2,6 +2,7 @@ using Foundation;
 using Prism;
 using Prism.Ioc;
 using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.SfChart.XForms.iOS.Renderers;
 using Syncfusion.SfRating.XForms.iOS;
 using Syncfusion.XForms.iOS.Border;
 using Syncfusion.XForms.iOS.Buttons;
@@ -44,6 +45,12 @@ namespace MobileApp.iOS
             SfGradientViewRenderer.Init();
             SfBorderRenderer.Init();
             SfButtonRenderer.Init();
+            SfChartRenderer.Init();
+            // Add the below line if you are using SfLinearProgressBar.
+            Syncfusion.XForms.iOS.ProgressBar.SfLinearProgressBarRenderer.Init();
+
+            // Add the below line if you are using SfCircularProgressBar.  
+            Syncfusion.XForms.iOS.ProgressBar.SfCircularProgressBarRenderer.Init();
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

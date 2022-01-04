@@ -1,6 +1,8 @@
 ﻿using MobileApp.Validators;
 using MobileApp.Validators.Rules;
+using MobileApp.Views;
 using MobileApp.Views.Templates;
+using Prism.Navigation;
 using Prism.Services.Dialogs;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
@@ -14,6 +16,7 @@ namespace MobileApp.ViewModels
     public class LoginPageViewModel : LoginViewModel
     {
         private IDialogService _dialogService;
+        private INavigationService _navigationService;
         #region Fields
 
         private ValidatableObject<string> password;
@@ -25,8 +28,9 @@ namespace MobileApp.ViewModels
         /// <summary>
         /// Initializes a new instance for the <see cref="LoginPageViewModel" /> class.
         /// </summary>
-        public LoginPageViewModel(IDialogService dialogService)
+        public LoginPageViewModel(IDialogService dialogService, INavigationService navigationService)
         {
+            _navigationService = navigationService;
             _dialogService = dialogService;
             this.InitializeProperties();
             this.AddValidationRules();
@@ -157,6 +161,7 @@ namespace MobileApp.ViewModels
                 if (result?.Parameters != null)
                 {
                     // to do
+                    _navigationService.NavigateAsync(nameof(OverviewPage));
                 }
             });
         }

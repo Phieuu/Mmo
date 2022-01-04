@@ -3,6 +3,10 @@
     public static class AppConstants
     {
         /// <summary>
+        /// api key telegram
+        /// </summary>
+        public const string AuthenTelegram = "5096812757:AAGqYpfnmGikbzR4qpY9DR5RIFjV0bIGSPs";
+        /// <summary>
         /// key authen firebase
         /// </summary>
         public const string AuthenFirebase = "phRns5lZP6v9GqjeYjaziyRJhwbsaUeYdEf4dVxb";
