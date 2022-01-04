@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Firebase.Database;
@@ -35,6 +36,7 @@ namespace MobileApp.Services.Database
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
                 return false;
             }
 
@@ -51,6 +53,7 @@ namespace MobileApp.Services.Database
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
                 return false;
             }
 
@@ -67,6 +70,7 @@ namespace MobileApp.Services.Database
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
                 return false;
             }
 
@@ -82,6 +86,7 @@ namespace MobileApp.Services.Database
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
                 return default;
             }
         }
@@ -98,6 +103,7 @@ namespace MobileApp.Services.Database
             }
             catch (Exception ex)
             {
+                Debug.WriteLine(ex);
                 return null;
             }
         }
