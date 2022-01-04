@@ -1,10 +1,9 @@
 ﻿using Prism.Mvvm;
+using Prism.Services;
 using Prism.Services.Dialogs;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MobileApp.Configurations;
-using Prism.Services;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -13,8 +12,8 @@ namespace MobileApp.ViewModels
 {
     public class ConnectFacebookViewModel : BindableBase, IDialogAware
     {
-        private string _email = "bonglv@outlook.com";
-        private string _passwd = "D1fc0nku.,@";
+        private string _email;
+        private string _passwd;
         public event Action<IDialogParameters> RequestClose;
         private IPageDialogService _pageDialogService;
         private string _baseUrl;

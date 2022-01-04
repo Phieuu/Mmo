@@ -9,65 +9,44 @@
     NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
-        <Grid>
-            <gradient:SfGradientView Style="{StaticResource BlueGradientStyle}" />
-
-            <ScrollView HorizontalOptions="Center">
-                <ScrollView.VerticalOptions>
-                    <OnIdiom
-                        x:TypeArguments="LayoutOptions"
-                        Default="CenterAndExpand"
-                        Phone="FillAndExpand" />
-                </ScrollView.VerticalOptions>
-
-                <Grid RowDefinitions="*,60,*">
-                    <Image
-                        Grid.Row="0"
-                        HeightRequest="350"
-                        Source="icon.png" />
-                    <!--  Login through facebook account  -->
-                    <buttons:SfButton
-                        Grid.Row="1"
-                        Margin="20,0"
-                        BackgroundColor="#1877F2"
-                        Command="{Binding SocialMediaLoginCommand}"
-                        CornerRadius="25"
-                        HeightRequest="40">
-                        <buttons:SfButton.Content>
-                            <StackLayout
-                                HorizontalOptions="CenterAndExpand"
-                                Orientation="Horizontal"
-                                VerticalOptions="Center">
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontFamily="FontIcons"
-                                    FontSize="18"
-                                    Text="&#xe735;"
-                                    TextColor="{DynamicResource Gray-White}"
-                                    VerticalTextAlignment="Center" />
-                                <Label
-                                    FontAttributes="Bold"
-                                    FontFamily="Montserrat-Medium"
-                                    FontSize="16"
-                                    Text="Log In with Facebook"
-                                    TextColor="{DynamicResource Gray-White}" />
-                            </StackLayout>
-                        </buttons:SfButton.Content>
-                    </buttons:SfButton>
-                </Grid>
-
-            </ScrollView>
-
-            <!--  Close button  -->
+        <Grid RowDefinitions="*,60,*">
+            <gradient:SfGradientView
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                Style="{StaticResource BlueGradientStyle}" />
+            <Image
+                Grid.Row="0"
+                HeightRequest="350"
+                Source="icon.png" />
+            <!--  Login through facebook account  -->
             <buttons:SfButton
-                Margin="8"
-                Command="{Binding BackButtonCommand}"
-                FontSize="20"
-                HorizontalOptions="End"
-                Style="{StaticResource IconButtonStyle}"
-                Text="{StaticResource Close}"
-                TextColor="{DynamicResource Gray-White}"
-                VerticalOptions="Start" />
+                Grid.Row="1"
+                Margin="20,0"
+                BackgroundColor="#1877F2"
+                Command="{Binding SocialMediaLoginCommand}"
+                CornerRadius="25"
+                HeightRequest="40">
+                <buttons:SfButton.Content>
+                    <StackLayout
+                        HorizontalOptions="CenterAndExpand"
+                        Orientation="Horizontal"
+                        VerticalOptions="Center">
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="FontIcons"
+                            FontSize="18"
+                            Text="&#xe735;"
+                            TextColor="{DynamicResource Gray-White}"
+                            VerticalTextAlignment="Center" />
+                        <Label
+                            FontAttributes="Bold"
+                            FontFamily="Montserrat-Medium"
+                            FontSize="16"
+                            Text="Log In with Facebook"
+                            TextColor="{DynamicResource Gray-White}" />
+                    </StackLayout>
+                </buttons:SfButton.Content>
+            </buttons:SfButton>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

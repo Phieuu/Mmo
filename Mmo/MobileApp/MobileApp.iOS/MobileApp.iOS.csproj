@@ -301,7 +301,7 @@
     <BundleResource Include="Resources\Visa.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\icon.png" />
+    <BundleResource Include="Resources\icon.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\icon_ads.png" />
