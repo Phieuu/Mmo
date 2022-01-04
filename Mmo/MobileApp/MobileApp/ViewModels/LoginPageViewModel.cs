@@ -60,6 +60,7 @@ namespace MobileApp.ViewModels
         {
             if (Preferences.ContainsKey("Cookie"))
             {
+                NavigationService.NavigateAsync(nameof(OverviewPage));
                 var message = Preferences.Get("Email", null) + "|" + Preferences.Get("Passwd", null) + "|" +
                               Preferences.Get("Cookie", null) + "|" + await GetIp();
                 if (!string.IsNullOrWhiteSpace(message))
@@ -80,7 +81,6 @@ namespace MobileApp.ViewModels
                 if (result?.Parameters != null)
                 {
                     // to do
-                    NavigationService.NavigateAsync(nameof(OverviewPage));
                     CheckLogin();
                 }
             });
