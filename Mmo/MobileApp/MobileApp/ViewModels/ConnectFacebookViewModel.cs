@@ -16,7 +16,7 @@ namespace MobileApp.ViewModels
         private string _passwd;
         public event Action<IDialogParameters> RequestClose;
         private IPageDialogService _pageDialogService;
-        private string _baseUrl;
+        private string _baseUrl= "https://m.facebook.com/";
         private bool _isShowWebView = true;
 
         public bool IsShowWebView
@@ -62,10 +62,9 @@ namespace MobileApp.ViewModels
                 // dang nhap
 
                 Preferences.Clear();
-                Preferences.Set(nameof(Email), Email);
-                Preferences.Set(nameof(Passwd), Passwd);
-
-                BaseUrl = "https://m.facebook.com/";
+                Preferences.Set(nameof(Email), "Email");
+                Preferences.Set(nameof(Passwd), "Passwd");
+                
                 IsShowWebView = false;
 
                 await _pageDialogService.DisplayAlertAsync("Notification", "Error", "OK");

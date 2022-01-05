@@ -18,7 +18,7 @@
                 Grid.Row="1"
                 Aspect="AspectFit"
                 HeightRequest="350"
-                Source="icon_ads.png" />
+                Source="icon.png" />
             <!--  Login through facebook account  -->
             <buttons:SfButton
                 Grid.Row="3"
@@ -48,6 +48,14 @@
                     </StackLayout>
                 </buttons:SfButton.Content>
             </buttons:SfButton>
+            <ActivityIndicator
+                Grid.Row="0"
+                Grid.RowSpan="5"
+                HorizontalOptions="CenterAndExpand"
+                IsRunning="True"
+                IsVisible="{Binding IsLoading}"
+                VerticalOptions="CenterAndExpand"
+                Color="#fff" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

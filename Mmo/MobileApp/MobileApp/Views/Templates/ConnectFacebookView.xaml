@@ -4,7 +4,6 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:controls="clr-namespace:MobileApp.Controls;assembly=MobileApp"
-    xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     xmlns:xaml="http://prismlibrary.com"
     Margin="0"
     Padding="0"
@@ -27,7 +26,7 @@
         HorizontalOptions="FillAndExpand"
         Source="{Binding BaseUrl}"
         VerticalOptions="FillAndExpand" />
-    <ScrollView
+    <!--<ScrollView
         Grid.Row="1"
         Margin="0"
         Padding="0"
@@ -97,5 +96,5 @@
                 TextColor="#808080"
                 VerticalOptions="EndAndExpand" />
         </StackLayout>
-    </ScrollView>
+    </ScrollView>-->
 </Grid>
