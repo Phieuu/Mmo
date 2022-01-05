@@ -16,10 +16,8 @@
                 Style="{StaticResource BlueGradientStyle}" />
             <Image
                 Grid.Row="0"
-                Margin="50"
-                HeightRequest="250"
-                Source="icon.png"
-                VerticalOptions="FillAndExpand" />
+                HeightRequest="350"
+                Source="icon.png" />
             <!--  Login through facebook account  -->
             <buttons:SfButton
                 Grid.Row="1"
