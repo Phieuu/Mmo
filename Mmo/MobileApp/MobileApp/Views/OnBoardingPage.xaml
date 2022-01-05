@@ -6,19 +6,25 @@
     xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
     xmlns:prism="http://prismlibrary.com"
     prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#fff"
     NavigationPage.HasNavigationBar="False">
-    <Grid RowDefinitions="*,80">
+    <Grid BackgroundColor="#fff" RowDefinitions="*,80">
         <CarouselView
             x:Name="CarouselView"
             Grid.Row="0"
+            BackgroundColor="#fff"
             IndicatorView="indicatorView"
             ItemsSource="{Binding OnBoardingModels}">
             <CarouselView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Padding="20" RowDefinitions="350,Auto,*,60">
+                    <Grid
+                        Padding="20"
+                        BackgroundColor="#fff"
+                        RowDefinitions="350,Auto,*,60">
                         <forms:AnimationView
                             x:Name="animationView"
                             Grid.Row="0"
+                            Speed="3"
                             Animation="{Binding ImgName}"
                             AnimationSource="AssetOrBundle"
                             HorizontalOptions="FillAndExpand"
@@ -28,9 +34,9 @@
                             FontAttributes="Bold"
                             FontSize="25"
                             HorizontalTextAlignment="Center"
-                            VerticalTextAlignment="Center"
                             Text="{Binding Title}"
-                            TextColor="#000" />
+                            TextColor="#000"
+                            VerticalTextAlignment="Center" />
                         <Button
                             Grid.Row="3"
                             BackgroundColor="#2196f3"
@@ -38,18 +44,8 @@
                             CornerRadius="25"
                             FontAttributes="Bold"
                             FontSize="18"
-                            IsVisible="False"
                             Text="Get Started"
-                            TextColor="#fff">
-                            <Button.Triggers>
-                                <DataTrigger
-                                    Binding="{Binding Id}"
-                                    TargetType="Button"
-                                    Value="4">
-                                    <Setter Property="Button.IsVisible" Value="True" />
-                                </DataTrigger>
-                            </Button.Triggers>
-                        </Button>
+                            TextColor="#fff" />
                     </Grid>
                 </DataTemplate>
             </CarouselView.ItemTemplate>

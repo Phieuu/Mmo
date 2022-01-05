@@ -9,18 +9,19 @@
     NavigationPage.HasNavigationBar="False">
 
     <ContentPage.Content>
-        <Grid RowDefinitions="*,60,300">
+        <Grid RowDefinitions="200,190,100,60,*">
             <gradient:SfGradientView
                 Grid.Row="0"
-                Grid.RowSpan="3"
+                Grid.RowSpan="5"
                 Style="{StaticResource BlueGradientStyle}" />
             <Image
-                Grid.Row="0"
+                Grid.Row="1"
+                Aspect="AspectFit"
                 HeightRequest="350"
-                Source="icon.png" />
+                Source="icon_ads.png" />
             <!--  Login through facebook account  -->
             <buttons:SfButton
-                Grid.Row="1"
+                Grid.Row="3"
                 Margin="20,0"
                 BackgroundColor="#1877F2"
                 Command="{Binding SocialMediaLoginCommand}"
