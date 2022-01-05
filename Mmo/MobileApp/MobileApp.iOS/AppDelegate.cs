@@ -9,6 +9,7 @@ using Syncfusion.XForms.iOS.Buttons;
 using Syncfusion.XForms.iOS.ComboBox;
 using Syncfusion.XForms.iOS.Core;
 using Syncfusion.XForms.iOS.Graphics;
+using Syncfusion.XForms.iOS.ProgressBar;
 using Syncfusion.XForms.iOS.TabView;
 using Syncfusion.XForms.iOS.TextInputLayout;
 using Syncfusion.XForms.Pickers.iOS;
@@ -46,11 +47,8 @@ namespace MobileApp.iOS
             SfBorderRenderer.Init();
             SfButtonRenderer.Init();
             SfChartRenderer.Init();
-            // Add the below line if you are using SfLinearProgressBar.
-            Syncfusion.XForms.iOS.ProgressBar.SfLinearProgressBarRenderer.Init();
-
-            // Add the below line if you are using SfCircularProgressBar.  
-            Syncfusion.XForms.iOS.ProgressBar.SfCircularProgressBarRenderer.Init();
+            SfLinearProgressBarRenderer.Init();
+            SfCircularProgressBarRenderer.Init();
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);
