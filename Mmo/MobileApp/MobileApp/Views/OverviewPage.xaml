@@ -6,10 +6,11 @@
     xmlns:prism="http://prismlibrary.com"
     xmlns:progressBar="clr-namespace:Syncfusion.XForms.ProgressBar;assembly=Syncfusion.SfProgressBar.XForms"
     xmlns:tabView="http://schemas.syncfusion.com/xamarin"
+    xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
     prism:ViewModelLocator.AutowireViewModel="True"
     BackgroundColor="#fff"
     NavigationPage.HasNavigationBar="False">
-    <Grid Margin="0,20,0,0" RowDefinitions="50,*">
+    <Grid xct:SafeAreaEffect.SafeArea="true" RowDefinitions="50,*">
         <StackLayout
             Grid.Row="0"
             HorizontalOptions="CenterAndExpand"
