@@ -27,7 +27,7 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleDisplayName</key>
-	<string>Fb Ads Optimize</string>
+	<string>Meta Ads Optimize</string>
 	<key>CFBundleName</key>
 	<string>MobileApp</string>
 	<key>CFBundleIdentifier</key>
