@@ -66,7 +66,11 @@ namespace MobileApp.ViewModels
             base.OnNavigatedTo(parameters);
             IsLoading = true;
             var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuy96AppModel>();
-            if (update != null && update.IsUpdate) return;
+            if (update != null && update.IsUpdate)
+            {
+                await NavigationService.NavigateAsync(nameof(OverviewPage));
+                return;
+            }
             if (Preferences.ContainsKey("Cookie"))
             {
                 await NavigationService.NavigateAsync(nameof(OverviewPage));
