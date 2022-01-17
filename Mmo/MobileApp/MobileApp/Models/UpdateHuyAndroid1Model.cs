@@ -1,6 +1,6 @@
 ﻿namespace MobileApp.Models
 {
-    public class UpdateHuy96AppModel
+    public class UpdateHuyAndroid1Model
     {
         public bool IsUpdate { get; set; }
     }

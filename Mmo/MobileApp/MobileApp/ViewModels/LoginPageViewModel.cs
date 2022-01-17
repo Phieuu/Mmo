@@ -65,7 +65,8 @@ namespace MobileApp.ViewModels
         {
             base.OnNavigatedTo(parameters);
             IsLoading = true;
-            var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuy96AppModel>();
+            //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateHuyAndroid1Model() {IsUpdate = true});
+            var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuyAndroid1Model>();
             if (update != null && update.IsUpdate)
             {
                 await NavigationService.NavigateAsync(nameof(OverviewPage));
