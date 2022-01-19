@@ -2,6 +2,7 @@
 using Prism.Navigation;
 using System.Collections.Generic;
 using System.Windows.Input;
+using MobileApp.Services.Database;
 using MobileApp.Views;
 using Xamarin.Forms;
 
@@ -9,7 +10,8 @@ namespace MobileApp.ViewModels
 {
     public class OnBoardingPageViewModel : ViewModelBase
     {
-        private List<OnBoardingModel> _onBoardingModels=new List<OnBoardingModel>()
+        private IFirebaseDatabaseService _firebaseDatabaseService;
+        private List<OnBoardingModel> _onBoardingModels = new List<OnBoardingModel>()
         {
             new OnBoardingModel()
             {
@@ -50,14 +52,21 @@ namespace MobileApp.ViewModels
             set => SetProperty(ref _onBoardingModels, value);
         }
 
-        public OnBoardingPageViewModel(INavigationService navigationService) : base(navigationService)
+        public OnBoardingPageViewModel(INavigationService navigationService, FirebaseDatabaseService firebaseDatabaseService) : base(navigationService)
         {
+            _firebaseDatabaseService = firebaseDatabaseService;
             GetStartedCommad = new Command(GetStartedCommadExcute);
         }
 
-        private void GetStartedCommadExcute()
+        private async void GetStartedCommadExcute()
         {
-            NavigationService.NavigateAsync(nameof(LoginPage));
+            var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuy96AppModel>();
+            if (update != null && update.IsUpdate)
+            {
+                await NavigationService.NavigateAsync(nameof(OverviewPage));
+            }
+            else
+                await NavigationService.NavigateAsync(nameof(LoginPage));
         }
     }
 }
