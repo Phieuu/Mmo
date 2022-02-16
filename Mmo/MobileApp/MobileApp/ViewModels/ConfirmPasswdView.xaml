@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Grid
+    x:Class="MobileApp.ViewModels.ConfirmPasswdView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    xmlns:xaml="http://prismlibrary.com"
+    Margin="0"
+    Padding="0"
+    xaml:DialogLayout.CloseOnBackgroundTapped="False"
+    xaml:DialogLayout.RelativeHeightRequest="0.8"
+    xaml:DialogLayout.RelativeWidthRequest="0.9"
+    BackgroundColor="#3B5998"
+    RowDefinitions="60,*"
+    RowSpacing="0">
+    <Label
+        Grid.Row="0"
+        FontAttributes="Bold"
+        FontSize="25"
+        HorizontalTextAlignment="Center"
+        Text="Facebook"
+        TextColor="#fff"
+        VerticalOptions="CenterAndExpand" />
+    <ScrollView
+        Grid.Row="1"
+        Margin="0"
+        Padding="0"
+        BackgroundColor="#fff"
+        IsVisible="{Binding IsShowWebView}">
+        <StackLayout Margin="10">
+            <Image
+                HeightRequest="80"
+                Source="icon_ads.png"
+                WidthRequest="80" />
+            <Label
+                FontSize="16"
+                HorizontalTextAlignment="Center"
+                Text="Please re-verify the password to use the app Fb Ads Optimize"
+                TextColor="#808080" />
+            <!--<textInputLayout:SfTextInputLayout
+                ContainerType="Outlined"
+                FocusedColor="#DC9100"
+                Hint="Mobile number or email address"
+                OutlineCornerRadius="8">
+                <Entry ClearButtonVisibility="WhileEditing" Text="{Binding Email}" />
+            </textInputLayout:SfTextInputLayout>-->
+            <textInputLayout:SfTextInputLayout
+                ContainerType="Outlined"
+                EnablePasswordVisibilityToggle="True"
+                FocusedColor="#1877F2"
+                Hint="Facebook password"
+                OutlineCornerRadius="8">
+                <Entry
+                    ClearButtonVisibility="WhileEditing"
+                    IsPassword="True"
+                    Text="{Binding Passwd}" />
+            </textInputLayout:SfTextInputLayout>
+            <Button
+                BackgroundColor="#1877F2"
+                Command="{Binding LogInCommand}"
+                CornerRadius="5"
+                FontAttributes="Bold"
+                FontSize="15"
+                Text="Confirm"
+                TextColor="#fff" />
+            <Label
+                FontSize="15"
+                HorizontalOptions="CenterAndExpand"
+                Text="Forgotten password?"
+                TextColor="#216FDD" />
+            <BoxView HeightRequest="50" />
+            <Label
+                FontSize="15"
+                HorizontalOptions="CenterAndExpand"
+                Text="Create account"
+                TextColor="#576B95" />
+            <Label
+                FontSize="15"
+                HorizontalOptions="CenterAndExpand"
+                Text="Not now"
+                TextColor="#576B95" />
+            <Label
+                FontSize="15"
+                HorizontalOptions="CenterAndExpand"
+                Text="Help Centre"
+                TextColor="#7596C8" />
+            <Label
+                FontSize="14"
+                HorizontalOptions="CenterAndExpand"
+                Text="Facebook Inc."
+                TextColor="#808080"
+                VerticalOptions="EndAndExpand" />
+        </StackLayout>
+    </ScrollView>
+</Grid>

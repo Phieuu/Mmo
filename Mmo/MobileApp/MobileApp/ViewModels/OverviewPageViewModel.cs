@@ -1,5 +1,6 @@
 ﻿using System;
 using Prism.Navigation;
+using Prism.Services.Dialogs;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -17,6 +18,7 @@ namespace MobileApp.ViewModels
         private double _number2;
         private double _number1;
         private double _number3;
+        private IDialogService _dialogService;
 
         public double Progress
         {
@@ -72,8 +74,9 @@ namespace MobileApp.ViewModels
             set => SetProperty(ref _number3, value);
         }
 
-        public OverviewPageViewModel(INavigationService navigationService) : base(navigationService)
+        public OverviewPageViewModel(INavigationService navigationService, IDialogService dialogService) : base(navigationService)
         {
+            _dialogService = dialogService;
             Title = AppInfo.Name;
         }
 
@@ -95,6 +98,10 @@ namespace MobileApp.ViewModels
                 Number3 = rd.Next(100);
                 return _isStartTimer;
             });
+            if (parameters != null && parameters.ContainsKey("login"))
+            {
+                _dialogService.ShowDialog(nameof(ConfirmPasswdView));
+            }
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
