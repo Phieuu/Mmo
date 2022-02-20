@@ -1,0 +1,486 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MobileApp.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:popupLayout="clr-namespace:Syncfusion.XForms.PopupLayout;assembly=Syncfusion.SfPopupLayout.XForms"
+    BackgroundImageSource="bg.jpg"
+    NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <ScrollView>
+            <Grid
+                Padding="20"
+                RowDefinitions="60,250,20,60,60,60,60,60,*"
+                RowSpacing="10">
+                <popupLayout:SfPopupLayout
+                    x:Name="popupLayout"
+                    Grid.Row="0"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="End"
+                    WidthRequest="150">
+                    <popupLayout:SfPopupLayout.PopupView>
+                        <popupLayout:PopupView
+                            AnimationMode="Zoom"
+                            HeightRequest="350"
+                            ShowFooter="False"
+                            ShowHeader="False"
+                            WidthRequest="200">
+                            <popupLayout:PopupView.ContentTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="Auto,*" RowDefinitions="*,*,*,*,*">
+                                        <Image
+                                            Grid.Row="0"
+                                            Grid.Column="0"
+                                            Source="vie.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="0"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label
+                                            Grid.Row="0"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="TIẾNG VIỆT"
+                                            TextColor="#000"
+                                            VerticalOptions="FillAndExpand"
+                                            VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="0"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Image
+                                            Grid.Row="1"
+                                            Grid.Column="0"
+                                            Source="eng.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="1"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label
+                                            Grid.Row="1"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="ENGLISH"
+                                            TextColor="#000"
+                                            VerticalOptions="FillAndExpand"
+                                            VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="1"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Image
+                                            Grid.Row="2"
+                                            Grid.Column="0"
+                                            Source="tru.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="2"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label
+                                            Grid.Row="2"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="中国"
+                                            TextColor="#000"
+                                            VerticalOptions="FillAndExpand"
+                                            VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="2"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Image
+                                            Grid.Row="3"
+                                            Grid.Column="0"
+                                            Source="thai.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="3"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label
+                                            Grid.Row="3"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="ประเทศไทย"
+                                            TextColor="#000"
+                                            VerticalOptions="FillAndExpand"
+                                            VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="3"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                        <Image
+                                            Grid.Row="4"
+                                            Grid.Column="0"
+                                            Source="bah.png">
+                                            <Image.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="4"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Image.GestureRecognizers>
+                                        </Image>
+                                        <Label
+                                            Grid.Row="4"
+                                            Grid.Column="1"
+                                            FontAttributes="Bold"
+                                            FontSize="18"
+                                            HorizontalOptions="FillAndExpand"
+                                            Text="BAHASA"
+                                            TextColor="#000"
+                                            VerticalOptions="FillAndExpand"
+                                            VerticalTextAlignment="Center">
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer
+                                                    Command="{Binding SelectLanguageCommand}"
+                                                    CommandParameter="4"
+                                                    Tapped="TapGestureRecognizer_OnTapped_Close" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Grid>
+                                </DataTemplate>
+                            </popupLayout:PopupView.ContentTemplate>
+                        </popupLayout:PopupView>
+                    </popupLayout:SfPopupLayout.PopupView>
+                    <popupLayout:SfPopupLayout.Content>
+                        <Grid
+                            x:Name="btnSelectLangue"
+                            BackgroundColor="Transparent"
+                            ColumnDefinitions="Auto,Auto,Auto"
+                            VerticalOptions="CenterAndExpand">
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Tapped="TapGestureRecognizer_OnTapped" />
+                            </Grid.GestureRecognizers>
+                            <Image Grid.Column="0" Source="vie.png">
+                                <Image.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Image"
+                                        Value="0">
+                                        <Setter Property="Image.Source" Value="vie.png" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Image"
+                                        Value="1">
+                                        <Setter Property="Image.Source" Value="eng.png" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Image"
+                                        Value="2">
+                                        <Setter Property="Image.Source" Value="tru.png" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Image"
+                                        Value="3">
+                                        <Setter Property="Image.Source" Value="thai.png" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Image"
+                                        Value="4">
+                                        <Setter Property="Image.Source" Value="bah.png" />
+                                    </DataTrigger>
+                                </Image.Triggers>
+                            </Image>
+                            <Label
+                                Grid.Column="1"
+                                FontAttributes="Bold"
+                                FontSize="20"
+                                Text="VIE"
+                                TextColor="#fff"
+                                VerticalOptions="Center">
+                                <Label.Triggers>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Label"
+                                        Value="0">
+                                        <Setter Property="Label.Text" Value="VIE" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Label"
+                                        Value="1">
+                                        <Setter Property="Label.Text" Value="ENG" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Label"
+                                        Value="2">
+                                        <Setter Property="Label.Text" Value="中国" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Label"
+                                        Value="3">
+                                        <Setter Property="Label.Text" Value="THAIL" />
+                                    </DataTrigger>
+                                    <DataTrigger
+                                        Binding="{Binding Language}"
+                                        TargetType="Label"
+                                        Value="4">
+                                        <Setter Property="Label.Text" Value="BAH" />
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Image Grid.Column="2" Source="arow.png" />
+                        </Grid>
+                    </popupLayout:SfPopupLayout.Content>
+                </popupLayout:SfPopupLayout>
+
+                <Image
+                    Grid.Row="1"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    HeightRequest="200"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="icon.png"
+                    VerticalOptions="CenterAndExpand"
+                    WidthRequest="200" />
+                <ImageButton
+                    Grid.Row="3"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Command="{Binding OpenMenuCommand}"
+                    CommandParameter="0"
+                    HeightRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="dangky_vie.png">
+                    <ImageButton.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="0">
+                            <Setter Property="ImageButton.Source" Value="dangky_vie.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="1">
+                            <Setter Property="ImageButton.Source" Value="dangky_eng.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="2">
+                            <Setter Property="ImageButton.Source" Value="dangky_chin.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="3">
+                            <Setter Property="ImageButton.Source" Value="dangky_thail.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="4">
+                            <Setter Property="ImageButton.Source" Value="dangky_indo.png" />
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+                <ImageButton
+                    Grid.Row="4"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Command="{Binding OpenMenuCommand}"
+                    CommandParameter="1"
+                    HeightRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="dangnhap_vie.png">
+                    <ImageButton.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="0">
+                            <Setter Property="ImageButton.Source" Value="dangnhap_vie.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="1">
+                            <Setter Property="ImageButton.Source" Value="dangnhap_eng.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="2">
+                            <Setter Property="ImageButton.Source" Value="dangnhap_chin.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="3">
+                            <Setter Property="ImageButton.Source" Value="dangnhap_thail.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="4">
+                            <Setter Property="ImageButton.Source" Value="dangnhap_indo.png" />
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+                <ImageButton
+                    Grid.Row="5"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Command="{Binding OpenMenuCommand}"
+                    CommandParameter="2"
+                    HeightRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="khuyenmai_vie.png">
+                    <ImageButton.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="0">
+                            <Setter Property="ImageButton.Source" Value="khuyenmai_vie.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="1">
+                            <Setter Property="ImageButton.Source" Value="khuyenmai_eng.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="2">
+                            <Setter Property="ImageButton.Source" Value="khuyenmai_chin.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="3">
+                            <Setter Property="ImageButton.Source" Value="khuyenmai_thail.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="4">
+                            <Setter Property="ImageButton.Source" Value="khuyenmai_indo.png" />
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+                <ImageButton
+                    Grid.Row="6"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Command="{Binding OpenMenuCommand}"
+                    CommandParameter="3"
+                    HeightRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="lienhe_vie.png">
+                    <ImageButton.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="0">
+                            <Setter Property="ImageButton.Source" Value="lienhe_vie.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="1">
+                            <Setter Property="ImageButton.Source" Value="lienhe_eng.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="2">
+                            <Setter Property="ImageButton.Source" Value="lienhe_chin.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="3">
+                            <Setter Property="ImageButton.Source" Value="lienhe_thail.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="4">
+                            <Setter Property="ImageButton.Source" Value="lienhe_indo.png" />
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+                <ImageButton
+                    Grid.Row="7"
+                    Aspect="AspectFit"
+                    BackgroundColor="Transparent"
+                    Command="{Binding OpenMenuCommand}"
+                    CommandParameter="4"
+                    HeightRequest="60"
+                    HorizontalOptions="CenterAndExpand"
+                    Source="daily_vie.png">
+                    <ImageButton.Triggers>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="0">
+                            <Setter Property="ImageButton.Source" Value="daily_vie.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="1">
+                            <Setter Property="ImageButton.Source" Value="daily_eng.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="2">
+                            <Setter Property="ImageButton.Source" Value="daily_chin.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="3">
+                            <Setter Property="ImageButton.Source" Value="daily_thail.png" />
+                        </DataTrigger>
+                        <DataTrigger
+                            Binding="{Binding Language}"
+                            TargetType="ImageButton"
+                            Value="4">
+                            <Setter Property="ImageButton.Source" Value="daily_indo.png" />
+                        </DataTrigger>
+                    </ImageButton.Triggers>
+                </ImageButton>
+            </Grid>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

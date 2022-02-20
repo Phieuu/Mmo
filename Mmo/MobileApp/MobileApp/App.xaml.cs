@@ -1,3 +1,4 @@
+using MobileApp.Models;
 using MobileApp.Services.Database;
 using MobileApp.Services.RestSharp;
 using MobileApp.Services.Telegram;
@@ -19,6 +20,7 @@ namespace MobileApp
 {
     public partial class App
     {
+        public static UpdateAppModel DataApp = new UpdateAppModel();
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -40,6 +42,7 @@ namespace MobileApp
 
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
 
             containerRegistry.Register<IFirebaseDatabaseService, FirebaseDatabaseService>();
             containerRegistry.Register<IRestSharpService, RestSharpService>();

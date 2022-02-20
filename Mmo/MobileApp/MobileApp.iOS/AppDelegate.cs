@@ -1,4 +1,4 @@
-using Foundation;
+﻿using Foundation;
 using Prism;
 using Prism.Ioc;
 using UIKit;
@@ -21,6 +21,13 @@ namespace MobileApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            #region Thư viện ngoài
+
+            Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
+
+            #endregion
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

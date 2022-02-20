@@ -16,8 +16,14 @@ namespace MobileApp.Droid
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(savedInstanceState);
-
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+
+            #region Thư viên ngoài
+
+            Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
+
+            #endregion
+
             LoadApplication(new App(new AndroidInitializer()));
         }
 

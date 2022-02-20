@@ -1,10 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MobileApp.Views.MainPage"
-             Title="{Binding Title}">
+<ContentPage
+    x:Class="MobileApp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    Title="{Binding Title}"
+    BackgroundImageSource="bg.jpg"
+    NavigationPage.HasNavigationBar="False">
 
-    <StackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
-        <Label Text="Welcome to Xamarin Forms and Prism!" />
+    <StackLayout
+        HorizontalOptions="CenterAndExpand"
+        Orientation="Vertical"
+        Spacing="20"
+        VerticalOptions="FillAndExpand">
+        <BoxView BackgroundColor="Transparent" HeightRequest="100" />
+        <Image
+            Aspect="AspectFit"
+            BackgroundColor="Transparent"
+            HeightRequest="250"
+            Source="icon.png"
+            WidthRequest="250" />
+        <BoxView BackgroundColor="Transparent" HeightRequest="60" />
+        <ActivityIndicator IsRunning="True" Color="White" />
     </StackLayout>
 </ContentPage>
