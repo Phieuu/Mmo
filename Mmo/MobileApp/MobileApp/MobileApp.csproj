@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder\**" />
+    <EmbeddedResource Remove="NewFolder\**" />
+    <None Remove="NewFolder\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="FakeModules\Resources\icon_f_booking.png" />
     <None Remove="FakeModules\Resources\icon_f_car1.png" />
     <None Remove="FakeModules\Resources\icon_f_car2.png" />
@@ -87,10 +93,6 @@
     <EmbeddedResource Update="Views\WebviewPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="NewFolder\" />
   </ItemGroup>
 
 </Project>

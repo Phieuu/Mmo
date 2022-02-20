@@ -21,7 +21,7 @@
                 Aspect="AspectFit"
                 HeightRequest="30"
                 HorizontalOptions="CenterAndExpand"
-                Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_notification.png}"
+                Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_notification.png}"
                 VerticalOptions="CenterAndExpand">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer Command="{xaml:NavigateTo '/NotificationPage'}" />
@@ -66,25 +66,25 @@
                     </Grid.Resources>
                     <Frame Grid.Row="0" Grid.Column="0">
                         <StackLayout Orientation="Vertical">
-                            <Image Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_car1.png}" />
+                            <Image Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_car1.png}" />
                             <Label Text="Xe sân bay" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="0" Grid.Column="1">
                         <StackLayout Orientation="Vertical">
-                            <Image Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_car2.png}" />
+                            <Image Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_car2.png}" />
                             <Label Text="Xe liên tỉnh" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="1" Grid.Column="0">
                         <StackLayout Orientation="Vertical">
-                            <Image Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_car3.png}" />
+                            <Image Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_car3.png}" />
                             <Label Text="Xe hợp đồng" />
                         </StackLayout>
                     </Frame>
                     <Frame Grid.Row="1" Grid.Column="1">
                         <StackLayout Orientation="Vertical">
-                            <Image Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_car4.png}" />
+                            <Image Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_car4.png}" />
                             <Label Text="Xe hàng hóa" />
                         </StackLayout>
                     </Frame>
@@ -138,7 +138,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_3.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_3.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -173,7 +173,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -208,7 +208,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_5.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_5.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -243,7 +243,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_4.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_4.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -278,7 +278,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_3.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_3.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -313,7 +313,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_2.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_2.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -348,7 +348,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -383,7 +383,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_5.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_5.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -418,7 +418,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_4.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_4.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -453,7 +453,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_3.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_3.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -488,7 +488,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus_2.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus_2.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>
@@ -523,7 +523,7 @@
                             Grid.RowSpan="3"
                             Grid.Column="1"
                             Aspect="AspectFit"
-                            Source="{xct:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_f_map_bus.png}"
+                            Source="{xct:ImageResource Id=MobileApp.FakeModules.Resources.icon_f_map_bus.png}"
                             VerticalOptions="FillAndExpand" />
                     </Grid>
                 </Frame>

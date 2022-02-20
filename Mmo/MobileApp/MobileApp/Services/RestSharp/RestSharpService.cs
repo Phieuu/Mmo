@@ -4,7 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using AUTO.HLT.MOBILE.VIP.Models.RequestProviderModel;
+using MobileApp.Models.RequestProviderModel;
 using RestSharp;
 
 namespace MobileApp.Services.RestSharp

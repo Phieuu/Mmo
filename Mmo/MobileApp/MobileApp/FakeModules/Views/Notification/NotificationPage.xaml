@@ -6,7 +6,8 @@
     xmlns:extensions="http://xamarin.com/schemas/2020/toolkit"
     xmlns:xaml="http://prismlibrary.com"
     Background="#FFC20F"
-    BackgroundColor="#FFC20F">
+    BackgroundColor="#FFC20F"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <StackLayout>
             <Grid Padding="0,15" ColumnDefinitions="50,*">
@@ -14,7 +15,7 @@
                     Grid.Column="0"
                     Aspect="AspectFit"
                     HorizontalOptions="FillAndExpand"
-                    Source="{extensions:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_left_arrow.png}"
+                    Source="{extensions:ImageResource Id=MobileApp.FakeModules.Resources.icon_left_arrow.png}"
                     VerticalOptions="FillAndExpand">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{xaml:NavigateTo '/FMainPage'}" />

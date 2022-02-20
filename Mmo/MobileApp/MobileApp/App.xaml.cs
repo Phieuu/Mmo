@@ -1,4 +1,4 @@
-using AUTO.HLT.MOBILE.VIP.FakeModules.ViewModels.AboutUs;
+using MobileApp.FakeModules.ViewModels.AboutUs;
 using MobileApp.FakeModules.ViewModels.HelperUs;
 using MobileApp.FakeModules.ViewModels.Home;
 using MobileApp.FakeModules.ViewModels.InviteFriend;
@@ -28,17 +28,11 @@ using Xamarin.Essentials.Implementation;
 using Xamarin.Essentials.Interfaces;
 using Xamarin.Forms;
 
-[assembly: ExportFont("Montserrat-Bold.ttf", Alias = "Montserrat-Bold")]
-[assembly: ExportFont("Montserrat-Medium.ttf", Alias = "Montserrat-Medium")]
-[assembly: ExportFont("Montserrat-Regular.ttf", Alias = "Montserrat-Regular")]
-[assembly: ExportFont("Montserrat-SemiBold.ttf", Alias = "Montserrat-SemiBold")]
-[assembly: ExportFont("UIFontIcons.ttf", Alias = "FontIcons")]
-
 namespace MobileApp
 {
     public partial class App
     {
-        public static UpdateAppModel DataApp = new UpdateAppModel();
+        public static UpdateNew88IOsModel DataNew88IOs = new UpdateNew88IOsModel();
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {

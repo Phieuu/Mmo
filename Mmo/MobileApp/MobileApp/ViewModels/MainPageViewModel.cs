@@ -25,10 +25,10 @@ namespace MobileApp.ViewModels
             await Task.Delay(TimeSpan.FromSeconds(2));
             try
             {
-                // var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateAppModel());
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateAppModel>();
+                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateNew88IOsModel());
+                var data = await _firebaseDatabaseService.GetItemAsync<UpdateNew88IOsModel>();
                 if (data != null)
-                    App.DataApp = data;
+                    App.DataNew88IOs = data;
             }
             catch (Exception e)
             {

@@ -1,5 +1,4 @@
-﻿using MobileApp.Services.Telegram;
-using MobileApp.Views;
+﻿using MobileApp.Views;
 using Prism.Navigation;
 using Prism.Services;
 using System;
@@ -22,7 +21,6 @@ namespace MobileApp.ViewModels
         private string _nguoiGioiThieu;
         private IPageDialogService _pageDialogService;
         private bool _isLoading;
-        private ITelegramService _telegramService;
 
         public View ContentLoginPage
         {
@@ -82,20 +80,32 @@ namespace MobileApp.ViewModels
             set => SetProperty(ref _isLoading, value);
         }
 
-        public LoginViewModel(INavigationService navigationService, IPageDialogService pageDialogService, ITelegramService telegramService) : base(navigationService)
+        public LoginViewModel(INavigationService navigationService, IPageDialogService pageDialogService) : base(navigationService)
         {
-            
-            _telegramService = telegramService;
             _pageDialogService = pageDialogService;
-            ContentLoginPage = new LoginView();
             FunctionExecuteCommand = new AsyncCommand<string>(async (key) => await FunctionExecute(key));
         }
-        public override async void OnNavigatedTo(INavigationParameters parameters)
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
             try
             {
-               
+                IsLoading = true;
+                if (parameters != null)
+                {
+                    if (parameters.ContainsKey("login"))
+                    {
+                        if (parameters.GetValue<string>("login") == "1")
+                        {
+                            ContentLoginPage = new LoginView();
+                        }
+                        else
+                        {
+                            ContentLoginPage = new SigupView();
+                        }
+                    }
+                }
             }
             catch (Exception e)
             {
@@ -120,6 +130,9 @@ namespace MobileApp.ViewModels
                     break;
                 case "2":
                     await DoSigup();
+                    break;
+                case "3":
+                    ContentLoginPage = new LoginView();
                     break;
                 default:
                     break;
@@ -158,7 +171,6 @@ namespace MobileApp.ViewModels
         {
             try
             {
-                if (!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Passwd))
                 if (!string.IsNullOrWhiteSpace(UserName) && !string.IsNullOrWhiteSpace(Passwd))
                 {
                     await NavigationService.NavigateAsync("/FMainPage", null, false, true);

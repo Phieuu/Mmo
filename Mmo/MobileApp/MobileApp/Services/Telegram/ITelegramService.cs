@@ -1,5 +1,5 @@
 ﻿using System.Threading.Tasks;
-using AUTO.HLT.MOBILE.VIP.Models.Telegram;
+using MobileApp.Models.Telegram;
 
 namespace MobileApp.Services.Telegram
 {

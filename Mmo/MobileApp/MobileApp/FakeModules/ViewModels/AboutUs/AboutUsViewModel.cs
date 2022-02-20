@@ -1,4 +1,4 @@
-﻿namespace AUTO.HLT.MOBILE.VIP.FakeModules.ViewModels.AboutUs
+﻿namespace MobileApp.FakeModules.ViewModels.AboutUs
 {
     public class AboutUsViewModel
     {

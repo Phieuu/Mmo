@@ -14,7 +14,7 @@
                     Grid.Column="0"
                     Aspect="AspectFit"
                     HorizontalOptions="FillAndExpand"
-                    Source="{extensions:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_left_arrow.png}"
+                    Source="{extensions:ImageResource Id=MobileApp.FakeModules.Resources.icon_left_arrow.png}"
                     VerticalOptions="FillAndExpand">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer Command="{xaml:NavigateTo '/FMainPage'}" />

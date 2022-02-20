@@ -1,5 +1,5 @@
-﻿using AUTO.HLT.MOBILE.VIP.Models.RequestProviderModel;
-using AUTO.HLT.MOBILE.VIP.Models.Telegram;
+﻿using MobileApp.Models.RequestProviderModel;
+using MobileApp.Models.Telegram;
 using MobileApp.Configurations;
 using MobileApp.Services.RestSharp;
 using Newtonsoft.Json;

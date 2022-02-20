@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using AUTO.HLT.MOBILE.VIP.Models.RequestProviderModel;
+using MobileApp.Models.RequestProviderModel;
 
 namespace MobileApp.Services.RestSharp
 {

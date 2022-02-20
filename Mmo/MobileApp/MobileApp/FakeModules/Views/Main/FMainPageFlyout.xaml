@@ -23,7 +23,7 @@
             <Image
                 Aspect="Fill"
                 HeightRequest="40"
-                Source="{extensions:ImageResource Id=AUTO.HLT.MOBILE.VIP.FakeModules.Resources.icon_user.png}"
+                Source="{extensions:ImageResource Id=MobileApp.FakeModules.Resources.icon_user.png}"
                 VerticalOptions="CenterAndExpand"
                 WidthRequest="40" />
             <Label

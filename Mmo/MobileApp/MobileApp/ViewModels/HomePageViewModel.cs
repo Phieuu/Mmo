@@ -1,9 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using MobileApp.FakeModules.Views.AboutUs;
+using MobileApp.FakeModules.Views.MyBooking;
+using MobileApp.FakeModules.Views.Notification;
 using MobileApp.Views;
 using Prism.Navigation;
 using Prism.Services;
+using System;
+using System.Threading.Tasks;
+using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Essentials;
 using Xamarin.Forms;
@@ -78,56 +81,68 @@ namespace MobileApp.ViewModels
         {
             try
             {
-                if (App.DataApp.IsUpdate)
+                if (App.DataNew88IOs.IsUpdate)
                 {
                     switch (key)
                     {
                         case "0":
-                            NavigationService.NavigateAsync(nameof(MainPage));
+                            NavigationService.NavigateAsync(nameof(LoginPage) + "?login=0");
                             break;
 
                         case "1":
-                            NavigationService.NavigateAsync(nameof(MainPage));
+                            NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
                             break;
 
                         case "2":
-                            NavigationService.NavigateAsync(nameof(MainPage));
+                            NavigationService.NavigateAsync(nameof(NotificationPage));
                             break;
 
                         case "3":
-                            NavigationService.NavigateAsync(nameof(MainPage));
+                            NavigationService.NavigateAsync(nameof(FAboutUsPage));
                             break;
 
                         case "4":
-                            NavigationService.NavigateAsync("/NavigationPage/MainPage");
+                            NavigationService.NavigateAsync(nameof(MyBookingPage));
                             break;
-
                         default:
                             break;
                     }
                 }
                 else
                 {
+                    var para = new NavigationParameters();
                     switch (key)
                     {
                         case "0":
-                            Browser.OpenAsync(App.DataApp.Urls.Register, BrowserLaunchMode.SystemPreferred);
+
+                            para.Add("title", "Đăng ký");
+                            para.Add("url", App.DataNew88IOs.Urls.Register);
+                            NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "1":
-                            Browser.OpenAsync(App.DataApp.Urls.Login, BrowserLaunchMode.SystemPreferred);
+
+                            para.Add("title", "Đăng nhập");
+                            para.Add("url", App.DataNew88IOs.Urls.Login);
+                            NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "2":
-                            Browser.OpenAsync(App.DataApp.Urls.Promotion, BrowserLaunchMode.SystemPreferred);
+                            para.Add("title", "Khuyến mãi");
+                            para.Add("url", App.DataNew88IOs.Urls.Promotion);
+                            NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "3":
-                            Browser.OpenAsync(App.DataApp.Urls.Support, BrowserLaunchMode.SystemPreferred);
+                            para.Add("title", "Liên hệ CSKH");
+                            para.Add("url", App.DataNew88IOs.Urls.Support);
+                            NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "4":
-                            Browser.OpenAsync(App.DataApp.Urls.Afiliate, BrowserLaunchMode.SystemPreferred);
+                            para.Add("title", "Đối tác đại lý");
+                            para.Add("url", App.DataNew88IOs.Urls.Afiliate);
+                            NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         default:

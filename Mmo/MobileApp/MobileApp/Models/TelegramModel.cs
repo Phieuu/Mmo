@@ -1,4 +1,4 @@
-﻿namespace AUTO.HLT.MOBILE.VIP.Models.Telegram
+﻿namespace MobileApp.Models.Telegram
 {
     public class TelegramModel
     {

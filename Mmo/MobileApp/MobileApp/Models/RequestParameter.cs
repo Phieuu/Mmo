@@ -1,4 +1,4 @@
-﻿namespace AUTO.HLT.MOBILE.VIP.Models.RequestProviderModel
+﻿namespace MobileApp.Models.RequestProviderModel
 {
     public class RequestParameter
     {
