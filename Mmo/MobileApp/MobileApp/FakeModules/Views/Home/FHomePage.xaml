@@ -5,6 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:xaml="http://prismlibrary.com"
     xmlns:xct="http://xamarin.com/schemas/2020/toolkit"
+    Background="{StaticResource HeaderHome}"
+    BackgroundColor="{StaticResource HeaderHome}"
     IconImageSource="https://firebasestorage.googleapis.com/v0/b/autohlt.appspot.com/o/icon_f_menu.png?alt=media&amp;token=100412a2-34cc-4e0c-b301-2bac943986df">
     <NavigationPage.TitleView>
         <Grid BackgroundColor="Transparent" ColumnDefinitions="*,60">
@@ -35,7 +37,7 @@
             Padding="0"
             BackgroundColor="#000">
             <StackLayout BackgroundColor="Transparent">
-                <Grid Padding="5" BackgroundColor="#FFC20F">
+                <Grid Padding="5" BackgroundColor="{StaticResource HeaderHome}">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*" />
                         <ColumnDefinition Width="*" />
