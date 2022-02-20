@@ -11,24 +11,13 @@ namespace MobileApp.Services.RestSharp
 {
     public class RestSharpService : IRestSharpService
     {
-        private IRestClient _client;
-        private IRestRequest _request;
+        private RestClient _client;
+        private RestRequest _request;
         public RestSharpService()
         {
             _client = new RestClient();
-            _client.Timeout = -1;
-        }
-        private void CreateClients(string uri, Method method = Method.GET)
-        {
-            try
-            {
-                _client.BaseUrl = new Uri(uri);
-                _request = new RestRequest(method);
-            }
-            catch (Exception ex)
-            {
-                Debug.WriteLine(ex.Message);
-            }
+            _request = new RestRequest();
+            _request.Timeout = -1;
         }
         /// <summary>
         /// them du lieu chuyen vao request
@@ -52,13 +41,12 @@ namespace MobileApp.Services.RestSharp
         /// them cookie
         /// </summary>
         /// <param name="cookie"></param>
-        private void AddHeader(string cookie)
+        private void AddHeader(string cookie, string domain = ".facebook.com")
         {
             try
             {
                 if (cookie != null)
                 {
-                    var cookieContainer = new CookieContainer();
                     var data = cookie.Split(';');
                     if (data.Any())
                     {
@@ -67,16 +55,15 @@ namespace MobileApp.Services.RestSharp
                             var ckie = item?.Split('=');
                             if (ckie.Any())
                             {
-                                cookieContainer.Add(new Cookie
+                                _client.CookieContainer.Add(new Cookie
                                 {
                                     Name = ckie[0],
                                     Value = ckie[1],
-                                    Domain = ".facebook.com",
+                                    Domain = domain,
                                     Path = "/"
                                 });
                             }
                         }
-                        _client.CookieContainer = cookieContainer;
                     }
                 }
             }
@@ -89,7 +76,7 @@ namespace MobileApp.Services.RestSharp
         {
             try
             {
-                CreateClients(uri);
+                _request.Method = Method.Get;
                 if (parameters != null && parameters.Any())
                 {
                     AddPrarameter(parameters);
@@ -115,7 +102,7 @@ namespace MobileApp.Services.RestSharp
         {
             try
             {
-                CreateClients(uri, Method.POST);
+                _request.Method = Method.Post;
                 if (parameters != null && parameters.Any())
                 {
                     AddPrarameter(parameters);
@@ -138,7 +125,7 @@ namespace MobileApp.Services.RestSharp
         {
             try
             {
-                CreateClients(uri, Method.PUT);
+                _request.Method = Method.Put;
                 if (parameters != null && parameters.Any())
                 {
                     AddPrarameter(parameters);
@@ -161,7 +148,7 @@ namespace MobileApp.Services.RestSharp
         {
             try
             {
-                CreateClients(uri, Method.DELETE);
+                _request.Method = Method.Delete;
                 if (parameters != null && parameters.Any())
                 {
                     AddPrarameter(parameters);
