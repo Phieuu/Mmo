@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentView
+    x:Class="MobileApp.Views.LoginView"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms">
+    <ContentView.Content>
+        <Grid
+            Margin="0"
+            Padding="0"
+            RowDefinitions="50,80,80,40,60,30,60,50">
+            <textInputLayout:SfTextInputLayout
+                Grid.Row="1"
+                Margin="20,0"
+                ContainerType="Outlined"
+                FocusedColor="#fff"
+                Hint="Tên đăng nhập"
+                OutlineCornerRadius="8"
+                UnfocusedColor="#fff">
+                <Entry
+                    BackgroundColor="Transparent"
+                    Keyboard="Plain"
+                    ReturnType="Next"
+                    Text="{Binding UserName}"
+                    TextColor="#fff" />
+            </textInputLayout:SfTextInputLayout>
+            <textInputLayout:SfTextInputLayout
+                Grid.Row="2"
+                Margin="20,0"
+                ContainerType="Outlined"
+                EnablePasswordVisibilityToggle="True"
+                FocusedColor="#fff"
+                Hint="Mật khẩu"
+                OutlineCornerRadius="8"
+                UnfocusedColor="#fff">
+                <Entry
+                    BackgroundColor="Transparent"
+                    IsPassword="True"
+                    Keyboard="Plain"
+                    ReturnCommand="{Binding FunctionExecuteCommand}"
+                    ReturnCommandParameter="0"
+                    ReturnType="Done"
+                    Text="{Binding Passwd}"
+                    TextColor="#fff" />
+            </textInputLayout:SfTextInputLayout>
+            <StackLayout
+                Grid.Row="3"
+                Margin="20,0"
+                Padding="0"
+                BackgroundColor="Transparent"
+                Orientation="Horizontal">
+                <CheckBox IsChecked="{Binding IsSavePasswd}" Color="#fff" />
+                <Label
+                    FontSize="16"
+                    Text="Nhớ mật khẩu"
+                    TextColor="#fff"
+                    VerticalOptions="CenterAndExpand" />
+            </StackLayout>
+            <Button
+                Grid.Row="4"
+                Margin="20,5"
+                BackgroundColor="Transparent"
+                BorderColor="#fff"
+                BorderWidth="1"
+                Command="{Binding FunctionExecuteCommand}"
+                CommandParameter="0"
+                CornerRadius="10"
+                Text="Đăng nhập"
+                TextColor="#fff" />
+            <Label
+                Grid.Row="5"
+                FontSize="14"
+                HorizontalOptions="CenterAndExpand"
+                Text="Chưa có tài khoản"
+                TextColor="#fff" />
+            <Button
+                Grid.Row="6"
+                Margin="20,5"
+                BackgroundColor="Transparent"
+                BorderColor="#fff"
+                BorderWidth="1"
+                Command="{Binding FunctionExecuteCommand}"
+                CommandParameter="1"
+                CornerRadius="10"
+                Text="Tạo tài khoản"
+                TextColor="#fff" />
+        </Grid>
+    </ContentView.Content>
+</ContentView>

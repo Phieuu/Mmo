@@ -1,6 +1,8 @@
 ﻿using Foundation;
 using Prism;
 using Prism.Ioc;
+using Syncfusion.SfBusyIndicator.XForms.iOS;
+using Syncfusion.XForms.iOS.TextInputLayout;
 using UIKit;
 
 namespace MobileApp.iOS
@@ -24,6 +26,8 @@ namespace MobileApp.iOS
 
             #region Thư viện ngoài
 
+            new SfBusyIndicatorRenderer();
+            SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();
 
             #endregion
