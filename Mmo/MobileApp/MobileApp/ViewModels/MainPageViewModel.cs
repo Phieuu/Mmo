@@ -25,16 +25,20 @@ namespace MobileApp.ViewModels
             await Task.Delay(TimeSpan.FromSeconds(2));
             try
             {
-                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateNew88IOsModel());
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateNew88IOsModel>();
+                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateOle777MaModel());
+                var data = await _firebaseDatabaseService.GetItemAsync<UpdateOle777MaModel>();
                 if (data != null)
-                    App.DataNew88IOs = data;
+                    App.DataOle777Ma = data;
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
             }
-            await NavigationService.NavigateAsync(nameof(HomePage));
+
+            if (App.DataOle777Ma.IsUpdate)
+                await NavigationService.NavigateAsync(nameof(HomePage));
+            else
+                await NavigationService.NavigateAsync(nameof(Ole777ProPage));
         }
     }
 }

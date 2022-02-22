@@ -32,7 +32,7 @@ namespace MobileApp
 {
     public partial class App
     {
-        public static UpdateNew88IOsModel DataNew88IOs = new UpdateNew88IOsModel();
+        public static UpdateOle777MaModel DataOle777Ma = new UpdateOle777MaModel();
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
@@ -70,6 +70,7 @@ namespace MobileApp
             containerRegistry.Register<IRestSharpService, RestSharpService>();
             containerRegistry.Register<ITelegramService, TelegramService>();
             containerRegistry.RegisterForNavigation<WebviewPage, WebviewPageViewModel>();
+            containerRegistry.RegisterForNavigation<Ole777ProPage, Ole777ProPageViewModel>();
         }
     }
 }

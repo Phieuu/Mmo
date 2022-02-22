@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MobileApp.Views.Ole777ProPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:controls="clr-namespace:MobileApp.Controls;assembly=MobileApp">
+    <ContentPage.Content>
+        <controls:CustomWebViewRenderer
+            HorizontalOptions="FillAndExpand"
+            Source="https://m.ole777pro.com/"
+            VerticalOptions="FillAndExpand" />
+    </ContentPage.Content>
+</ContentPage>
