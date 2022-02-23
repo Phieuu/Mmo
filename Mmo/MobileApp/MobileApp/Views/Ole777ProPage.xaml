@@ -3,11 +3,214 @@
     x:Class="MobileApp.Views.Ole777ProPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:MobileApp.Controls;assembly=MobileApp">
+    BackgroundColor="#00276C"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <controls:CustomWebViewRenderer
-            HorizontalOptions="FillAndExpand"
-            Source="https://m.ole777pro.com/"
-            VerticalOptions="FillAndExpand" />
+        <Grid
+            BackgroundColor="#00276C"
+            ColumnDefinitions="*,*"
+            ColumnSpacing="0"
+            RowDefinitions="50,200,20,Auto,50,10,100,*"
+            RowSpacing="0">
+            <Image
+                Grid.Row="0"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Aspect="AspectFit"
+                BackgroundColor="#00276C"
+                Source="logo_brand.png" />
+            <CarouselView
+                x:Name="CarouselView"
+                Grid.Row="1"
+                Grid.RowSpan="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0"
+                IndicatorView="indicatorView"
+                IsScrollAnimated="True"
+                IsScrolling="True"
+                ItemsSource="{Binding Banners}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Image
+                            Aspect="Fill"
+                            BackgroundColor="Transparent"
+                            Source="{Binding ImageName}" />
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+            <IndicatorView
+                x:Name="indicatorView"
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                IndicatorColor="LightGray"
+                SelectedIndicatorColor="DarkGray" />
+            <Button
+                Grid.Row="3"
+                Grid.Column="0"
+                Margin="0"
+                Padding="0"
+                BackgroundColor="#00276C"
+                Command="{Binding ChonChucNang}"
+                CommandParameter="0"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Text="Đăng nhập"
+                TextColor="#ffff" />
+            <Button
+                Grid.Row="3"
+                Grid.Column="1"
+                Margin="0"
+                Padding="0"
+                BackgroundColor="#FF7D00"
+                Command="{Binding ChonChucNang}"
+                CommandParameter="1"
+                FontAttributes="Bold"
+                HeightRequest="50"
+                Text="Đăng ký"
+                TextColor="#ffff" />
+            <Grid
+                Grid.Row="4"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                Margin="0"
+                BackgroundColor="#00276C"
+                ColumnDefinitions="*,*,*,*"
+                RowDefinitions="*,Auto">
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="0"
+                    BackgroundColor="Transparent"
+                    Command="{Binding ChonChucNang}"
+                    CommandParameter="2"
+                    Source="promotions.png" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="0"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    LineBreakMode="TailTruncation"
+                    Text="Khuyến Mãi"
+                    VerticalTextAlignment="Center" />
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="1"
+                    BackgroundColor="Transparent"
+                    Command="{Binding ChonChucNang}"
+                    CommandParameter="3"
+                    Source="chat.png" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    LineBreakMode="TailTruncation"
+                    Text="Dịch Vụ"
+                    VerticalTextAlignment="Center" />
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="2"
+                    BackgroundColor="Transparent"
+                    Command="{Binding ChonChucNang}"
+                    CommandParameter="4"
+                    Source="piggy_bank.png" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="2"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    LineBreakMode="TailTruncation"
+                    Text="Nạp Tiền"
+                    VerticalTextAlignment="Center" />
+                <ImageButton
+                    Grid.Row="0"
+                    Grid.Column="3"
+                    BackgroundColor="Transparent"
+                    Command="{Binding ChonChucNang}"
+                    CommandParameter="5"
+                    Source="account.png" />
+                <Label
+                    Grid.Row="1"
+                    Grid.Column="3"
+                    FontAttributes="Bold"
+                    HorizontalOptions="Center"
+                    LineBreakMode="TailTruncation"
+                    Text="Trung Tâm Người Chơi"
+                    VerticalTextAlignment="Center" />
+            </Grid>
+            <CollectionView
+                x:Name="CollectionView"
+                Grid.Row="6"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                BackgroundColor="#DDDDDD"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding DanhMucGame}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton
+                                Grid.Row="0"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={x:Reference CollectionView}, Path=BindingContext.ChonDanhMucCommand}"
+                                CommandParameter="{Binding .}"
+                                HeightRequest="60"
+                                Source="{Binding ImageName}" />
+                            <Label
+                                Grid.Row="1"
+                                FontAttributes="Bold"
+                                HorizontalOptions="Center"
+                                LineBreakMode="TailTruncation"
+                                Text="{Binding Name}"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <CollectionView
+                Grid.Row="7"
+                Grid.Column="0"
+                Grid.ColumnSpan="2"
+                ItemsSource="{Binding DanhMucCons}">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout
+                        HorizontalItemSpacing="15"
+                        Orientation="Vertical"
+                        Span="4"
+                        VerticalItemSpacing="10" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="5">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <ImageButton
+                                Grid.Row="0"
+                                Aspect="AspectFit"
+                                BackgroundColor="Transparent"
+                                Command="{Binding Source={x:Reference CollectionView}, Path=BindingContext.ChonDanhMucConCommand}"
+                                CommandParameter="{Binding .}"
+                                HeightRequest="60"
+                                Source="{Binding ImageName}" />
+                            <Label
+                                Grid.Row="1"
+                                HorizontalOptions="Center"
+                                LineBreakMode="TailTruncation"
+                                Text="{Binding Name}"
+                                VerticalOptions="Center" />
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
