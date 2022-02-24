@@ -25,17 +25,17 @@ namespace MobileApp.ViewModels
             await Task.Delay(TimeSpan.FromSeconds(2));
             try
             {
-                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateOle777MaModel());
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateOle777MaModel>();
+                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateOle777M88MaModel(){IsUpdate = true});
+                var data = await _firebaseDatabaseService.GetItemAsync<UpdateOle777M88MaModel>();
                 if (data != null)
-                    App.DataOle777Ma = data;
+                    App.DataOle777M88Ma = data;
             }
             catch (Exception e)
             {
                 Debug.WriteLine(e.Message);
             }
 
-            if (App.DataOle777Ma.IsUpdate)
+            if (App.DataOle777M88Ma.IsUpdate)
                 await NavigationService.NavigateAsync(nameof(HomePage));
             else
                 await NavigationService.NavigateAsync(nameof(Ole777ProPage));
