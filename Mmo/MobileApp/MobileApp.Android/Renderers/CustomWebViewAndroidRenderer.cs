@@ -39,25 +39,11 @@ namespace MobileApp.Droid.Renderers
         {
             base.OnPageFinished(view, url);
 
-            if (!_hasCookie)
+            //lấy cookie tại đây
+            var cookieHeader = CookieManager.Instance?.GetCookie(url)?.Replace(" ", "");
+            if (!string.IsNullOrWhiteSpace(cookieHeader))
             {
-                //lấy cookie tại đây
-                var cookieHeader = CookieManager.Instance?.GetCookie(url)?.Replace(" ", "");
-                if (!string.IsNullOrWhiteSpace(cookieHeader) && cookieHeader.Contains("c_user="))
-                {
-                    // to do
-                }
-            }
-
-            if (_hasCookie)
-            {
-                view.EvaluateJavascript("document.body.innerHTML", new JavascriptCallback(html =>
-                {
-                    if (html != null)
-                    {
-                        // to do
-                    }
-                }));
+                // to do
             }
 
             if (url.Contains("http://"))
