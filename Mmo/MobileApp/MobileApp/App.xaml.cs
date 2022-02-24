@@ -32,7 +32,7 @@ namespace MobileApp
 {
     public partial class App
     {
-        public static UpdateOle777M88MaModel DataOle777M88Ma = new UpdateOle777M88MaModel();
+        public static UpdateOle777K8MaModel DataOle777K8Ma = new UpdateOle777K8MaModel();
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {
