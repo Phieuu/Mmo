@@ -52,7 +52,7 @@
                 ClearButtonVisibility="WhileEditing"
                 FontSize="16"
                 Keyboard="Numeric"
-                Text="0987654321"
+                Text="099999999"
                 TextColor="#000" />
             <Label
                 Margin="10,0"
@@ -64,7 +64,7 @@
                 BackgroundColor="Transparent"
                 ClearButtonVisibility="WhileEditing"
                 FontSize="16"
-                Text="khachhang@autovip.com"
+                Text="khachhang@new88.com"
                 TextColor="#000" />
         </StackLayout>
     </ContentPage.Content>

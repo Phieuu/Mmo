@@ -26,7 +26,7 @@
                 FontAttributes="Bold"
                 FontSize="35"
                 HorizontalOptions="CenterAndExpand"
-                Text="AUTOVIP"
+                Text="{Binding Title}"
                 TextColor="{StaticResource AppBackgroud}" />
             <BoxView
                 Grid.Row="2"

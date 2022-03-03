@@ -6,6 +6,7 @@ using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace MobileApp.ViewModels
@@ -84,6 +85,7 @@ namespace MobileApp.ViewModels
         {
             _pageDialogService = pageDialogService;
             FunctionExecuteCommand = new AsyncCommand<string>(async (key) => await FunctionExecute(key));
+            Title = AppInfo.Name;
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
