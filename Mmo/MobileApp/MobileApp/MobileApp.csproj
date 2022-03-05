@@ -27,6 +27,7 @@
     <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
     <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
     <None Remove="Resources\Fonts\UIFontIcons.ttf" />
+    <None Remove="Resources\mydata.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -52,6 +53,7 @@
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Montserrat-SemiBold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\UIFontIcons.ttf" />
+    <EmbeddedResource Include="Resources\mydata.json" />
   </ItemGroup>
 
   <ItemGroup>

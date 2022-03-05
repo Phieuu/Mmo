@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using MobileApp.Heplers;
@@ -21,7 +26,7 @@ namespace MobileApp.ViewModels
         private GameModel _game;
         private int _successful;
         private Random _random;
-
+        private List<GameModel> _gameModels;
         public int Successful
         {
             get => _successful;
@@ -85,16 +90,20 @@ namespace MobileApp.ViewModels
             return CheckAnswer(Answer);
         }
 
+        private bool _checkAnswer;
         private async Task CheckAnswer(string answer)
         {
+            Successful = 0;
             if (string.IsNullOrWhiteSpace(answer) || _game == null) return;
+            if (_checkAnswer) return;
+            _checkAnswer = true;
             if (answer.ToUpper() == _game.Answer.ToUpper())
             {
                 Successful = 2;
                 Id = Id + 1;
                 Points += _random.Next(10);
                 RaisePropertyChanged(nameof(Points));
-                await GetData();
+                await GetData(Id);
             }
             else
             {
@@ -103,21 +112,38 @@ namespace MobileApp.ViewModels
             Answer = "";
             await Task.Delay(TimeSpan.FromSeconds(3));
             Successful = 0;
+            _checkAnswer = false;
         }
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
             IsLoading = true;
-            await GetData();
+
+            await GetData(Id);
+
             IsLoading = false;
         }
 
-        private async Task GetData()
+        private async Task GetData(int id)
         {
-            _game = await GetQuestionHelper.Get(Id);
-            Image = _game?.Image;
+            if (_gameModels == null)
+            {
+                var stream = typeof(PlayGamePageViewModel).GetTypeInfo().Assembly
+                    .GetManifestResourceStream("MobileApp.Resources.mydata.json");
+                string js;
+                using (var reader = new StreamReader(stream))
+                {
+                    js = reader.ReadToEnd();
+                }
+                _gameModels = JsonSerializer.Deserialize<List<GameModel>>(js);
+            }
+            _game = _gameModels.FirstOrDefault(x => x.Id == id);
+
+            Image = _game.NameFile;
             MaxLength = _game.Answer.Length;
             Note = "Ghi chú\n" + "Độ dài của câu trả lời " + MaxLength + " kí tự";
+
+            await Task.Delay(TimeSpan.FromSeconds(5));
         }
 
         private Task ExcuteGoBackCommand()

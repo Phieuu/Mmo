@@ -74,29 +74,43 @@
                 Source="{Binding Image}"
                 VerticalOptions="FillAndExpand" />
         </Frame>
-        <textInputLayout:SfTextInputLayout
+        <Grid
             Grid.Row="2"
-            Margin="30,5"
-            ContainerBackgroundColor="#fff"
-            ContainerType="Outlined"
-            FocusedColor="#E15D16"
-            FocusedStrokeWidth="2"
-            OutlineCornerRadius="20"
-            UnfocusedColor="#E15D16"
-            UnfocusedStrokeWidth="2">
-            <Entry
+            Margin="5,0"
+            ColumnDefinitions="*,100">
+            <textInputLayout:SfTextInputLayout
+                Grid.Column="0"
+                ContainerBackgroundColor="#fff"
+                ContainerType="Outlined"
+                FocusedColor="#E15D16"
+                FocusedStrokeWidth="2"
+                OutlineCornerRadius="20"
+                UnfocusedColor="#E15D16"
+                UnfocusedStrokeWidth="2">
+                <Entry
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    HorizontalTextAlignment="Center"
+                    Keyboard="Text"
+                    Placeholder="Nhập câu trả lời"
+                    PlaceholderColor="#000"
+                    Text="{Binding Answer}"
+                    TextColor="#000"
+                    VerticalTextAlignment="Center" />
+            </textInputLayout:SfTextInputLayout>
+            <Button
+                Grid.Column="1"
+                Margin="0,8"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Command="{Binding SubmitCommand}"
+                CornerRadius="25"
                 FontAttributes="Bold"
                 FontSize="18"
-                HorizontalTextAlignment="Center"
-                Keyboard="Text"
-                Placeholder="Nhập câu trả lời"
-                PlaceholderColor="#000"
-                ReturnCommand="{Binding SubmitCommand}"
-                Text="{Binding Answer}"
-                TextColor="#000"
-                Unfocused="VisualElement_OnUnfocused"
-                VerticalTextAlignment="Center" />
-        </textInputLayout:SfTextInputLayout>
+                Text="Kiểm Tra"
+                TextColor="#fff" />
+        </Grid>
         <Label
             Grid.Row="3"
             BackgroundColor="#fff"

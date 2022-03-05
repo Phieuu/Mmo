@@ -9,14 +9,5 @@ namespace MobileApp.Views
         {
             InitializeComponent();
         }
-
-        private void VisualElement_OnUnfocused(object sender, FocusEventArgs e)
-        {
-            var vm = BindingContext as PlayGamePageViewModel;
-            if (vm != null)
-            {
-                vm.SubmitCommand.Execute(vm.Answer);
-            }
-        }
     }
 }
