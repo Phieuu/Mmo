@@ -101,6 +101,18 @@
     <LinkDescription Include="LinkerSettings.xml" />
   </ItemGroup>
   <ItemGroup>
+    <AndroidAsset Include="Assets\arrowleftcircle.json" />
+    <AndroidAsset Include="Assets\backarrow.json" />
+    <AndroidAsset Include="Assets\countdown.json" />
+    <AndroidAsset Include="Assets\loading.json" />
+    <AndroidAsset Include="Assets\loser.json" />
+    <AndroidAsset Include="Assets\olympic.json" />
+    <AndroidAsset Include="Assets\retrogameloadinganimation.json" />
+    <AndroidAsset Include="Assets\rocket.json" />
+    <AndroidAsset Include="Assets\speed.json" />
+    <AndroidAsset Include="Assets\victoryplayer.json" />
+    <AndroidAsset Include="Assets\wincrown.json" />
+    <AndroidAsset Include="Assets\winner.json" />
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>

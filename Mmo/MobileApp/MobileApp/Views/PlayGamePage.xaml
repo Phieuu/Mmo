@@ -93,8 +93,8 @@
                 PlaceholderColor="#000"
                 ReturnCommand="{Binding SubmitCommand}"
                 Text="{Binding Answer}"
-                Unfocused="VisualElement_OnUnfocused"
                 TextColor="#000"
+                Unfocused="VisualElement_OnUnfocused"
                 VerticalTextAlignment="Center" />
         </textInputLayout:SfTextInputLayout>
         <Label
@@ -103,6 +103,7 @@
             HorizontalOptions="Center"
             HorizontalTextAlignment="Center"
             Text="{Binding Note}"
+            TextColor="#000"
             VerticalOptions="Center" />
         <forms:AnimationView
             Grid.Row="4"
