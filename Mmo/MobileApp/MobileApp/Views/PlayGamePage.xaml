@@ -1,0 +1,198 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MobileApp.Views.PlayGamePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    ios:Page.UseSafeArea="True"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundImageSource="bg.jpg"
+    NavigationPage.HasNavigationBar="False">
+    <Grid RowDefinitions="60,300,70,Auto,*" RowSpacing="10">
+        <Frame
+            Grid.Row="0"
+            Margin="10,0"
+            Padding="0"
+            BackgroundColor="#E15D16"
+            CornerRadius="30">
+            <Grid
+                Margin="5"
+                BackgroundColor="Transparent"
+                ColumnDefinitions="80,*,100,*,60">
+                <forms:AnimationView
+                    Grid.Column="0"
+                    Animation="arrowleftcircle.json"
+                    AnimationSource="AssetOrBundle"
+                    AutoPlay="True"
+                    BackgroundColor="Transparent"
+                    Command="{Binding GoBackCommand}"
+                    HorizontalOptions="FillAndExpand"
+                    RepeatCount="100000"
+                    RepeatMode="Restart"
+                    VerticalOptions="FillAndExpand" />
+                <forms:AnimationView
+                    Grid.Column="2"
+                    Margin="0"
+                    Animation="wincrown.json"
+                    AnimationSource="AssetOrBundle"
+                    AutoPlay="True"
+                    BackgroundColor="Transparent"
+                    HorizontalOptions="FillAndExpand"
+                    RepeatCount="100000"
+                    RepeatMode="Restart"
+                    Scale="1.5"
+                    VerticalOptions="FillAndExpand" />
+                <Label
+                    Grid.Column="2"
+                    Margin="0,18,0,0"
+                    FontAttributes="Bold"
+                    FontSize="25"
+                    HorizontalOptions="FillAndExpand"
+                    HorizontalTextAlignment="Center"
+                    Text="{Binding Points}"
+                    TextColor="#fff"
+                    VerticalOptions="FillAndExpand"
+                    VerticalTextAlignment="Center" />
+                <Image
+                    Grid.Column="4"
+                    Aspect="AspectFit"
+                    Source="icon.png" />
+            </Grid>
+        </Frame>
+        <Frame
+            Grid.Row="1"
+            Margin="20"
+            BackgroundColor="#fff"
+            BorderColor="#E15D16"
+            CornerRadius="25">
+            <Image
+                Aspect="AspectFit"
+                HorizontalOptions="FillAndExpand"
+                Source="{Binding Image}"
+                VerticalOptions="FillAndExpand" />
+        </Frame>
+        <textInputLayout:SfTextInputLayout
+            Grid.Row="2"
+            Margin="30,5"
+            ContainerBackgroundColor="#fff"
+            ContainerType="Outlined"
+            FocusedColor="#E15D16"
+            FocusedStrokeWidth="2"
+            OutlineCornerRadius="20"
+            UnfocusedColor="#E15D16"
+            UnfocusedStrokeWidth="2">
+            <Entry
+                FontAttributes="Bold"
+                FontSize="18"
+                HorizontalTextAlignment="Center"
+                Keyboard="Text"
+                Placeholder="Nhập câu trả lời"
+                PlaceholderColor="#000"
+                ReturnCommand="{Binding SubmitCommand}"
+                Text="{Binding Answer}"
+                Unfocused="VisualElement_OnUnfocused"
+                TextColor="#000"
+                VerticalTextAlignment="Center" />
+        </textInputLayout:SfTextInputLayout>
+        <Label
+            Grid.Row="3"
+            BackgroundColor="#fff"
+            HorizontalOptions="Center"
+            HorizontalTextAlignment="Center"
+            Text="{Binding Note}"
+            VerticalOptions="Center" />
+        <forms:AnimationView
+            Grid.Row="4"
+            Animation="victoryplayer.json"
+            AnimationSource="AssetOrBundle"
+            AutoPlay="True"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            RepeatCount="100000"
+            RepeatMode="Restart"
+            VerticalOptions="FillAndExpand" />
+        <forms:AnimationView
+            Grid.Row="0"
+            Grid.RowSpan="5"
+            Animation="loading.json"
+            AnimationSource="AssetOrBundle"
+            AutoPlay="True"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="{Binding IsLoading}"
+            RepeatCount="100000"
+            RepeatMode="Restart"
+            VerticalOptions="FillAndExpand" />
+        <forms:AnimationView
+            Grid.Row="0"
+            Grid.RowSpan="5"
+            Margin="20"
+            Animation="loser.json"
+            AnimationSource="AssetOrBundle"
+            AutoPlay="True"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="False"
+            RepeatCount="100000"
+            RepeatMode="Restart"
+            VerticalOptions="FillAndExpand">
+            <forms:AnimationView.Triggers>
+                <DataTrigger
+                    Binding="{Binding Successful}"
+                    TargetType="forms:AnimationView"
+                    Value="0">
+                    <Setter Property="forms:AnimationView.IsVisible" Value="False" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding Successful}"
+                    TargetType="forms:AnimationView"
+                    Value="1">
+                    <Setter Property="forms:AnimationView.IsVisible" Value="True" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding Successful}"
+                    TargetType="forms:AnimationView"
+                    Value="2">
+                    <Setter Property="forms:AnimationView.IsVisible" Value="False" />
+                </DataTrigger>
+            </forms:AnimationView.Triggers>
+        </forms:AnimationView>
+        <forms:AnimationView
+            Grid.Row="0"
+            Grid.RowSpan="5"
+            Margin="20"
+            Animation="winner.json"
+            AnimationSource="AssetOrBundle"
+            AutoPlay="True"
+            BackgroundColor="Transparent"
+            HorizontalOptions="FillAndExpand"
+            IsVisible="False"
+            RepeatCount="100000"
+            RepeatMode="Restart"
+            VerticalOptions="FillAndExpand">
+            <forms:AnimationView.Triggers>
+                <DataTrigger
+                    Binding="{Binding Successful}"
+                    TargetType="forms:AnimationView"
+                    Value="0">
+                    <Setter Property="forms:AnimationView.IsVisible" Value="False" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding Successful}"
+                    TargetType="forms:AnimationView"
+                    Value="1">
+                    <Setter Property="forms:AnimationView.IsVisible" Value="False" />
+                </DataTrigger>
+                <DataTrigger
+                    Binding="{Binding Successful}"
+                    TargetType="forms:AnimationView"
+                    Value="2">
+                    <Setter Property="forms:AnimationView.IsVisible" Value="True" />
+                </DataTrigger>
+            </forms:AnimationView.Triggers>
+        </forms:AnimationView>
+    </Grid>
+</ContentPage>

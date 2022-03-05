@@ -26,6 +26,7 @@ namespace MobileApp.iOS
 
             #region Thư viện ngoài
 
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init();
             new SfBusyIndicatorRenderer();
             SfTextInputLayoutRenderer.Init();
             Syncfusion.XForms.iOS.PopupLayout.SfPopupLayoutRenderer.Init();

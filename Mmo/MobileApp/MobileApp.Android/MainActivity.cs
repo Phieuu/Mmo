@@ -20,6 +20,7 @@ namespace MobileApp.Droid
 
             #region Thư viên ngoài
 
+            FFImageLoading.Forms.Platform.CachedImageRenderer.Init(enableFastRenderer: true);
             Syncfusion.XForms.Android.PopupLayout.SfPopupLayoutRenderer.Init();
 
             #endregion
