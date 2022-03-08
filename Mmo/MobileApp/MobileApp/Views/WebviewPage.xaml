@@ -6,7 +6,8 @@
     xmlns:controls="clr-namespace:MobileApp.Controls;assembly=MobileApp"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
-    prism:ViewModelLocator.AutowireViewModel="True">
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
     <controls:CustomWebViewRenderer
         HorizontalOptions="FillAndExpand"
         Source="{Binding UrlApp}"
