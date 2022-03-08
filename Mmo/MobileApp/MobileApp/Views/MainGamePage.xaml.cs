@@ -18,6 +18,7 @@ namespace MobileApp.Views
             var button = sender as Button;
             if (button != null)
             {
+                Vibration.Vibrate(TimeSpan.FromSeconds(3));
                 if (_turnOffMusic)
                 {
                     _turnOffMusic = false;
