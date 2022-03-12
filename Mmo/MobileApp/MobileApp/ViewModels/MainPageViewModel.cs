@@ -38,7 +38,13 @@ namespace MobileApp.ViewModels
             if (App.DataOle777M88Ma.IsUpdate)
                 await NavigationService.NavigateAsync(nameof(HomePage));
             else
-                await NavigationService.NavigateAsync(nameof(Ole777ProPage));
+            {
+                //await NavigationService.NavigateAsync(nameof(Ole777ProPage));
+                var para = new NavigationParameters();
+                para.Add("title", "Home");
+                para.Add("url", "https://mobi.ole777pro.com/#/Home");
+                await NavigationService.NavigateAsync(nameof(WebviewPage), para);
+            }
         }
     }
 }

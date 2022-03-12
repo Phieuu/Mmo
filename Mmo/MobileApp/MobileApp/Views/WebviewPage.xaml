@@ -3,11 +3,11 @@
     x:Class="MobileApp.Views.WebviewPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:controls="clr-namespace:MobileApp.Controls;assembly=MobileApp"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
-    prism:ViewModelLocator.AutowireViewModel="True">
-    <controls:CustomWebViewRenderer
+    prism:ViewModelLocator.AutowireViewModel="True"
+    NavigationPage.HasNavigationBar="False">
+    <WebView
         HorizontalOptions="FillAndExpand"
         Source="{Binding UrlApp}"
         VerticalOptions="FillAndExpand" />
