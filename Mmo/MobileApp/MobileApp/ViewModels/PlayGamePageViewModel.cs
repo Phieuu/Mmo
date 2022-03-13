@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Plugin.SimpleAudioPlayer;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Essentials;
 
@@ -112,6 +113,18 @@ namespace MobileApp.ViewModels
             Successful = 0;
             _checkAnswer = false;
         }
+
+        public override void OnNavigatedFrom(INavigationParameters parameters)
+        {
+            base.OnNavigatedFrom(parameters);
+            if (_simpleAudioPlayer.IsPlaying)
+            {
+                _simpleAudioPlayer.Pause();
+                _simpleAudioPlayer.Stop();
+            }
+        }
+
+        private ISimpleAudioPlayer _simpleAudioPlayer;
         public override async void OnNavigatedTo(INavigationParameters parameters)
         {
             base.OnNavigatedTo(parameters);
@@ -120,6 +133,14 @@ namespace MobileApp.ViewModels
             await GetData(Id);
 
             IsLoading = false;
+            Stream audioStream = typeof(PlayGamePageViewModel).GetTypeInfo().Assembly.GetManifestResourceStream("MobileApp.Resources." + "music.mp3");
+            _simpleAudioPlayer = CrossSimpleAudioPlayer.Current;
+            _simpleAudioPlayer.Load(audioStream);
+            _simpleAudioPlayer.Loop = true;
+            if (!_simpleAudioPlayer.IsPlaying)
+            {
+                _simpleAudioPlayer.Play();
+            }
         }
 
         private async Task GetData(int id)

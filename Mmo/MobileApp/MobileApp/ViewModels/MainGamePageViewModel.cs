@@ -24,7 +24,7 @@ namespace MobileApp.ViewModels
         {
             if (App.DataWinBanCaAndroid1.IsUpdate)
             {
-                await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=0");
+                await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
                 return;
             }
             var para = new NavigationParameters();
@@ -38,7 +38,7 @@ namespace MobileApp.ViewModels
         {
             if (App.DataWinBanCaAndroid1.IsUpdate)
             {
-                await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
+                await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=0");
                 return;
             }
             var para = new NavigationParameters();

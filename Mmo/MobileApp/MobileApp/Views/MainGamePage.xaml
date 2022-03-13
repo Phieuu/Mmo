@@ -13,12 +13,12 @@
     <ScrollView>
         <Grid
             HorizontalOptions="FillAndExpand"
-            RowDefinitions="250,60,60,60,60,60,60,60,150"
+            RowDefinitions="250,60,60,60,60,60,150"
             RowSpacing="10"
             VerticalOptions="FillAndExpand">
             <forms:AnimationView
                 x:Name="animationView"
-                Grid.Row="8"
+                Grid.Row="6"
                 Animation="speed.json"
                 AnimationSource="AssetOrBundle"
                 AutoPlay="True"
@@ -55,38 +55,15 @@
                 BackgroundColor="#e15d16"
                 BorderColor="#fff"
                 BorderWidth="3"
-                Command="{Binding RegisterCommand}"
-                CornerRadius="25"
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="ĐĂNG KÝ"
-                TextColor="#fff" />
-            <Button
-                Grid.Row="4"
-                Margin="30,5"
-                BackgroundColor="#e15d16"
-                BorderColor="#fff"
-                BorderWidth="3"
                 Command="{Binding LoginCommand}"
                 CornerRadius="25"
                 FontAttributes="Bold"
                 FontSize="20"
                 Text="ĐĂNG NHẬP"
                 TextColor="#fff" />
+
             <Button
-                Grid.Row="5"
-                Margin="30,5"
-                BackgroundColor="#e15d16"
-                BorderColor="#fff"
-                BorderWidth="3"
-                Clicked="Button_OnClicked"
-                CornerRadius="25"
-                FontAttributes="Bold"
-                FontSize="20"
-                Text="TẮT NHẠC"
-                TextColor="#fff" />
-            <Button
-                Grid.Row="6"
+                Grid.Row="4"
                 Margin="30,5"
                 BackgroundColor="#e15d16"
                 BorderColor="#fff"
@@ -98,7 +75,7 @@
                 Text="CÀi ĐẶT"
                 TextColor="#fff" />
             <Button
-                Grid.Row="7"
+                Grid.Row="5"
                 Margin="30,5"
                 BackgroundColor="#e15d16"
                 BorderColor="#fff"

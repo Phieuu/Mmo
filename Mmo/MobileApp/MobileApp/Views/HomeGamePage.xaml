@@ -16,5 +16,6 @@
         HorizontalOptions="FillAndExpand"
         OnFinishedAnimation="AnimationView_OnOnFinishedAnimation"
         RepeatMode="Restart"
+        Speed="1.5"
         VerticalOptions="FillAndExpand" />
 </ContentPage>

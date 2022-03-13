@@ -2,20 +2,22 @@
 using Prism.Navigation;
 using System;
 using System.Threading.Tasks;
+using System.Windows.Input;
+using Xamarin.CommunityToolkit.ObjectModel;
 
 namespace MobileApp.ViewModels
 {
     public class HomeGamePageViewModel : ViewModelBase
     {
+        public ICommand NavigationCommand { get; private set; }
         public HomeGamePageViewModel(INavigationService navigationService) : base(navigationService)
         {
+            NavigationCommand = new AsyncCommand(ExcuteNavigationCommand);
         }
 
-        public override async void OnNavigatedTo(INavigationParameters parameters)
+        private Task ExcuteNavigationCommand()
         {
-            base.OnNavigatedTo(parameters);
-            await Task.Delay(TimeSpan.FromSeconds(10));
-            await NavigationService.NavigateAsync(nameof(MainGamePage));
+            return NavigationService.NavigateAsync(nameof(MainGamePage));
         }
     }
 }
