@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MobileApp.Models;
+using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -6,21 +8,16 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MobileApp.Heplers;
-using MobileApp.Models;
-using Prism.Navigation;
 using Xamarin.CommunityToolkit.ObjectModel;
-using Xamarin.Forms;
+using Xamarin.Essentials;
 
 namespace MobileApp.ViewModels
 {
     public class PlayGamePageViewModel : ViewModelBase
     {
-        private int _points;
         private int _maxLength;
         private string _answer;
         private string _note;
-        private int _id;
         private string _image;
         private bool _isLoading;
         private GameModel _game;
@@ -93,6 +90,7 @@ namespace MobileApp.ViewModels
         private bool _checkAnswer;
         private async Task CheckAnswer(string answer)
         {
+            Vibration.Vibrate(TimeSpan.FromSeconds(2));
             Successful = 0;
             if (string.IsNullOrWhiteSpace(answer) || _game == null) return;
             if (_checkAnswer) return;
@@ -148,6 +146,7 @@ namespace MobileApp.ViewModels
 
         private Task ExcuteGoBackCommand()
         {
+            Vibration.Vibrate(TimeSpan.FromSeconds(2));
             return NavigationService.GoBackAsync();
         }
     }

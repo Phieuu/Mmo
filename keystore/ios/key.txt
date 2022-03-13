@@ -1,1 +1,0 @@
-com.new88.app.global
