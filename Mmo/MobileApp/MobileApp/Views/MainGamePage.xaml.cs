@@ -36,7 +36,7 @@ namespace MobileApp.Views
 
         private void Button_OnClicked1(object sender, EventArgs e)
         {
-            var message = $"Đuổi hình bắt chữ\nVersion: {AppInfo.Version}({AppInfo.BuildString})\n{DateTime.UtcNow.ToString("F")}";
+            var message = $"{AppInfo.Name}\nVersion: {AppInfo.Version}({AppInfo.BuildString})\n{DateTime.UtcNow.ToString("F")}";
             App.Current.MainPage.DisplayAlert("Thông báo", message, "OK");
         }
 

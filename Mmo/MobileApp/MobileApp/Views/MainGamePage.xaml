@@ -10,81 +10,105 @@
     BackgroundImageSource="bg.jpg"
     NavigationPage.HasNavigationBar="False">
 
-    <Grid
-        HorizontalOptions="CenterAndExpand"
-        RowDefinitions="250,60,60,60,60,60,*"
-        RowSpacing="10">
-        <forms:AnimationView
-            x:Name="animationView"
-            Grid.Row="6"
-            Animation="speed.json"
-            AnimationSource="AssetOrBundle"
-            AutoPlay="True"
+    <ScrollView>
+        <Grid
             HorizontalOptions="FillAndExpand"
-            IsAnimating="True"
-            RepeatMode="Reverse"
-            Speed="2"
-            VerticalOptions="FillAndExpand" />
-        <Image
-            Grid.Row="0"
-            xct:ShadowEffect.Color="#E15D16"
-            Source="icon.png" />
-        <Label
-            Grid.Row="1"
-            xct:ShadowEffect.Color="#FFF"
-            FontAttributes="Bold"
-            FontSize="35"
-            HorizontalOptions="CenterAndExpand"
-            Text="ĐUỔI HÌNH BẮT CHỮ"
-            TextColor="#E15D16"
-            VerticalOptions="CenterAndExpand" />
-        <Button
-            Grid.Row="2"
-            Margin="30,5"
-            BackgroundColor="#e15d16"
-            BorderColor="#fff"
-            BorderWidth="3"
-            Command="{Binding PlayGameCommand}"
-            CornerRadius="25"
-            FontAttributes="Bold"
-            FontSize="20"
-            Text="CHƠI NGAY"
-            TextColor="#fff" />
-        <Button
-            Grid.Row="3"
-            Margin="30,5"
-            BackgroundColor="#e15d16"
-            BorderColor="#fff"
-            BorderWidth="3"
-            Clicked="Button_OnClicked"
-            CornerRadius="25"
-            FontAttributes="Bold"
-            FontSize="20"
-            Text="TẮT NHẠC"
-            TextColor="#fff" />
-        <Button
-            Grid.Row="4"
-            Margin="30,5"
-            BackgroundColor="#e15d16"
-            BorderColor="#fff"
-            BorderWidth="3"
-            Clicked="Button_OnClicked2"
-            CornerRadius="25"
-            FontAttributes="Bold"
-            FontSize="20"
-            Text="CÀi ĐẶT"
-            TextColor="#fff" />
-        <Button
-            Grid.Row="5"
-            Margin="30,5"
-            BackgroundColor="#e15d16"
-            BorderColor="#fff"
-            BorderWidth="3"
-            Clicked="Button_OnClicked1"
-            CornerRadius="25"
-            FontAttributes="Bold"
-            FontSize="20"
-            Text="THÔNG TIN ỨNG DỤNG"
-            TextColor="#fff" />
-    </Grid>
+            RowDefinitions="250,60,60,60,60,60,60,60,150"
+            RowSpacing="10"
+            VerticalOptions="FillAndExpand">
+            <forms:AnimationView
+                x:Name="animationView"
+                Grid.Row="8"
+                Animation="speed.json"
+                AnimationSource="AssetOrBundle"
+                AutoPlay="True"
+                HorizontalOptions="FillAndExpand"
+                RepeatCount="1000"
+                RepeatMode="Reverse"
+                Speed="2"
+                VerticalOptions="FillAndExpand" />
+            <Image Grid.Row="0" Source="icon.png" />
+            <Label
+                Grid.Row="1"
+                xct:ShadowEffect.Color="#FFF"
+                FontAttributes="Bold"
+                FontSize="35"
+                HorizontalOptions="CenterAndExpand"
+                Text="{Binding Title}"
+                TextColor="#E15D16"
+                VerticalOptions="CenterAndExpand" />
+            <Button
+                Grid.Row="2"
+                Margin="30,5"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Command="{Binding PlayGameCommand}"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="CHƠI NGAY"
+                TextColor="#fff" />
+            <Button
+                Grid.Row="3"
+                Margin="30,5"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Command="{Binding RegisterCommand}"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="ĐĂNG KÝ"
+                TextColor="#fff" />
+            <Button
+                Grid.Row="4"
+                Margin="30,5"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Command="{Binding LoginCommand}"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="ĐĂNG NHẬP"
+                TextColor="#fff" />
+            <Button
+                Grid.Row="5"
+                Margin="30,5"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Clicked="Button_OnClicked"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="TẮT NHẠC"
+                TextColor="#fff" />
+            <Button
+                Grid.Row="6"
+                Margin="30,5"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Clicked="Button_OnClicked2"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="CÀi ĐẶT"
+                TextColor="#fff" />
+            <Button
+                Grid.Row="7"
+                Margin="30,5"
+                BackgroundColor="#e15d16"
+                BorderColor="#fff"
+                BorderWidth="3"
+                Clicked="Button_OnClicked1"
+                CornerRadius="25"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="THÔNG TIN ỨNG DỤNG"
+                TextColor="#fff" />
+        </Grid>
+    </ScrollView>
 </ContentPage>

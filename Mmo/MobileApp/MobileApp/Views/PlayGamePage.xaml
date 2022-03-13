@@ -30,7 +30,7 @@
                     BackgroundColor="Transparent"
                     Command="{Binding GoBackCommand}"
                     HorizontalOptions="FillAndExpand"
-                    IsAnimating="True"
+                    RepeatCount="1000"
                     RepeatMode="Reverse"
                     VerticalOptions="FillAndExpand" />
                 <forms:AnimationView
@@ -41,7 +41,7 @@
                     AutoPlay="True"
                     BackgroundColor="Transparent"
                     HorizontalOptions="FillAndExpand"
-                    IsAnimating="True"
+                    RepeatCount="1000"
                     RepeatMode="Reverse"
                     Scale="1.5"
                     VerticalOptions="FillAndExpand" />
@@ -126,7 +126,7 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
-            IsAnimating="True"
+            RepeatCount="1000"
             RepeatMode="Reverse"
             VerticalOptions="FillAndExpand" />
         <forms:AnimationView
@@ -137,8 +137,8 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
-            IsAnimating="True"
             IsVisible="{Binding IsLoading}"
+            RepeatCount="1000"
             RepeatMode="Reverse"
             VerticalOptions="FillAndExpand" />
         <forms:AnimationView
@@ -150,8 +150,8 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
-            IsAnimating="True"
             IsVisible="False"
+            RepeatCount="1000"
             RepeatMode="Reverse"
             VerticalOptions="FillAndExpand">
             <forms:AnimationView.Triggers>
@@ -184,8 +184,8 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
-            IsAnimating="True"
             IsVisible="False"
+            RepeatCount="1000"
             RepeatMode="Reverse"
             VerticalOptions="FillAndExpand">
             <forms:AnimationView.Triggers>

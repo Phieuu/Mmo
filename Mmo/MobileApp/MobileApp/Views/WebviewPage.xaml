@@ -5,8 +5,10 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="http://prismlibrary.com"
     Title="{Binding Title}"
-    prism:ViewModelLocator.AutowireViewModel="True">
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundImageSource="bg.jpg">
     <WebView
+        BackgroundColor="Transparent"
         HorizontalOptions="FillAndExpand"
         Source="{Binding UrlApp}"
         VerticalOptions="FillAndExpand" />
