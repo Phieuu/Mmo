@@ -21,8 +21,8 @@
             AnimationSource="AssetOrBundle"
             AutoPlay="True"
             HorizontalOptions="FillAndExpand"
-            RepeatCount="100000"
-            RepeatMode="Restart"
+            IsAnimating="True"
+            RepeatMode="Reverse"
             Speed="2"
             VerticalOptions="FillAndExpand" />
         <Image

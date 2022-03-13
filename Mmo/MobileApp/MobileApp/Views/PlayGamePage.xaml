@@ -30,8 +30,8 @@
                     BackgroundColor="Transparent"
                     Command="{Binding GoBackCommand}"
                     HorizontalOptions="FillAndExpand"
-                    RepeatCount="100000"
-                    RepeatMode="Restart"
+                    IsAnimating="True"
+                    RepeatMode="Reverse"
                     VerticalOptions="FillAndExpand" />
                 <forms:AnimationView
                     Grid.Column="2"
@@ -41,8 +41,8 @@
                     AutoPlay="True"
                     BackgroundColor="Transparent"
                     HorizontalOptions="FillAndExpand"
-                    RepeatCount="100000"
-                    RepeatMode="Restart"
+                    IsAnimating="True"
+                    RepeatMode="Reverse"
                     Scale="1.5"
                     VerticalOptions="FillAndExpand" />
                 <Label
@@ -126,8 +126,8 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
-            RepeatCount="100000"
-            RepeatMode="Restart"
+            IsAnimating="True"
+            RepeatMode="Reverse"
             VerticalOptions="FillAndExpand" />
         <forms:AnimationView
             Grid.Row="0"
@@ -137,9 +137,9 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
+            IsAnimating="True"
             IsVisible="{Binding IsLoading}"
-            RepeatCount="100000"
-            RepeatMode="Restart"
+            RepeatMode="Reverse"
             VerticalOptions="FillAndExpand" />
         <forms:AnimationView
             Grid.Row="0"
@@ -150,9 +150,9 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
+            IsAnimating="True"
             IsVisible="False"
-            RepeatCount="100000"
-            RepeatMode="Restart"
+            RepeatMode="Reverse"
             VerticalOptions="FillAndExpand">
             <forms:AnimationView.Triggers>
                 <DataTrigger
@@ -184,9 +184,9 @@
             AutoPlay="True"
             BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
+            IsAnimating="True"
             IsVisible="False"
-            RepeatCount="100000"
-            RepeatMode="Restart"
+            RepeatMode="Reverse"
             VerticalOptions="FillAndExpand">
             <forms:AnimationView.Triggers>
                 <DataTrigger

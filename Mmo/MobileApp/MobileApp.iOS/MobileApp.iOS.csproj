@@ -120,6 +120,9 @@
     <BundleResource Include="Resources\winner.json" />
   </ItemGroup>
   <ItemGroup>
+    <ImageAsset Include="AppIcon.xcassets\AppIcon.appiconset\1024.png">
+      <Visible>false</Visible>
+    </ImageAsset>
     <ImageAsset Include="AppIcon.xcassets\AppIcon.appiconset\120.png">
       <Visible>false</Visible>
     </ImageAsset>
@@ -169,9 +172,6 @@
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="AppIcon.xcassets\AppIcon.appiconset\87.png">
-      <Visible>false</Visible>
-    </ImageAsset>
-    <ImageAsset Include="AppIcon.xcassets\AppIcon.appiconset\appstore.png">
       <Visible>false</Visible>
     </ImageAsset>
     <ImageAsset Include="AppIcon.xcassets\AppIcon.appiconset\Contents.json">

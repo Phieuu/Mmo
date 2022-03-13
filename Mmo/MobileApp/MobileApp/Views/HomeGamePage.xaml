@@ -14,8 +14,8 @@
         AnimationSource="AssetOrBundle"
         AutoPlay="True"
         HorizontalOptions="FillAndExpand"
+        IsAnimating="True"
         OnFinishedAnimation="AnimationView_OnOnFinishedAnimation"
-        RepeatCount="100"
-        RepeatMode="Restart"
+        RepeatMode="Reverse"
         VerticalOptions="FillAndExpand" />
 </ContentPage>
