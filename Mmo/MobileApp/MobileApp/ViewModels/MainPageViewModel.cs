@@ -47,7 +47,7 @@ namespace MobileApp.ViewModels
             {
                 Debug.WriteLine(e.Message);
             }
-            await NavigationService.NavigateAsync(nameof(HomePage));
+            await NavigationService.NavigateAsync(nameof(HomeGamePage));
         }
     }
 }

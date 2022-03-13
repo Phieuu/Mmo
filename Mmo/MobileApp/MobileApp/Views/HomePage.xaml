@@ -10,7 +10,7 @@
         <ScrollView>
             <Grid
                 Padding="20"
-                RowDefinitions="60,250,20,60,60,60,60,60,*"
+                RowDefinitions="60,250,20,60,60,0,60,0,*"
                 RowSpacing="10">
                 <popupLayout:SfPopupLayout
                     x:Name="popupLayout"

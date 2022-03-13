@@ -70,6 +70,9 @@ namespace MobileApp
             containerRegistry.Register<IRestSharpService, RestSharpService>();
             containerRegistry.Register<ITelegramService, TelegramService>();
             containerRegistry.RegisterForNavigation<WebviewPage, WebviewPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomeGamePage, HomeGamePageViewModel>();
+            containerRegistry.RegisterForNavigation<MainGamePage, MainGamePageViewModel>();
+            containerRegistry.RegisterForNavigation<PlayGamePage, PlayGamePageViewModel>();
         }
     }
 }

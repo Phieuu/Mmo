@@ -5,12 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="NewFolder\**" />
-    <EmbeddedResource Remove="NewFolder\**" />
-    <None Remove="NewFolder\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="FakeModules\Resources\icon_f_booking.png" />
     <None Remove="FakeModules\Resources\icon_f_car1.png" />
     <None Remove="FakeModules\Resources\icon_f_car2.png" />
@@ -33,6 +27,7 @@
     <None Remove="Resources\Fonts\Montserrat-Regular.ttf" />
     <None Remove="Resources\Fonts\Montserrat-SemiBold.ttf" />
     <None Remove="Resources\Fonts\UIFontIcons.ttf" />
+    <None Remove="Resources\mydata.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -58,6 +53,7 @@
     <EmbeddedResource Include="Resources\Fonts\Montserrat-Regular.ttf" />
     <EmbeddedResource Include="Resources\Fonts\Montserrat-SemiBold.ttf" />
     <EmbeddedResource Include="Resources\Fonts\UIFontIcons.ttf" />
+    <EmbeddedResource Include="Resources\mydata.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -69,6 +65,7 @@
     <PackageReference Include="Syncfusion.Xamarin.SfBusyIndicator" Version="19.4.0.55" />
     <PackageReference Include="Syncfusion.Xamarin.SfPopupLayout" Version="19.4.0.55" />
     <PackageReference Include="Xamarin.CommunityToolkit" Version="2.0.0" />
+    <PackageReference Include="Xamarin.FFImageLoading.Forms" Version="2.4.11.982" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.2337" />
     <PackageReference Include="Xamarin.Essentials.Interfaces" Version="1.7.1" />
     <PackageReference Include="Prism.DryIoc.Forms" Version="8.1.97" />
@@ -78,6 +75,9 @@
     <EmbeddedResource Update="Controls\LoadingView.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\HomeGamePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\HomePage.xaml">
       <Generator>MSBuild:Compile</Generator>
     </EmbeddedResource>
@@ -86,6 +86,12 @@
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginView.xaml">
       <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainGamePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\PlayGamePage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\SigupView.xaml">
       <Generator>MSBuild:Compile</Generator>
