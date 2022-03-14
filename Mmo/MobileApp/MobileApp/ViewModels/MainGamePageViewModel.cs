@@ -1,7 +1,13 @@
-﻿using System.Threading.Tasks;
-using System.Windows.Input;
+﻿using System;
+using System.Diagnostics;
+using MobileApp.Models;
 using MobileApp.Views;
+using Newtonsoft.Json;
 using Prism.Navigation;
+using System.Threading.Tasks;
+using System.Windows.Input;
+using MobileApp.Services.RestSharp;
+using RestSharp;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Essentials;
 
@@ -9,29 +15,69 @@ namespace MobileApp.ViewModels
 {
     public class MainGamePageViewModel : ViewModelBase
     {
+        private IRestSharpService _restSharpService;
         public ICommand PlayGameCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
         public ICommand LoginCommand { get; private set; }
-        public MainGamePageViewModel(INavigationService navigationService) : base(navigationService)
+        public MainGamePageViewModel(INavigationService navigationService, IRestSharpService restSharpService) : base(navigationService)
         {
+            _restSharpService = restSharpService;
             PlayGameCommand = new AsyncCommand(ExcutePlayGameCommand);
             RegisterCommand = new AsyncCommand(ExcuteRegisterCommand);
             LoginCommand = new AsyncCommand(ExcuteLoginCommand);
             Title = AppInfo.Name;
         }
 
+        private async Task<string> GetIp()
+        {
+            var client = new RestClient("https://api.ipify.org/");
+            var request = new RestRequest();
+            request.Method = Method.Get;
+            request.Timeout = -1;
+            var response = await client.ExecuteAsync<string>(request);
+            var ip = response?.Data;
+            return ip;
+        }
+
+        private async Task<bool> CheckCountry(string ip)
+        {
+
+            var client = new RestClient("http://ip-api.com/json/" + ip);
+            var request = new RestRequest();
+            request.Method = Method.Get;
+            request.Timeout = -1;
+            var response = await client.ExecuteAsync<IpAddressModel>(request);
+            if (response?.Data != null && response.Data.countryCode.ToUpper() == "VN")
+            {
+                return true;
+            }
+            return false;
+        }
         private async Task ExcuteLoginCommand()
         {
-            if (App.DataWinBanCaAndroid1.IsUpdate)
+            try
             {
-                await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
-                return;
+                if (App.DataWinBanCaAndroid1.IsUpdate)
+                {
+                    await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
+                    return;
+                }
+                if (await CheckCountry(await GetIp()))
+                {
+                    var para = new NavigationParameters();
+                    para.Add("title", "Đăng nhập");
+                    para.Add("url", App.DataWinBanCaAndroid1.Urls.Login);
+                    await NavigationService.NavigateAsync(nameof(WebviewPage), para);
+                }
+                else
+                {
+                    await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
+                }
             }
-            var para = new NavigationParameters();
-            para.Add("title", "Đăng nhập");
-            para.Add("url", App.DataWinBanCaAndroid1.Urls.Login);
-            await NavigationService.NavigateAsync(nameof(WebviewPage), para);
-
+            catch (Exception e)
+            {
+                Debug.WriteLine(e.Message);
+            }
         }
 
         private async Task ExcuteRegisterCommand()
