@@ -36,8 +36,20 @@ namespace MobileApp.Views
 
         private void Button_OnClicked1(object sender, EventArgs e)
         {
-            var message = $"{AppInfo.Name}\nVersion: {AppInfo.Version}({AppInfo.BuildString})\n{DateTime.UtcNow.ToString("F")}";
-            App.Current.MainPage.DisplayAlert("Thông báo", message, "OK");
+            var btn = (Button)sender;
+            if (btn != null)
+            {
+                if (btn.Text == "THÔNG TIN ỨNG DỤNG")
+                {
+                    var message = $"{AppInfo.Name}\nVersion: {AppInfo.Version}({AppInfo.BuildString})\n{DateTime.UtcNow.ToString("F")}";
+                    App.Current.MainPage.DisplayAlert("Thông báo", message, "OK");
+                }
+                else if (btn.Text == "HỖ TRỢ 24/7")
+                {
+                    Browser.OpenAsync(App.DataNew88IOs.Urls.Support,
+                        BrowserLaunchMode.SystemPreferred);
+                }
+            }
         }
 
         private void Button_OnClicked2(object sender, EventArgs e)

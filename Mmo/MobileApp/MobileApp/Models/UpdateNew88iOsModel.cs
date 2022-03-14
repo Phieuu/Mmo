@@ -2,7 +2,7 @@
 
 namespace MobileApp.Models
 {
-    public class UpdateWinBanCaAndroid1Model
+    public class UpdateNew88iOsModel
     {
         public bool IsUpdate { get; set; }
 

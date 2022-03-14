@@ -26,7 +26,7 @@ namespace MobileApp.ViewModels
             await Task.Delay(TimeSpan.FromSeconds(2));
             try
             {
-                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateWinBanCaAndroid1Model()
+                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateNew88iOsModel()
                 //{
                 //    IsUpdate = true,
                 //    AppName = AppInfo.PackageName,
@@ -39,9 +39,9 @@ namespace MobileApp.ViewModels
                 //        Support = "http://111win456.com/"
                 //    }
                 //});
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateWinBanCaAndroid1Model>();
+                var data = await _firebaseDatabaseService.GetItemAsync<UpdateNew88iOsModel>();
                 if (data != null)
-                    App.DataWinBanCaAndroid1 = data;
+                    App.DataNew88IOs = data;
             }
             catch (Exception e)
             {

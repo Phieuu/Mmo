@@ -26,15 +26,15 @@
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
 	<key>CFBundleDisplayName</key>
-	<string>NEW88</string>
+	<string>NEW88 ON THE WORD</string>
 	<key>CFBundleName</key>
 	<string>MobileApp</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.new56789.global</string>
+	<string>com.new88ontheword.newapp</string>
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.3.6</string>
+	<string>1.0</string>
 	<key>UIMainStoryboardFile</key>
 	<string>LaunchScreen</string>
 </dict>

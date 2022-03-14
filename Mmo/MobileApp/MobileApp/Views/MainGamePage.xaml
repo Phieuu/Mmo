@@ -59,7 +59,7 @@
                 CornerRadius="25"
                 FontAttributes="Bold"
                 FontSize="20"
-                Text="ĐĂNG NHẬP"
+                Text="{Binding StrLogin}"
                 TextColor="#fff" />
 
             <Button
@@ -84,7 +84,7 @@
                 CornerRadius="25"
                 FontAttributes="Bold"
                 FontSize="20"
-                Text="THÔNG TIN ỨNG DỤNG"
+                Text="{Binding StrHoTro}"
                 TextColor="#fff" />
         </Grid>
     </ScrollView>

@@ -81,7 +81,7 @@ namespace MobileApp.ViewModels
         {
             try
             {
-                if (App.DataWinBanCaAndroid1.IsUpdate)
+                if (App.DataNew88IOs.IsUpdate)
                 {
                     switch (key)
                     {
@@ -116,32 +116,32 @@ namespace MobileApp.ViewModels
                         case "0":
 
                             para.Add("title", "Đăng ký");
-                            para.Add("url", App.DataWinBanCaAndroid1.Urls.Register);
+                            para.Add("url", App.DataNew88IOs.Urls.Register);
                             NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "1":
 
                             para.Add("title", "Đăng nhập");
-                            para.Add("url", App.DataWinBanCaAndroid1.Urls.Login);
+                            para.Add("url", App.DataNew88IOs.Urls.Login);
                             NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "2":
                             para.Add("title", "Khuyến mãi");
-                            para.Add("url", App.DataWinBanCaAndroid1.Urls.Promotion);
+                            para.Add("url", App.DataNew88IOs.Urls.Promotion);
                             NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "3":
                             para.Add("title", "Liên hệ CSKH");
-                            para.Add("url", App.DataWinBanCaAndroid1.Urls.Support);
+                            para.Add("url", App.DataNew88IOs.Urls.Support);
                             NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 
                         case "4":
                             para.Add("title", "Đối tác đại lý");
-                            para.Add("url", App.DataWinBanCaAndroid1.Urls.Afiliate);
+                            para.Add("url", App.DataNew88IOs.Urls.Afiliate);
                             NavigationService.NavigateAsync(nameof(WebviewPage), para);
                             break;
 

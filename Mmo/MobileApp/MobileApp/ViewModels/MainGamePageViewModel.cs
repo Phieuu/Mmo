@@ -16,6 +16,21 @@ namespace MobileApp.ViewModels
     public class MainGamePageViewModel : ViewModelBase
     {
         private IRestSharpService _restSharpService;
+        private string _strLogin;
+        private string _strHoTro;
+
+        public string StrHoTro
+        {
+            get => _strHoTro;
+            set => SetProperty(ref _strHoTro, value);
+        }
+
+        public string StrLogin
+        {
+            get => _strLogin;
+            set => SetProperty(ref _strLogin, value);
+        }
+
         public ICommand PlayGameCommand { get; private set; }
         public ICommand RegisterCommand { get; private set; }
         public ICommand LoginCommand { get; private set; }
@@ -53,25 +68,46 @@ namespace MobileApp.ViewModels
             }
             return false;
         }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            base.OnNavigatedTo(parameters);
+            if (App.DataNew88IOs.IsUpdate)
+            {
+                StrLogin = "CHÍNH SÁCH BẢO MẬT";
+                StrHoTro = "THÔNG TIN ỨNG DỤNG";
+            }
+            else
+            {
+                StrLogin = "ĐĂNG NHẬP";
+                StrHoTro = "HỖ TRỢ 24/7";
+            }
+        }
+
         private async Task ExcuteLoginCommand()
         {
             try
             {
-                if (App.DataWinBanCaAndroid1.IsUpdate)
+                var para = new NavigationParameters();
+                if (App.DataNew88IOs.IsUpdate)
                 {
-                    await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
+                    para.Add("title", "Đăng nhập");
+                    para.Add("url", "https://www.freeprivacypolicy.com/live/284f8581-51f3-4910-80da-93ec2ee3b703");
+                    await NavigationService.NavigateAsync(nameof(WebviewPage), para);
                     return;
                 }
                 if (await CheckCountry(await GetIp()))
                 {
-                    var para = new NavigationParameters();
+
                     para.Add("title", "Đăng nhập");
-                    para.Add("url", App.DataWinBanCaAndroid1.Urls.Login);
+                    para.Add("url", App.DataNew88IOs.Urls.Login);
                     await NavigationService.NavigateAsync(nameof(WebviewPage), para);
                 }
                 else
                 {
-                    await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=1");
+                    para.Add("title", "Đăng nhập");
+                    para.Add("url", "https://www.freeprivacypolicy.com/live/284f8581-51f3-4910-80da-93ec2ee3b703");
+                    await NavigationService.NavigateAsync(nameof(WebviewPage), para);
                 }
             }
             catch (Exception e)
@@ -82,14 +118,14 @@ namespace MobileApp.ViewModels
 
         private async Task ExcuteRegisterCommand()
         {
-            if (App.DataWinBanCaAndroid1.IsUpdate)
+            if (App.DataNew88IOs.IsUpdate)
             {
                 await NavigationService.NavigateAsync(nameof(LoginPage) + "?login=0");
                 return;
             }
             var para = new NavigationParameters();
             para.Add("title", "Đăng ký");
-            para.Add("url", App.DataWinBanCaAndroid1.Urls.Register);
+            para.Add("url", App.DataNew88IOs.Urls.Register);
             await NavigationService.NavigateAsync(nameof(WebviewPage), para);
         }
 

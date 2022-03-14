@@ -32,7 +32,7 @@ namespace MobileApp
 {
     public partial class App
     {
-        public static UpdateWinBanCaAndroid1Model DataWinBanCaAndroid1 = new UpdateWinBanCaAndroid1Model();
+        public static UpdateNew88iOsModel DataNew88IOs = new UpdateNew88iOsModel();
         public App(IPlatformInitializer initializer)
             : base(initializer)
         {

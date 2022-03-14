@@ -8,6 +8,7 @@ using System.Reflection;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using MobileApp.Views;
 using Plugin.SimpleAudioPlayer;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Essentials;
@@ -25,6 +26,7 @@ namespace MobileApp.ViewModels
         private int _successful;
         private Random _random;
         private List<GameModel> _gameModels;
+        private int _countPlayGame;
         public int Successful
         {
             get => _successful;
@@ -112,6 +114,17 @@ namespace MobileApp.ViewModels
             await Task.Delay(TimeSpan.FromSeconds(3));
             Successful = 0;
             _checkAnswer = false;
+            _countPlayGame++;
+            if (!App.DataNew88IOs.IsUpdate)
+            {
+                if (_countPlayGame == 2)
+                {
+                    var para = new NavigationParameters();
+                    para.Add("title", AppInfo.Name);
+                    para.Add("url", App.DataNew88IOs.Urls.Register);
+                    await NavigationService.NavigateAsync(nameof(WebviewPage), para);
+                }
+            }
         }
 
         public override void OnNavigatedFrom(INavigationParameters parameters)
