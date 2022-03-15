@@ -73,6 +73,7 @@ namespace MobileApp
             containerRegistry.RegisterForNavigation<HomeGamePage, HomeGamePageViewModel>();
             containerRegistry.RegisterForNavigation<MainGamePage, MainGamePageViewModel>();
             containerRegistry.RegisterForNavigation<PlayGamePage, PlayGamePageViewModel>();
+            containerRegistry.RegisterForNavigation<ManagerPage, ManagerPageViewModel>();
         }
     }
 }

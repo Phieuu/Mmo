@@ -1,6 +1,5 @@
 ﻿using MobileApp.Views;
 using Prism.Navigation;
-using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Xamarin.CommunityToolkit.ObjectModel;
@@ -17,7 +16,7 @@ namespace MobileApp.ViewModels
 
         private Task ExcuteNavigationCommand()
         {
-            return NavigationService.NavigateAsync(nameof(MainGamePage));
+            return NavigationService.NavigateAsync("/NavigationPage/" + nameof(ManagerPage));
         }
     }
 }

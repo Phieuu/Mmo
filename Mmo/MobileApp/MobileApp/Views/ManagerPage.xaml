@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MobileApp.Views.ManagerPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
+    Title="Manager Applications"
+    prism:ViewModelLocator.AutowireViewModel="True"
+    BackgroundColor="#fff">
+    <ScrollView>
+        <StackLayout
+            BackgroundColor="{StaticResource AppBackgroud}"
+            HorizontalOptions="FillAndExpand"
+            Orientation="Vertical"
+            VerticalOptions="FillAndExpand">
+            <Label
+                FontSize="18"
+                HorizontalOptions="CenterAndExpand"
+                Text="Bật / tắt link ứng dụng" />
+            <Switch
+                x:Name="Switch"
+                HorizontalOptions="CenterAndExpand"
+                IsToggled="{Binding WinBanCa.IsUpdate}" />
+            <Label HorizontalOptions="CenterAndExpand">
+                <Label.Triggers>
+                    <DataTrigger
+                        Binding="{Binding WinBanCa.IsUpdate}"
+                        TargetType="Label"
+                        Value="True">
+                        <Setter Property="Label.Text" Value="Đang tắt link" />
+                        <Setter Property="Label.TextColor" Value="Red" />
+                    </DataTrigger>
+                    <DataTrigger
+                        Binding="{Binding WinBanCa.IsUpdate}"
+                        TargetType="Label"
+                        Value="False">
+                        <Setter Property="Label.Text" Value="Đang bật link" />
+                        <Setter Property="Label.TextColor" Value="Green" />
+                    </DataTrigger>
+                </Label.Triggers>
+            </Label>
+
+            <textInputLayout:SfTextInputLayout
+                Margin="20,0"
+                ContainerType="Outlined"
+                FocusedColor="#fff"
+                Hint="Url Login"
+                OutlineCornerRadius="8"
+                UnfocusedColor="#fff">
+                <textInputLayout:SfTextInputLayout.Triggers>
+                    <DataTrigger
+                        Binding="{Binding WinBanCa.IsUpdate}"
+                        TargetType="textInputLayout:SfTextInputLayout"
+                        Value="True">
+                        <Setter Property="StackLayout.IsVisible" Value="False" />
+                    </DataTrigger>
+                    <DataTrigger
+                        Binding="{Binding WinBanCa.IsUpdate}"
+                        TargetType="textInputLayout:SfTextInputLayout"
+                        Value="False">
+                        <Setter Property="StackLayout.IsVisible" Value="True" />
+                    </DataTrigger>
+                </textInputLayout:SfTextInputLayout.Triggers>
+                <Entry
+                    BackgroundColor="Transparent"
+                    FontSize="16"
+                    Keyboard="Plain"
+                    ReturnCommand="{Binding FunctionExecuteCommand}"
+                    ReturnCommandParameter="0"
+                    ReturnType="Done"
+                    Text="{Binding WinBanCa.Urls.Login}"
+                    TextColor="#fff" />
+            </textInputLayout:SfTextInputLayout>
+            <Button
+                Margin="20,0"
+                BackgroundColor="#000"
+                Command="{Binding UpdateDataCommand}"
+                Text="Cập nhật"
+                TextColor="#fff" />
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Diagnostics;
-using MobileApp.Models;
+﻿using MobileApp.Models;
+using MobileApp.Services.RestSharp;
 using MobileApp.Views;
-using Newtonsoft.Json;
 using Prism.Navigation;
+using RestSharp;
+using System;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using MobileApp.Services.RestSharp;
-using RestSharp;
 using Xamarin.CommunityToolkit.ObjectModel;
 using Xamarin.Essentials;
 
