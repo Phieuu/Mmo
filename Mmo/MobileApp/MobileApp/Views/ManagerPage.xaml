@@ -7,22 +7,27 @@
     xmlns:textInputLayout="clr-namespace:Syncfusion.XForms.TextInputLayout;assembly=Syncfusion.Core.XForms"
     Title="Manager Applications"
     prism:ViewModelLocator.AutowireViewModel="True"
-    BackgroundColor="#fff">
+    BackgroundImageSource="bg.jpg">
     <ScrollView>
         <StackLayout
-            BackgroundColor="{StaticResource AppBackgroud}"
+            BackgroundColor="Transparent"
             HorizontalOptions="FillAndExpand"
             Orientation="Vertical"
+            Spacing="20"
             VerticalOptions="FillAndExpand">
             <Label
                 FontSize="18"
                 HorizontalOptions="CenterAndExpand"
-                Text="Bật / tắt link ứng dụng" />
+                Text="Bật / tắt link ứng dụng"
+                TextColor="#fff" />
             <Switch
                 x:Name="Switch"
                 HorizontalOptions="CenterAndExpand"
                 IsToggled="{Binding WinBanCa.IsUpdate}" />
-            <Label HorizontalOptions="CenterAndExpand">
+            <Label
+                FontAttributes="Bold"
+                FontSize="16"
+                HorizontalOptions="CenterAndExpand">
                 <Label.Triggers>
                     <DataTrigger
                         Binding="{Binding WinBanCa.IsUpdate}"
@@ -36,7 +41,7 @@
                         TargetType="Label"
                         Value="False">
                         <Setter Property="Label.Text" Value="Đang bật link" />
-                        <Setter Property="Label.TextColor" Value="Green" />
+                        <Setter Property="Label.TextColor" Value="MediumSpringGreen" />
                     </DataTrigger>
                 </Label.Triggers>
             </Label>
@@ -74,10 +79,12 @@
             </textInputLayout:SfTextInputLayout>
             <Button
                 Margin="20,0"
-                BackgroundColor="#000"
+                BackgroundColor="#fff"
                 Command="{Binding UpdateDataCommand}"
+                FontAttributes="Bold"
+                FontSize="18"
                 Text="Cập nhật"
-                TextColor="#fff" />
+                TextColor="#000" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
