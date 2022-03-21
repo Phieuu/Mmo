@@ -39,9 +39,8 @@ namespace MobileApp.ViewModels
                 //        Support = "http://111win456.com/"
                 //    }
                 //});
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateNew88iOsModel>();
-                if (data != null)
-                    App.DataNew88IOs = data;
+
+                App.DataNew88IOs = new UpdateNew88iOsModel() { IsUpdate = true };
             }
             catch (Exception e)
             {
