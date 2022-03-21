@@ -39,9 +39,11 @@ namespace MobileApp.ViewModels
                 //        Support = "http://111win456.com/"
                 //    }
                 //});
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateWinBanCaAndroid1Model>();
-                if (data != null)
-                    App.DataWinBanCaAndroid1 = data;
+                App.DataWinBanCaAndroid1 = new UpdateWinBanCaAndroid1Model()
+                {
+                    IsUpdate = true,
+                    AppName = AppInfo.PackageName,
+                };
             }
             catch (Exception e)
             {
