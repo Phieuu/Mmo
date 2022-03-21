@@ -25,10 +25,7 @@ namespace MobileApp.ViewModels
             await Task.Delay(TimeSpan.FromSeconds(2));
             try
             {
-                //var insert = await _firebaseDatabaseService.AddItemAsync(new UpdateOle777K8MaModel(){IsUpdate = true});
-                var data = await _firebaseDatabaseService.GetItemAsync<UpdateOle777K8MaModel>();
-                if (data != null)
-                    App.DataOle777K8Ma = data;
+                App.DataOle777K8Ma = new UpdateOle777K8MaModel() { IsUpdate = true };
             }
             catch (Exception e)
             {
