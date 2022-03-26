@@ -29,19 +29,19 @@ public static class MenuHelper
         {
             if (DateTimeOffset.Now.TimeOfDay > dateTimeCheckOut.TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckOut.AddMinutes(15).TimeOfDay)
             {
+                Console.Clear();
                 Console.WriteLine($"[{DateTime.Now}] Check out");
                 await CheckInHelper.CheckInOut(userName, password);
-                await Task.Delay(TimeSpan.FromHours(14));
             }
             else if (DateTimeOffset.Now.TimeOfDay > dateTimeCheckIn.AddMinutes(-15).TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckIn.TimeOfDay)
             {
+                Console.Clear();
                 Console.WriteLine($"[{DateTime.Now}] Check in");
                 await CheckInHelper.CheckInOut(userName, password);
-                await Task.Delay(TimeSpan.FromHours(9));
             }
             else
             {
-                await Task.Delay(TimeSpan.FromMinutes(5));
+                await Task.Delay(TimeSpan.FromMinutes(2));
                 Console.WriteLine($"[{DateTime.Now}] Running ...");
             }
         }
