@@ -10,6 +10,8 @@ public static class MenuHelper
         string password;
         DateTimeOffset dateTimeCheckIn;
         DateTimeOffset dateTimeCheckOut;
+        bool isDateTimeCheckIn = false;
+        bool isDateTimeCheckOut = false;
 
         Console.OutputEncoding = Encoding.UTF8;
         Console.WriteLine($"[{DateTime.Now}] Chào mừng đến công cụ hỗ trợ điểm danh");
@@ -27,14 +29,18 @@ public static class MenuHelper
 
         while (true)
         {
-            if (DateTimeOffset.Now.TimeOfDay > dateTimeCheckOut.TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckOut.AddMinutes(15).TimeOfDay)
+            if (!isDateTimeCheckOut && DateTimeOffset.Now.TimeOfDay > dateTimeCheckOut.TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckOut.AddMinutes(15).TimeOfDay)
             {
+                isDateTimeCheckOut = true;
+                isDateTimeCheckIn = false;
                 Console.Clear();
                 Console.WriteLine($"[{DateTime.Now}] Check out");
                 await CheckInHelper.CheckInOut(userName, password);
             }
-            else if (DateTimeOffset.Now.TimeOfDay > dateTimeCheckIn.AddMinutes(-15).TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckIn.TimeOfDay)
+            else if (!isDateTimeCheckIn && DateTimeOffset.Now.TimeOfDay > dateTimeCheckIn.AddMinutes(-15).TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckIn.TimeOfDay)
             {
+                isDateTimeCheckIn = true;
+                isDateTimeCheckOut = false;
                 Console.Clear();
                 Console.WriteLine($"[{DateTime.Now}] Check in");
                 await CheckInHelper.CheckInOut(userName, password);
