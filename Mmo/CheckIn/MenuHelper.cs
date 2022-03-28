@@ -29,26 +29,34 @@ public static class MenuHelper
 
         while (true)
         {
-            if (!isDateTimeCheckOut && DateTimeOffset.Now.TimeOfDay > dateTimeCheckOut.TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckOut.AddMinutes(15).TimeOfDay)
+            if (DateTime.Now.DayOfWeek == DayOfWeek.Saturday)
             {
-                isDateTimeCheckOut = true;
-                isDateTimeCheckIn = false;
-                Console.Clear();
-                Console.WriteLine($"[{DateTime.Now}] Check out");
-                await CheckInHelper.CheckInOut(userName, password);
-            }
-            else if (!isDateTimeCheckIn && DateTimeOffset.Now.TimeOfDay > dateTimeCheckIn.AddMinutes(-15).TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckIn.TimeOfDay)
-            {
-                isDateTimeCheckIn = true;
-                isDateTimeCheckOut = false;
-                Console.Clear();
-                Console.WriteLine($"[{DateTime.Now}] Check in");
-                await CheckInHelper.CheckInOut(userName, password);
+                await Task.Delay(TimeSpan.FromMinutes(2));
+                Console.WriteLine($"[{DateTime.Now}] Thu 7 duoc nghi cac anh em duoc nghi quay thoi");
             }
             else
             {
-                await Task.Delay(TimeSpan.FromMinutes(2));
-                Console.WriteLine($"[{DateTime.Now}] Running ...");
+                if (!isDateTimeCheckOut && DateTimeOffset.Now.TimeOfDay > dateTimeCheckOut.TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckOut.AddMinutes(15).TimeOfDay)
+                {
+                    isDateTimeCheckOut = true;
+                    isDateTimeCheckIn = false;
+                    Console.Clear();
+                    Console.WriteLine($"[{DateTime.Now}] Check out");
+                    await CheckInHelper.CheckInOut(userName, password);
+                }
+                else if (!isDateTimeCheckIn && DateTimeOffset.Now.TimeOfDay > dateTimeCheckIn.AddMinutes(-15).TimeOfDay && DateTimeOffset.Now.TimeOfDay < dateTimeCheckIn.TimeOfDay)
+                {
+                    isDateTimeCheckIn = true;
+                    isDateTimeCheckOut = false;
+                    Console.Clear();
+                    Console.WriteLine($"[{DateTime.Now}] Check in");
+                    await CheckInHelper.CheckInOut(userName, password);
+                }
+                else
+                {
+                    await Task.Delay(TimeSpan.FromMinutes(2));
+                    Console.WriteLine($"[{DateTime.Now}] Running ...");
+                }
             }
         }
     }
